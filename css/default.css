@@ -1,0 +1,125 @@
+html, body {
+  width: 100%;
+}
+
+body {
+  font-family: "PT Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 16pt;
+  color: #455565;
+}
+
+h1 {
+  font-family: 'Gentium Book Basic', serif;
+}
+
+#quote {
+  font-family: 'Gentium Basic', serif;
+}
+
+h1, h2 {
+  color: #000;
+}
+
+h1 {
+  font-weight: bold;
+  text-align: center;
+  font-size: 45pt;
+  margin-top: 72px;
+  margin-bottom: 50px;
+}
+
+h2 {
+  font-size: 20pt;
+  font-weight: bold;
+}
+
+#bar {
+  background-color: #3873A3;
+  height: 10px;
+  width: 100%;
+}
+
+#body {
+  width: 590px;
+  margin: 0px auto;
+  text-align: justify;
+}
+
+#info {
+  margin-bottom: 40px;
+}
+
+a {
+  color: #3271A7;
+}
+
+a:hover {
+  color: #888;
+}
+
+#connect {
+  text-align: center;
+}
+
+#connect ul {
+  padding: 0px;
+}
+
+#connect li {
+  display: inline;
+  padding-right: 48pt;
+}
+
+#connect a {
+  text-decoration: none;
+}
+
+#connect a:hover {
+  text-decoration: underline;
+}
+
+#quoteBar {
+  background-color: #979797;
+  height: 1px;
+  width: 120px;
+  margin-top: 47px;
+}
+
+#quote {
+  font-style: italic;
+  margin: 14px 0 0 0;
+  font-size: 14pt;
+  margin-bottom: 30px;
+}
+
+@media only screen and (min-width: 768px) {
+  .mobile {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  #body {
+    width: calc(100% - 40px);
+    padding: 0px 20px;
+    text-align: center;
+    font-size: 16pt;
+  }
+  h1 {
+    width: 100%;
+    text-align: center;
+    margin: 35px 0 16px;
+  }
+  .desktop {
+    display: none !important;
+  }
+  #connect li {
+    font-size: 20pt;
+    display: block;
+    padding: 10pt 0;
+  }
+  #quote {
+    text-align: left;
+    font-size: 14pt;
+  }
+}
