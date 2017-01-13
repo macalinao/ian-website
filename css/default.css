@@ -42,7 +42,6 @@ h2 {
 #body {
   width: 590px;
   margin: 0px auto;
-  text-align: justify;
 }
 
 #info {
@@ -90,6 +89,19 @@ a:hover {
   margin: 14px 0 0 0;
   font-size: 14pt;
   margin-bottom: 30px;
+}
+
+h1.post {
+  margin-bottom: 30px;
+}
+
+#postUnder {
+  color: #3271A7;
+  text-align: center;
+  line-height: 10px;
+  font-family: 'Gentium Basic', serif;
+  margin-bottom: 60px;
+  font-weight: normal;
 }
 
 @media only screen and (min-width: 768px) {
