@@ -69,6 +69,10 @@ a:hover {
   padding-right: 48pt;
 }
 
+#connect li:last-child {
+  padding-right: 0;
+}
+
 #connect a {
   text-decoration: none;
 }
