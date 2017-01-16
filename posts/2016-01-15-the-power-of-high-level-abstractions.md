@@ -43,8 +43,8 @@ Thus, we can create a type like this that maps one-to-one to sum.
 ```go
 type Query struct {
   Timestamp int
-  AccountId string
-  SourceId string
+  Account string
+  Source string
 }
 ```
 
