@@ -34,7 +34,7 @@ Sum will be a serializable type that looks like this:
 ```go
 type Sum struct {
   PageImpressions uint64
-  Clicks uint64
+  Clicks          uint64
 }
 ```
 
@@ -43,8 +43,8 @@ Thus, we can create a type like this that maps one-to-one to sum.
 ```go
 type Query struct {
   Timestamp int
-  Account string
-  Source string
+  Account   string
+  Source    string
 }
 ```
 
