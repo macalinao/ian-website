@@ -25,7 +25,7 @@ CREATE TABLE event_sums (
 
   sum blob,
 
-  PRIMARY KEY((timestamp, account_id, source_id))
+  PRIMARY KEY((timestamp, account, source))
 );
 ```
 
