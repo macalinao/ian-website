@@ -40,8 +40,12 @@ h2 {
 }
 
 #body {
-  width: 590px;
+  width: 750px;
   margin: 0px auto;
+}
+
+#body.main {
+  width: 590px;
 }
 
 #info {
