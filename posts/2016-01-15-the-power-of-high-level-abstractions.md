@@ -169,7 +169,9 @@ We'll have to make quite a few changes to the code:
 
 Dammit, Go error handling!
 
-This can easily cause our little `combine` function to be over 50 lines of code, which can quickly become an unreadable mess. Furthermore, if we do any of these steps wrong, we could run into bugs. My personal opinion: as a developer, I shouldn't have to worry about problems that have been solved countless times by other people, such as error handling on a parallelized function.
+This can easily cause our little `combine` function to be over 50 lines of code, which can quickly become an unreadable mess. Furthermore, if we do any of these steps wrong, we could run into bugs.
+
+As software engineers, we shouldn't have to worry about problems that have been solved countless times by others, such as error handling on a parallelized function.
 
 ## The Scala solution
 
@@ -208,13 +210,13 @@ def sum(queries: List[Query]): Future[Sum] = {
 
 This code does all of the above. It:
 
--   handles errors naturally using Future's built-in error handling mechanism
--   limits concurrent requests to a predictable 10 using a thread pool implicitly used by the Future construct
--   adds all of the match sums, with the "+" being homologous to the "add" method in Go, and the "fold" being homologous to the for-loop and accumulator variable re-assigning.
+- handles errors naturally using [Future][http://docs.scala-lang.org/overviews/core/futures.html]'s built-in error handling mechanism
+- limits concurrent requests to a predictable 10 using a thread pool implicitly used by the Future construct (see [ExecutionContext][http://docs.scala-lang.org/overviews/core/futures.html])
+- adds all of the match sums, with the `+` being homologous to the `add` method in Go and the `fold` being homologous to the for-loop and accumulator variable re-assigning.
 
-The Scala is almost <span class="underline">one-fifth</span> the length of the Go code in number of lines. (The one difference in implementation is that we are storing all of the `Sum`s in memory before we add them together, but we will get to that later.)
+The Scala is almost _one-fifth_ the length of the Go code in number of lines. The one major difference in implementation is that we are storing all of the `Sum`s in memory before we add them together, as `Future.sequence(...)` returns a `Future[List[Sum]]`, but we will get to that later.
 
-We can still do better by borrowing a concept from abstract algebra: the monoid. A monoid is defined as a set with a binary function equipped with two properties: it possesses an identity element, and it is associative. Using the Cats library, we define a monoid as follows:
+We can still do better by borrowing a concept from abstract algebra: the [monoid][https://en.wikipedia.org/wiki/Monoid]. Using the [Cats library][http://typelevel.org/cats], we define a monoid as follows:
 
 ```scala
 object SumMonoid extends Monoid[Sum] {
@@ -228,7 +230,7 @@ object SumMonoid extends Monoid[Sum] {
 }
 ```
 
-Using the Monoid, the fold in the above function may be rewritten as so:
+Using the `Monoid`, the `fold` in the above function may be rewritten as so:
 
 ```scala
 def sum(queries: List[Query]): Future[Sum] = {
@@ -244,7 +246,7 @@ def sum(queries: List[Query]): Future[Sum] = {
 }
 ```
 
-Furthermore, for every monoid of T, there exists a `Monoid[Option[T]]`, so we can write things like this:
+Furthermore, for every `Monoid[T]`, there exists a `Monoid[Option[T]]`, so we can write things like this:
 
 ```scala
 def sum(queries: List[Query]): Future[Sum] = {
@@ -274,7 +276,7 @@ def sum(queries: List[Query]): Future[Sum] = {
 }
 ```
 
-It turns out, folding on a monoid is a common use case, and Cats gives us a Foldable trait that allows us to write `list.combineAll` to perform the fold.
+It turns out, folding over a `Monoid` is a common use case. Cats gives us a [Foldable][http://eed3si9n.com/herding-cats/using-monoids-to-fold.html] typeclass that allows us to write `list.combineAll` to perform the fold.
 
 ```scala
 def sum(queries: List[Query]): Future[Sum] = {
@@ -288,7 +290,7 @@ def sum(queries: List[Query]): Future[Sum] = {
 }
 ```
 
-Unwrapping an Option[T] to a T, using the empty value of the monoid is also a common operation. Cats gives us the `.orEmpty` method for this.
+Unwrapping an `Option[T]` to a `T`, using the empty value of the `Monoid` is also a common operation. Cats gives us the `.orEmpty` method for this.
 
 ```scala
 def sum(queries: List[Query]): Future[Sum] = {
@@ -317,7 +319,7 @@ def sum(queries: List[Query]): Future[Sum] = {
 }
 ```
 
-Sequence is common to all `Traversable`s, so we can write things like this:
+Using Cats's [Traverse][http://typelevel.org/cats/typeclasses/traverse.html] typeclass defined on `List[_]`, we can write things like this:
 
 ```scala
 def sum(queries: List[Query]): Future[Sum] = {
@@ -334,7 +336,7 @@ def sum(queries: List[Query]): Future[Sum] = {
 }
 ```
 
-But wait: we're storing all of the `Sum`s in memory still! Fortunately, `Future` can also be treated as a `Monoid`, so like `Option`, we can fold over it. Thus, we can omit the `.sequence` and `.combineAll` it.
+But wait: we're still storing all of the `Sum`s in memory! Fortunately, `Future` can also be treated as a `Monoid`, so like `Option`, we can fold over it. Thus, we can omit the `.sequence` and `.combineAll` it.
 
 ```scala
 def sum(queries: List[Query]): Future[Sum] = {
@@ -346,8 +348,8 @@ With comments:
 
 ```scala
 def sum(queries: List[Query]): Future[Sum] = {
-  // Get a list of filters
-  filters
+  // Get a list of queries
+  queries
     // Get the Sum of each Query
     .map(fetch)
     // Aggregate using the Sum monoid
@@ -358,3 +360,5 @@ def sum(queries: List[Query]): Future[Sum] = {
 We've now turned a 50 line function into a one-liner (sans the Monoid). Damn!
 
 If you haven't been exposed to this kind of programming before, you may be thinking that the Scala one-liner is much harder to read than the Go. However, I argue that once you learn and fully understand the abstractions, the Scala code will be better tested, more concise, and easier to understand. In a future blog post, I will be discussing exactly why I believe this.
+
+Thanks to Pradyuman Vig for reading drafts of this.
