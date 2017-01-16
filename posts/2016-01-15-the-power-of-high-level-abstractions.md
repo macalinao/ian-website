@@ -12,7 +12,7 @@ Let's say we have a database of counts of page impressions, and we want to get t
 
 We have a table that looks like the following:
 
-```cql
+```sql
 CREATE TABLE event_sums (
   -- The timestamp of the minute that these sums were collected for.
   timestamp int,
