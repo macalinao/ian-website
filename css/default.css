@@ -44,8 +44,9 @@ h2 {
   margin: 0px auto;
 }
 
-#body.main {
+#homeWrapper {
   width: 590px;
+  margin: 0px auto;
 }
 
 #info {
@@ -112,6 +113,11 @@ h1.post {
   font-weight: normal;
 }
 
+pre {
+  text-align: left;
+  font-size: 12pt;
+}
+
 @media only screen and (min-width: 768px) {
   .mobile {
     display: none;
@@ -124,6 +130,9 @@ h1.post {
     padding: 0px 20px;
     text-align: center;
     font-size: 16pt;
+  }
+  #mainWrapper {
+    width: 100%;
   }
   h1 {
     width: 100%;
@@ -141,5 +150,8 @@ h1.post {
   #quote {
     text-align: left;
     font-size: 14pt;
+  }
+  #post {
+    text-align: left;
   }
 }
