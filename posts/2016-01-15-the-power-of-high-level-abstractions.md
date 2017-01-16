@@ -361,4 +361,4 @@ We've now turned a 50 line function into a one-liner (sans the Monoid). Damn!
 
 If you haven't been exposed to this kind of programming before, you may be thinking that the Scala one-liner is much harder to read than the Go. However, I argue that once you learn and fully understand the abstractions, the Scala code will be better tested, more concise, and easier to understand. In a future blog post, I will be discussing exactly why I believe this.
 
-Thanks to [Pradyuman Vig](http://pradyumanvig.com) for reading drafts of this.
+Thanks to [Pradyuman Vig](https://github.com/pradyuman) for reading drafts of this.
