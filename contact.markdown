@@ -2,5 +2,16 @@
 title: Contact
 ---
 
-I live in a small hut in the mountains of Kumano Kodō on Kii Hantō and would not
-like to be contacted.
+<h1>Contact</h1>
+
+You should contact me through email at [me@ian.pw](mailto:me@ian.pw).
+
+In the event that you would like to send me an encrypted message, here is my [Keybase profile](https://keybase.io/ianm) and [public key](/static/ianmacalinao.asc).
+
+```
+pub   4096R/F126F8E8 2017-01-23
+uid                  Ian Macalinao (ian-mac) <me@ian.pw>
+sub   4096R/90AD9567 2017-01-23
+```
+
+[Back to Home](/)
