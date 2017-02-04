@@ -79,6 +79,7 @@ Note that we've fixed quite a few problems:
 
 * We are fixed to a known amount of memory.
 * We don't need to lock the list of locks, as we're only performing reads. (Also Scala enforces immutability on `Vector`, yay!)
+* We can "get" a lock, since locks are never deleted.
 * We allocate all of the locks upfront, so GC can't screw us over. This also hugely simplifies our code.
 
 The only downside to this is that each lock could possess multiple keys, though you can probably tweak the numbers to find something with a good balance of throughput and memory usage.
