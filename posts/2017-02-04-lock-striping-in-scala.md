@@ -21,20 +21,22 @@ class LockManager[K] {
         case None => locksMap + (key -> new ReentrantLock())
       }
     }
-    val ret = fn
-    locks.getAndTransform { locksMap =>
-      locksMap.get(key) match {
-        case Some(lock) => {
-          lock.unlock()
-          locksMap - key
-        }
-        case None => {
-          logger.warn(s"Lock for ${key} suspiciously missing")
-          locksMap  // wtf?? this shoudnt happen
+    try {
+      fn
+    } finally {
+      locks.getAndTransform { locksMap =>
+        locksMap.get(key) match {
+          case Some(lock) => {
+            lock.unlock()
+            locksMap - key
+          }
+          case None => {
+            logger.warn(s"Lock for ${key} suspiciously missing")
+            locksMap  // wtf?? this shoudnt happen
+          }
         }
       }
     }
-    ret
   }
 
 }
