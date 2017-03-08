@@ -2,9 +2,11 @@
 {-# LANGUAGE OverloadedStrings #-}
 import           Data.Monoid (mappend)
 import           Hakyll
-
-
+import qualified Data.Set as S
+import           Text.Pandoc.Options
+import           System.FilePath.Posix
 --------------------------------------------------------------------------------
+
 main :: IO ()
 main = hakyll $ do
     match "images/*" $ do
@@ -31,7 +33,7 @@ main = hakyll $ do
 
     match "posts/*" $ do
         route $ setExtension "html"
-        compile $ pandocCompiler
+        compile $ pandocMathCompiler
             >>= loadAndApplyTemplate "templates/post.html"    postCtx
             >>= loadAndApplyTemplate "templates/default.html" postCtx
             >>= relativizeUrls
@@ -50,6 +52,13 @@ main = hakyll $ do
                 >>= loadAndApplyTemplate "templates/default.html" archiveCtx
                 >>= relativizeUrls
 
+    match "pages/*" $ do
+        -- Use base route
+        route $ baseWithExtension "html"
+        compile $ pandocMathCompiler
+            >>= loadAndApplyTemplate "templates/page.html"    postCtx
+            >>= loadAndApplyTemplate "templates/default.html" postCtx
+            >>= relativizeUrls
 
     match "index.html" $ do
         route idRoute
@@ -73,3 +82,19 @@ postCtx :: Context String
 postCtx =
     dateField "date" "%B %e, %Y" `mappend`
     defaultContext
+
+-- Thanks http://travis.athougies.net/posts/2013-08-13-using-math-on-your-hakyll-blog.html
+pandocMathCompiler =
+    let mathExtensions = [Ext_tex_math_dollars, Ext_tex_math_double_backslash,
+                          Ext_latex_macros]
+        defaultExtensions = writerExtensions defaultHakyllWriterOptions
+        newExtensions = foldr S.insert defaultExtensions mathExtensions
+        writerOptions = defaultHakyllWriterOptions {
+                          writerExtensions = newExtensions,
+                          writerHTMLMathMethod = MathJax ""
+                        }
+    in pandocCompilerWith defaultHakyllReaderOptions writerOptions
+
+baseWithExtension :: String -> Routes
+baseWithExtension ext = customRoute $
+  (`replaceExtension` ext) . takeBaseName . toFilePath
