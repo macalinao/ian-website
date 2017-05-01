@@ -1,5 +1,5 @@
 ---
-title: Separation of Variables
+title: Separation of Variables (Partial Differential Equations)
 date: 2017-04-29
 ordering: 4
 ---
