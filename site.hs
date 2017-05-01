@@ -1,10 +1,15 @@
 --------------------------------------------------------------------------------
 {-# LANGUAGE OverloadedStrings #-}
+{-# LANGUAGE TupleSections #-}
+import           Data.Ord                    (comparing)
+import           Control.Monad               (liftM)
 import           Data.Monoid (mappend)
+import qualified Data.Map as M
 import           Hakyll
 import qualified Data.Set as S
 import           Text.Pandoc.Options
 import           System.FilePath.Posix
+import           Data.List
 --------------------------------------------------------------------------------
 
 main :: IO ()
@@ -32,6 +37,29 @@ main = hakyll $ do
             >>= relativizeUrls
 
     match "posts/*" $ do
+        route $ setExtension "html"
+        compile $ pandocMathCompiler
+            >>= loadAndApplyTemplate "templates/post.html"    postCtx
+            >>= loadAndApplyTemplate "templates/default.html" postCtx
+            >>= relativizeUrls
+
+    -- TODO(igm): make a generic notebook template, loop properly
+    match "notes/diffeq/index.md" $ do
+        route $ setExtension "html"
+        compile $ do
+          notes <- loadAll $ "notes/diffeq/*" .&&. complement "notes/diffeq/index.md"
+
+          let notebookCtx =
+                listField "notes" defaultContext (notebookOrder =<< return notes) `mappend`
+                defaultContext
+
+          pandocMathCompiler
+            >>= loadAndApplyTemplate "templates/notebook.html" notebookCtx
+            >>= loadAndApplyTemplate "templates/default.html"  notebookCtx
+            >>= relativizeUrls
+
+
+    match "notes/diffeq/*" $ do
         route $ setExtension "html"
         compile $ pandocMathCompiler
             >>= loadAndApplyTemplate "templates/post.html"    postCtx
@@ -78,6 +106,15 @@ main = hakyll $ do
 
 
 --------------------------------------------------------------------------------
+notebookOrder :: MonadMetadata m => [Item a] -> m [Item a]
+notebookOrder =
+    sortByM $ \x -> getMetadataField (itemIdentifier x) "ordering" 
+  where
+    sortByM :: (Monad m, Ord k) => (a -> m k) -> [a] -> m [a]
+    sortByM f xs = liftM (map fst . sortBy (comparing snd)) $
+                   mapM (\x -> liftM (x,) (f x)) xs
+
+
 postCtx :: Context String
 postCtx =
     dateField "date" "%B %e, %Y" `mappend`
