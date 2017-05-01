@@ -45,18 +45,18 @@ $$
 Plugging in our initial condition $X(0) = 0$, we get:
 
 $$
-X(0) = 0 = c_1 \cos(\sqrt{\lambda + 1}0) + c_2 \sin(\sqrt{x + 1}0)
+X(0) = 0 = c_1 \cos(\sqrt{\lambda + 1}0) + c_2 \sin(\sqrt{\lambda + 1} * 0)
 $$
 
 Thus $c_1 = 0$ since $\cos(0) = 1$ and $\sin(0) = 0$. With our second initial condition $X(10) = 0$, we get:
 
 $$
-X(10) = 0 = c_2 \sin(\sqrt{x + 1}(10x))
+X(10) = 0 = c_2 \sin(\sqrt{x + 1} * 10)
 $$
 
 $$
 \begin{align}
-  10\sqrt{x+1} &= n\pi \\
+  10\sqrt{\lambda + 1} &= n\pi \\
   \lambda + 1 &= \frac{n^2 \pi^2}{100} \\
   \lambda &= \frac{n^2 \pi^2}{100} - 1
 \end{align}
@@ -65,7 +65,7 @@ $$
 thus we have solved for our eigenvalue. Our eigenfunction just involves plugging this back into the original equation, so
 
 $$
-X(x) = c_2 \sin(\sqrt{\frac{n^2 \pi^2}{100}} * 10x) = c_2 \sin(n\pi x)
+X(x) = c_2 \sin(\sqrt{\frac{n^2 \pi^2}{100}} * 10) = c_2 \sin(n\pi x)
 $$
 
 Next, let's solve for $T(t)$.
@@ -85,5 +85,5 @@ $$
 Thus, given $u(x, 0)$ we get that $c_1 = 3$, $n_1 = 2$, $c_2 = -7$, and $n_2 = 4$, so:
 
 $$
-u(x, t) = 3\sin(2\pi x)e^{(\frac{1 - 4\pi^2}{100})t} - 7\sin(4\pi x)e^{(\frac{1 - 16\pi^2}{100})t}
+u(x, t) = 3\sin(2\pi x)e^{(1 - 4\pi^2)t} - 7\sin(4\pi x)e^{(1 - 16\pi^2)t}
 $$
