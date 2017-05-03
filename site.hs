@@ -100,7 +100,7 @@ loadNotes id = loadAll $ (notePattern id) .&&. hasVersion "dummy"
 
 notebook :: String -> Rules ()
 notebook id = do
-    match (notePattern id) $ do
+    match (noteIndexPattern id) $ do
         route $ setExtension "html"
         compile $ do
           notes <- loadNotesSorted id
@@ -114,7 +114,7 @@ notebook id = do
             >>= loadAndApplyTemplate "templates/default.html"  notebookCtx
             >>= relativizeUrls
 
-    match (noteIndexPattern id) $ do
+    match (notePattern id) $ do
         route $ setExtension "html"
         compile $ do
           notes <- loadNotesSorted id
