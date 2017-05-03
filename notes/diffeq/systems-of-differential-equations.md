@@ -4,6 +4,14 @@ date: 2017-04-29
 ordering: 1
 ---
 
+You can use linear algebra techniques to solve differential equations of the form:
+
+$$
+\dot{\vec{x}} = A\vec{x}
+$$
+
+where $A$ is a matrix of constants.
+
 ## Real Eigenvalues
 
 Consider the following initial value problem:
@@ -90,6 +98,49 @@ $$
 \vec{x}(t) = \frac{1}{4} e^{-t}\begin{bmatrix}1 \\ -2\end{bmatrix} + \frac{7}{4} e^{3t}\begin{bmatrix}1 \\ 2\end{bmatrix}
 $$
 
+### Example
+
+Let $A$ be a $3 \times 3$ matrix. Suppose $7, 4, 1$ are eigenvalues with corresponding eigenvectors:
+
+$$
+\begin{bmatrix}2 \\ 0 \\ 3\end{bmatrix},
+\begin{bmatrix}6 \\ 1 \\ 8\end{bmatrix},
+\begin{bmatrix}4 \\ 2 \\ 7\end{bmatrix},
+$$
+
+Find the solution to the initial value problem $\frac{d}{dt}\vec{x} = A\vec{x}$ with $\vec{x}(0) = \begin{bmatrix}1 \\ 1 \\ 4\end{bmatrix}$.
+
+With the eigenvalues and eigenvalues already solved for, this problem is very simple: just plug things into the formula like below.
+
+$$
+\vec{x}(t) =
+  c_1e^{7t}\begin{bmatrix}2 \\ 0 \\ 3\end{bmatrix}
+  + c_2e^{4t}\begin{bmatrix}6 \\ 1 \\ 8\end{bmatrix}
+  + c_3e^{t}\begin{bmatrix}4 \\ 2 \\ 7\end{bmatrix}
+$$
+
+Then, we solve for our constants by plugging in $\vec{x}(0)$:
+
+$$
+\vec{x}(0) = \begin{bmatrix}1 \\ 1 \\ 4\end{bmatrix} =
+  c_1\begin{bmatrix}2 \\ 0 \\ 3\end{bmatrix}
+  + c_2\begin{bmatrix}6 \\ 1 \\ 8\end{bmatrix}
+  + c_3\begin{bmatrix}4 \\ 2 \\ 7\end{bmatrix}
+$$
+
+Transforming this into a matrix equation, we get:
+
+$$
+\begin{bmatrix}1 \\ 1 \\ 4\end{bmatrix} =
+  \begin{bmatrix}
+    2 & 6 & 4 \\
+    0 & 1 & 2 \\
+    3 & 8 & 7
+  \end{bmatrix}\begin{bmatrix}c_1 \\ c_2 \\ c_3\end{bmatrix}
+$$
+
+With this, we can easily solve for our constants $c_1$, $c_2$, and $c_3$.
+
 ## Complex Eigenvectors
 
 Let's say we get end up with complex eigenvalues/eigenvectors, for example:
@@ -118,7 +169,7 @@ $$
 \vec{x} = c_1e^{-t}\begin{bmatrix}3 \\ 1 \\ 6\end{bmatrix} + c_2 e^{5t}\begin{bmatrix}-\sin(2t) \\ 0 \\ 3\cos(2t)\end{bmatrix} + c_3 e^{5t}\begin{bmatrix}6\cos(2t) \\ 0 \\ 3\sin(2t)\end{bmatrix}
 $$
 
-Notice that the $i$ in the third term was absorbed by $c_3$.
+Notice that the $i$ in the third term was absorbed by $c_3$ -- the whole idea is to factor out $i$ so we don't get it in our answer.
 
 ## Repeated Eigenvalues
 
