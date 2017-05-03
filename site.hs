@@ -10,6 +10,8 @@ import qualified Data.Set as S
 import           Text.Pandoc.Options
 import           System.FilePath.Posix
 import           Data.List
+import           Data.Binary                    (Binary)
+import           Data.Typeable
 --------------------------------------------------------------------------------
 
 main :: IO ()
@@ -85,16 +87,26 @@ main = hakyll $ do
 
 
 --------------------------------------------------------------------------------
+noteIndexPattern id = fromGlob $ "notes/" ++ id ++ "/index.md"
+
+notePattern id = (fromGlob $ "notes/" ++ id ++ "/*")
+              .&&. complement (noteIndexPattern id)
+
+loadNotesSorted :: (Binary a, Typeable a, MonadMetadata m) => String -> Compiler (m [Item a])
+loadNotesSorted id = fmap notebookOrder $ loadNotes id
+
+loadNotes :: (Binary a, Typeable a) => String -> Compiler [Item a]
+loadNotes id = loadAll $ (notePattern id) .&&. hasVersion "dummy"
 
 notebook :: String -> Rules ()
 notebook id = do
-    match (fromGlob $ "notes/" ++ id ++ "/index.md") $ do
+    match (notePattern id) $ do
         route $ setExtension "html"
         compile $ do
-          notes <- loadAll $ "notes/diffeq/*" .&&. complement "notes/diffeq/index.md"
+          notes <- loadNotesSorted id
 
           let notebookCtx =
-                listField "notes" defaultContext (notebookOrder =<< return notes) `mappend`
+                listField "notes" defaultContext notes `mappend`
                 defaultContext
 
           pandocMathCompiler
@@ -102,12 +114,24 @@ notebook id = do
             >>= loadAndApplyTemplate "templates/default.html"  notebookCtx
             >>= relativizeUrls
 
-    match (fromGlob $ "notes/" ++ id ++ "/*") $ do
+    match (noteIndexPattern id) $ do
         route $ setExtension "html"
-        compile $ pandocMathCompiler
-            >>= loadAndApplyTemplate "templates/post.html"    postCtx
-            >>= loadAndApplyTemplate "templates/default.html" postCtx
+        compile $ do
+          notes <- loadNotesSorted id
+
+          let noteCtx =
+                listField "notes" defaultContext notes `mappend`
+                defaultContext
+
+          pandocMathCompiler
+            >>= loadAndApplyTemplate "templates/note.html"    noteCtx
+            >>= loadAndApplyTemplate "templates/default.html" noteCtx
             >>= relativizeUrls
+
+    -- This "dummy" pattern exists to allow generation of a table of contents.
+    match (notePattern id) $ version "dummy" $ do
+        route   $ setExtension "html"
+        compile getResourceBody
 
 
 notebookOrder :: MonadMetadata m => [Item a] -> m [Item a]

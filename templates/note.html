@@ -1,0 +1,26 @@
+<h1 class="post">$title$</h1>
+
+<div id="postUnder">
+  <p>by <a href="/">Ian Macalinao</a></p>
+</div>
+
+$partial("templates/notebook-nav.html")$
+
+<div id="post">
+  $body$
+</div>
+
+<div id="disqus_thread"></div>
+
+<script>
+var disqus_config = function() {
+  this.page.url = 'http://ian.pw$url$';
+  this.page.identifier = '$path$';
+  };
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = '//ianpw.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
