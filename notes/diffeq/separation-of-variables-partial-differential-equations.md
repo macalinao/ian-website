@@ -4,9 +4,11 @@ date: 2017-04-29
 ordering: 4
 ---
 
-Now we will solve a PDE using separation of variables.
+In this section, we will solve partial differential equations using separation of variables.
 
-### Example
+### Example 1
+
+Solve for $u(x, t)$ in the following initial value problem:
 
 $$
 \frac{\partial u}{\partial t} = \frac{\partial^2 u}{\partial x^2} + u

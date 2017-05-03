@@ -44,27 +44,7 @@ main = hakyll $ do
             >>= relativizeUrls
 
     -- TODO(igm): make a generic notebook template, loop properly
-    match "notes/diffeq/index.md" $ do
-        route $ setExtension "html"
-        compile $ do
-          notes <- loadAll $ "notes/diffeq/*" .&&. complement "notes/diffeq/index.md"
-
-          let notebookCtx =
-                listField "notes" defaultContext (notebookOrder =<< return notes) `mappend`
-                defaultContext
-
-          pandocMathCompiler
-            >>= loadAndApplyTemplate "templates/notebook.html" notebookCtx
-            >>= loadAndApplyTemplate "templates/default.html"  notebookCtx
-            >>= relativizeUrls
-
-
-    match "notes/diffeq/*" $ do
-        route $ setExtension "html"
-        compile $ pandocMathCompiler
-            >>= loadAndApplyTemplate "templates/post.html"    postCtx
-            >>= loadAndApplyTemplate "templates/default.html" postCtx
-            >>= relativizeUrls
+    notebook "diffeq"
 
     create ["writing/index.html"] $ do
         route idRoute
@@ -106,9 +86,34 @@ main = hakyll $ do
 
 
 --------------------------------------------------------------------------------
+
+notebook :: String -> Rules ()
+notebook id = do
+    match (fromGlob $ "notes/" ++ id ++ "/index.md") $ do
+        route $ setExtension "html"
+        compile $ do
+          notes <- loadAll $ "notes/diffeq/*" .&&. complement "notes/diffeq/index.md"
+
+          let notebookCtx =
+                listField "notes" defaultContext (notebookOrder =<< return notes) `mappend`
+                defaultContext
+
+          pandocMathCompiler
+            >>= loadAndApplyTemplate "templates/notebook.html" notebookCtx
+            >>= loadAndApplyTemplate "templates/default.html"  notebookCtx
+            >>= relativizeUrls
+
+    match (fromGlob $ "notes/" ++ id ++ "/*") $ do
+        route $ setExtension "html"
+        compile $ pandocMathCompiler
+            >>= loadAndApplyTemplate "templates/post.html"    postCtx
+            >>= loadAndApplyTemplate "templates/default.html" postCtx
+            >>= relativizeUrls
+
+
 notebookOrder :: MonadMetadata m => [Item a] -> m [Item a]
 notebookOrder =
-    sortByM $ \x -> getMetadataField (itemIdentifier x) "ordering" 
+    sortByM $ \x -> getMetadataField (itemIdentifier x) "ordering"
   where
     sortByM :: (Monad m, Ord k) => (a -> m k) -> [a] -> m [a]
     sortByM f xs = liftM (map fst . sortBy (comparing snd)) $

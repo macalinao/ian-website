@@ -15,3 +15,5 @@ $$
   f(x) &= \frac{a_0}{2} + \sum\limits_{n = 1}^{\infty}\big[ a_n \cos\frac{n\pi x}{l} + b_n \sin\frac{n\pi x}{l} \big]
 \end{align}
 $$
+
+Notice that since $\cos$ is an even function, we will only use this if the original function is an even function. Similarly, since $\sin$ is an odd function, $b_n$ is non-zero only if $f(x)$ is odd.
