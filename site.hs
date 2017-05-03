@@ -43,7 +43,6 @@ main = hakyll $ do
             >>= loadAndApplyTemplate "templates/default.html" postCtx
             >>= relativizeUrls
 
-    -- TODO(igm): make a generic notebook template, loop properly
     notebook "diffeq"
 
     create ["writing/index.html"] $ do
