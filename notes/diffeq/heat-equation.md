@@ -1,7 +1,7 @@
 ---
 title: The Heat Equation
 date: 2017-04-29
-ordering: 6
+ordering: c60
 ---
 
 The heat equation is of the form:

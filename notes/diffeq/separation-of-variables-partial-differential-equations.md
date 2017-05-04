@@ -1,7 +1,7 @@
 ---
 title: Separation of Variables (Partial Differential Equations)
 date: 2017-04-29
-ordering: 4
+ordering: c40
 ---
 
 In this section, we will solve partial differential equations using separation of variables.

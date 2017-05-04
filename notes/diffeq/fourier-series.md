@@ -1,7 +1,7 @@
 ---
 title: Fourier Series
 date: 2017-04-29
-ordering: 5
+ordering: c50
 ---
 
 The basic premise behind the [Fourier series](https://en.wikipedia.org/wiki/Fourier_series) is that any periodic function can be decomposed into the sum of sine and cosine waves.

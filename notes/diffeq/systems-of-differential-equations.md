@@ -1,7 +1,7 @@
 ---
 title: Systems of Differential Equations
 date: 2017-04-29
-ordering: 1
+ordering: c10
 ---
 
 You can use linear algebra techniques to solve differential equations of the form:

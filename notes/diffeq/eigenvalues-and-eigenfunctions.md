@@ -1,10 +1,7 @@
 ---
-title: Eigenvalues and Eigenfunctions
-date: 2017-04-29
-ordering: 3
+title: Boundary Value Problems
+ordering: c30
 ---
-
-## Boundary Value Problems
 
 To find the eigenvalues and eigenfunctions of a boundary value problem, we must consider three cases: $\lambda = 0$, $\lambda > 0$, and $\lambda < 0$. For each of these cases, we find the eigenfunction using the initial values, then we find the eigenvalues using the result.
 
