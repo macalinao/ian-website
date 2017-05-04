@@ -32,7 +32,7 @@ $$
 y'(t) = -c_1\sin(t\sqrt{-\lambda})\sqrt{-\lambda} + c_2\cos(t\sqrt{-\lambda})\sqrt{-\lambda}
 $$
 
-Using the initial value of $y'(0) = 0$, we see that since $\cos(0) = 0$, $c_2$ must equal $0$.
+Using the initial value of $y'(0) = 0$, we see that since $\cos(0) = 1$, $c_2$ must equal $0$ for this to be possible.
 
 Using this, we now have the following equation:
 
@@ -60,4 +60,4 @@ If $\lambda = 0$, our equation is of the form $y = c_1 x + c_2$, so $y' = c_1$. 
 
 #### Case $\lambda > 0$
 
-In this case, the problem works out to the same thing as the previous solution, so we are done.
+In this case, we cannot extract an $i$ from the $\sqrt{lambda}$, so we end up getting trivial solutions.
