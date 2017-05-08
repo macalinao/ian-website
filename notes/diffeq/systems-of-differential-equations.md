@@ -1,6 +1,5 @@
 ---
 title: Systems of Differential Equations
-date: 2017-04-29
 ordering: c10
 ---
 
