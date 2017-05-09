@@ -1,7 +1,13 @@
 <ul>
     $for(notes)$
+        $if(section)$
+</ul>
+<h3>$title$</h3>
+<ul>
+        $else$
         <li>
             <a href="$url$">$title$</a>
         </li>
+        $endif$
     $endfor$
 </ul>
