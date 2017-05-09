@@ -1,5 +1,5 @@
 ---
-title: Ian's DiffEq Guide
+title: Ian's Guide to Differential Equations
 ---
 
 Hello reader! Welcome to my Differential Equations guide. Below is a collection of notes I've created for M 427J at the University of Texas at Austin.
