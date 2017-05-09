@@ -22,7 +22,7 @@ Solving the power series involves three steps:
 2. Solve for the resulting recurrence
 3. Plug the found $a_n$ coefficients into the power series equation
 
-### Example 1
+## Example 1
 
 Using a power series, solve for the recurrence relation and the first four nonzero terms of the soution for the following initial value problem:
 
@@ -51,7 +51,7 @@ $$
 \sum\limits_{m=3}^{\infty}t^m((m+2)(m+1)a_{m+2} + (m-2)a_{m-2} + (m-1)a_{m-1} +2a_{m-1})
 $$
 
-We then solve for $a_{m+2}$:
+We then solve for $a_{m+2}$ in the following equation:
 
 $$
 (m+2)(m+1)a_{m+2} + (m-2)a_{m-2} + (m-1)a_{m-1} + 2a_{m-1} = 0

@@ -24,3 +24,7 @@ we get $r = \pm 2i$, so
 $$
 y_h = c_1\cos(2t) + c_2\sin(2t)
 $$
+
+is the homogenous solution.
+
+Next, let's guess for the particular solution.

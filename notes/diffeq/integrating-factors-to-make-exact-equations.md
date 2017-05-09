@@ -1,5 +1,5 @@
 ---
-title: Integrating Factors to make Exact Equations
+title: Integrating Factors to Make Exact Equations
 ordering: a50
 ---
 
