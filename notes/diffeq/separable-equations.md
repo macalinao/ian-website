@@ -3,7 +3,7 @@ title: Separable Equations
 ordering: a10
 ---
 
-Inarguably the easiest differential equations are separable equations, because we already know how to do them.
+Inarguably the easiest differential equations are separable equations, because we already know how to do them from calculus.
 
 This is when you have an equation of the form
 
