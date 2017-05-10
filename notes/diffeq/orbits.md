@@ -34,7 +34,7 @@ $$
 This is an implicit solution. To clean up our variables, let's solve for $y(t)$:
 
 $$
-y(t) = \cos (x(t - 1))^2
+y(t) = \cos (x(t) - 1)^2
 $$
 
 ### Example 2

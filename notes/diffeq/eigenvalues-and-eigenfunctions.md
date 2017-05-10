@@ -57,4 +57,4 @@ If $\lambda = 0$, our equation is of the form $y = c_1 x + c_2$, so $y' = c_1$. 
 
 #### Case $\lambda > 0$
 
-In this case, we cannot extract an $i$ from the $\sqrt{lambda}$, so we end up getting trivial solutions.
+In this case, we cannot extract an $i$ from the $\sqrt{\lambda}$, so we end up getting trivial solutions.

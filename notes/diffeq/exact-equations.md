@@ -13,12 +13,12 @@ $$
 where
 
 $$
-\frac{\partial M}{\partial y} = \frac{\partial N}{\partial t}
+\frac{\partial M}{\partial x} = \frac{\partial N}{\partial t}
 $$
 
 To solve this for a solution $F(x, t)$, perform the following steps:
 
-1. Solve $\int \partial F = \int M \partial x$ for $F$.
+1. Solve $\int \partial F = \int M \partial t$ for $F$.
 2. Set your constant to a function $f(t)$.
 3. Find $\partial F/\partial t$ and equate this to $\frac{\partial N}{\partial t}$.
 4. Solve for $f'(t)$.
