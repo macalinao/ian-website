@@ -1,6 +1,6 @@
 ---
 title: Integrating Factors to Make Exact Equations
-ordering: a50
+ordering: a30
 ---
 
 Let's say we have an equation of the following form:

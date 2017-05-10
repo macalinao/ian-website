@@ -1,6 +1,7 @@
 ---
 title: Judicious Guessing
-ordering: a30
+ordering: a50
+incomplete: true
 ---
 
 Judicious guessing can be used to guess for a solution.
