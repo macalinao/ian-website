@@ -28,23 +28,23 @@ Not all equations of this form can be made exact. We have two cases:
 #### Case 1
 
 $$
-u(x, t) = \frac{\frac{\partial M}{\partial t} - \frac{\partial N}{\partial y}}{N}
+u(x, t) = \frac{\frac{\partial M}{\partial t} - \frac{\partial N}{\partial x}}{N}
 $$
 
 becomes an integrating factor if $u(x, t)$ is solely a function of $x$, so
 
 $$
-u(x) = exp(\int \frac{\frac{\partial M}{\partial t} - \frac{\partial N}{\partial y}}{N} dx)
+u(x) = exp(\int \frac{\frac{\partial M}{\partial t} - \frac{\partial N}{\partial x}}{N} dx)
 $$
 
 #### Case 2
 
 $$
-u(x, t) = \frac{\frac{\partial M}{\partial t} - \frac{\partial N}{\partial y}}{-M}
+u(x, t) = \frac{\frac{\partial M}{\partial t} - \frac{\partial N}{\partial x}}{-M}
 $$
 
 becomes an integrating factor if $u(x, t)$ is solely a function of $t$, so
 
 $$
-u(t) = exp(\int \frac{\frac{\partial M}{\partial t} - \frac{\partial N}{\partial y}}{-M} dt)
+u(t) = exp(\int \frac{\frac{\partial M}{\partial t} - \frac{\partial N}{\partial x}}{-M} dt)
 $$
