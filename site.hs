@@ -51,6 +51,8 @@ main = hakyll $ do
 
     notebook "diffeq"
 
+    notebook "probability"
+
     create ["writing/index.html"] $ do
         route idRoute
         compile $ do

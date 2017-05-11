@@ -180,3 +180,10 @@ pre {
   padding: 10px 20px;
   border-left: 4px solid #3873A3;
 }
+
+#thanks {
+  margin: 3em auto;
+  border-top: 1px solid #ddd;
+  padding: 2em 0.5em;
+  border-bottom: 1px solid #ddd;
+}

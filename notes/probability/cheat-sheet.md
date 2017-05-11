@@ -1,5 +1,6 @@
 ---
-title: Probability Cheat Sheet
+title: Cheat Sheet
+ordering: z10
 ---
 
 ## Random Variables
