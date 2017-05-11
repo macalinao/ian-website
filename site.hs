@@ -104,6 +104,9 @@ loadNotesSorted id = fmap notebookOrder $ loadNotes id
 loadNotes :: (Binary a, Typeable a) => String -> Compiler [Item a]
 loadNotes id = loadAll $ (notePattern id) .&&. hasVersion "dummy"
 
+loadNotebook :: (Binary a, Typeable a) => String -> Compiler (Item a)
+loadNotebook id = fmap head . loadAll $ (noteIndexPattern id) .&&. hasVersion "dummy"
+
 notebook :: String -> Rules ()
 notebook id = do
     match (noteIndexPattern id) $ do
