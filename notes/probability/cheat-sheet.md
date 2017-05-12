@@ -3,6 +3,38 @@ title: Cheat Sheet
 ordering: z10
 ---
 
+## Basic Probability
+
+### Demorgan's
+
+$$
+P((AB)^C) = P(A^C \cup B^C)
+$$
+
+### Inclusion/Exclusion
+
+$$
+P(A \cup B) = P(A) + P(B) - P(AB)
+$$
+
+### Conditional probability
+
+$$
+P(A | B) = \frac{P(A \cap B)}{P(B)}
+$$
+
+### Bayes Theorem
+
+$$
+P(A | B) = \frac{P(B | A)P(A)}{P(B)}
+$$
+
+## Approximation
+
+Poisson approximation of binomial $(n, p)$: $\lambda = np$.
+
+Normal $(\mu, \sigma)$ of binomial $(n, p)$: $\mu = np$, $\sigma^2 = np(1-p)$. Make sure you correct for continuity.
+
 ## Random Variables
 
 ### Expectation
@@ -46,7 +78,13 @@ Let $X, Y$ be random variables. IF $Y = g(X)$, then the pdf $f_y$ is defined as
 
 $$f_Y(y) = \frac{f_X(x)}{|dy/dx|}$$
 
-where $y = g(x)$.
+where $y = g(x)$. This works for monotonically increasing/decreasing functions.
+
+#### Many to one
+
+$$f_Y(y) = \sum\limits_{x: g(x) = y} \frac{f_X(x)}{|dy/dx|}$$
+
+where each $f_X(x)$ is monotone.
 
 ## Probability Distributions
 
@@ -76,3 +114,85 @@ where $y = g(x)$.
 * CDF: $(x-a)/(b-a)$
 * Mean: $(a+b)/2$
 * Variance: $\frac{(b-a)^2}{12}$
+
+## Continuous Joint Distributions
+
+### Joint Distribution Defined by a Density
+
+#### Infinitesimal probability
+
+$$
+P(X \in dx, Y \in dy) = f(x, y)dx dy
+$$
+
+#### Probability of a set B
+
+$$
+P((X, Y) \in B) = \int \int\limits_B f(x, y)dx dy
+$$
+
+#### Constraints
+
+A density needs to be equal to 1, so check that $f(x, y) \geq 0$ and
+
+$$
+\int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty} f(x, y)dx dy = 1
+$$
+
+#### Marginals
+
+$$
+f_X(x) = \int\limits_{-\infty}^{\infty} f(x, y)dy
+$$
+
+$$
+f_Y(y) = \int\limits_{-\infty}^{\infty} f(x, y)dx
+$$
+
+#### Independence
+
+For all $x$ and $y$,
+
+$$
+f(x, y) = f_X(x)f_Y(y)
+$$
+
+#### Expectation of a function $g$ of $(X, Y)$
+
+$$
+E(g(X, Y)) = \int \int g(x, y)f(x, y)dx dy
+$$
+
+This only works if the integral converges absolutely.
+
+## Independent normal variables
+
+Given two normal distributions $N_1(\mu_1, \sigma_1^2)$, $N_2(\mu_2, \sigma_2^2)$, the sum of the distribution is $N(\mu_1 + \mu_2, \sigma_1^2 + \sigma_2^2)$.
+
+## Discrete Conditioning
+
+$$
+E(g(y) \mid X = x) = \sum\limits_{\text{all } y}g(y)P(Y = y \mid X = x)
+$$
+
+## Continuous Conditioning
+
+$$
+f_X(x \mid Y = y) = \frac{f_Y(y \mid X = x)f_X(x)}{f_Y(y)}
+$$
+
+$$
+P(Y \in B \mid X = x) = \int\limits_B f_Y(y \mid X = x)dy
+$$
+
+$$
+P(B) = \int P(B \mid X = x)f_X(x)dx
+$$
+
+$$
+f_Y(y) = \int f_Y(y \mid X = x)f_X(x)dx
+$$
+
+$$
+E(Y) = \int E(Y \mid X = x)f_X(x)dx
+$$
