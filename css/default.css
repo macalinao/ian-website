@@ -188,7 +188,7 @@ pre {
   border-bottom: 1px solid #ddd;
 }
 
-blockquote {
+#post blockquote {
   border-left: 2px solid #455565;
   font-style: italic;
   color: #666;
