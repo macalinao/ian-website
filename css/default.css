@@ -187,3 +187,11 @@ pre {
   padding: 1em 0.5em;
   border-bottom: 1px solid #ddd;
 }
+
+blockquote {
+  border-left: 2px solid #455565;
+  font-style: italic;
+  color: #666;
+  margin: 10px 5px;
+  padding: 5px 25px;
+}
