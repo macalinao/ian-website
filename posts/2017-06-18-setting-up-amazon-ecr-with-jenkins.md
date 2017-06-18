@@ -2,9 +2,9 @@
 title: Setting up Amazon ECR with Jenkins
 ---
 
-Amazon ECR is Amazon's relatively new container registry service. If you're already using AWS, it's pretty convenient to use as it has free data transfer and it requires minimal setup.
+Amazon ECR is Amazon's container registry service and is a convenient place to store Docker images. If you're already using AWS, it's pretty nice to use as it has free data transfer and it requires minimal setup.
 
-Using it with Jenkins is deceptively complicated. You may think the [Amazon ECR Jenkins Plugin][amazon-ecr-plugin] is what you need, but if you're not using Jenkins Pipelines, you're on the wrong track-- it doesn't work! You will get an error that looks something like this:
+However, using it with Jenkins is deceptively complicated. You may think the [Amazon ECR Jenkins Plugin][amazon-ecr-plugin] all you need, but if you're not using Jenkins Pipelines, you're on the wrong track-- it doesn't work! You will get an error that looks something like this:
 
 ```
 [myservice] $ docker push 123456789.dkr.ecr.us-east-1.amazonaws.com/myservice:latest
