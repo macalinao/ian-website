@@ -31,6 +31,8 @@ The easiest solution I've found is to set up the [Amazon ECR Credential Helper][
 
 When doing this, make sure your credential file is named `~/.aws/credentials`. If you use `config` it won't work.
 
+Note that you don't need to use the Cloudbees Docker Build And Push plugin anymore if you use this. Just use plain ol' `docker build` and `docker push`!
+
 This blog post didn't really go over any of the details, but if you run into this issue, this is how I solved it!
 
 [amazon-ecr-plugin]: https://wiki.jenkins-ci.org/display/JENKINS/Amazon+ECR
