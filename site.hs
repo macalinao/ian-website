@@ -57,6 +57,8 @@ main = hakyll $ do
 
     notebook "probability"
 
+    notebook "complex-analysis"
+
     create ["writing/index.html"] $ do
         route idRoute
         compile $ do
