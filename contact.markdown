@@ -6,7 +6,7 @@ title: Contact
 
 You should contact me through email at [me@ian.pw](mailto:me@ian.pw).
 
-In the event that you would like to send me an encrypted message, here is my [Keybase profile](https://keybase.io/ianm) and [public key](/static/ianmacalinao.asc).
+In the event that you would like to send me an encrypted message, here is my [Keybase profile](https://keybase.io/ianm) and [public key](/ianmacalinao.asc).
 
 ```
 pub   4096R/F126F8E8 2017-01-23

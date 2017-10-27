@@ -25,7 +25,7 @@ main = hakyll $ do
         compile compressCssCompiler
 
     match "static/*" $ do
-        route   idRoute
+        route   (gsubRoute "static/" (const ""))
         compile copyFileCompiler
 
     match "resume/*" $ do
