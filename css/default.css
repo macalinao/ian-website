@@ -195,3 +195,17 @@ pre {
   margin: 10px 5px;
   padding: 5px 25px;
 }
+
+.figure {
+  margin: 60px auto;
+}
+
+.figure img {
+  width: 100%;
+}
+
+.figure .caption {
+  text-align: center;
+  font-style: italic;
+  color: #777;
+}

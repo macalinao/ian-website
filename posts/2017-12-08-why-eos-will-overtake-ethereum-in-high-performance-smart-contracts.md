@@ -56,7 +56,7 @@ Having massive block producers is not decentralized in Vitalik's definition, but
 
 Note that Ethereum in its current state is much more centralized than Bitshares and Steem, both based on the same DPOS technology as EOS.
 
-![centralization](https://i.imgur.com/0eT9SAE.jpg)
+![Distribution of block validators in various blockchains](https://i.imgur.com/0eT9SAE.jpg)
 
 *If you'd like to read the debate between Vitalik and Dan, see [Vitalik's criticism](https://np.reddit.com/r/ethereum/comments/6qm0y2/is_the_ethereum_team_defending_their_ground/dkyk94c/) and [Dan's response](https://steemit.com/eos/@dan/reponse-to-vitalik-s-written-remarks).*
 
