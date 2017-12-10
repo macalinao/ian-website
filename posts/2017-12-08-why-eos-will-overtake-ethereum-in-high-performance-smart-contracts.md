@@ -4,8 +4,6 @@ title: Why EOS will overtake Ethereum in high performance smart contracts
 
 I've always been a huge fan of Ethereum; however, it has some shortcomings, as recently made evident by [CryptoKitties](http://www.bbc.com/news/technology-42237162).
 
-## Ethereum vs EOS
-
 There are many problems with Ethereum in its current state that EOS has solutions for, which I will list some of below.
 
 ### Scalability/Speed
