@@ -12,7 +12,7 @@ Ethereum can only handle ~23 transactions per second (TPS) on average. Larger tr
 
 Furthermore, the Ethereum block time is around 30 seconds, which will be reduced to around 5-7 seconds when PoS is introduced. **You may have a lag of up to 30 seconds after every action.** This prohibits many types of applications that require more real-time feedback, e.g. decentralized asset exchange.
 
-EOS has a projected TPS of 100k/sec and a block time of 2 seconds on the testnet with a target time of 500ms on the mainnet. EOS can do this because it uses an algorithm called DPOS (delegated proof of stake) which basically lets you vote for "delegates" to process the blockchain for you. These delegates can be massive datacenters that can process many transactions in parallel, unlike Ethereum which is built to run on anything and where every node executes every transaction.
+EOS has a projected TPS of 100k/sec and a block time of 2 seconds on the testnet with a target time of 500ms on the mainnet. EOS can do this because it uses an algorithm called DPOS (delegated proof of stake) which basically lets you vote for "delegates" to process the blockchain. These delegates can be massive datacenters that can process many transactions in parallel, unlike Ethereum which is built to run on anything and where every node executes every transaction.
 
 ### Contract execution fees
 
