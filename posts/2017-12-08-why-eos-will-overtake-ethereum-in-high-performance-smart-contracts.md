@@ -66,7 +66,7 @@ However, the lead developer of EOS, Daniel Larimer, has built two other extremel
 
 ## Ethereum has its place
 
-I believe Ethereum makes sense for things that do not require mainstream adoption and/or high TPS, i.e. as a "settlement layer". It is more decentralized than EOS and suited for things that need that. Casper, Plasma, and sharding are certainly very promising, but it will be a while before these are out. The performance of these solutions is currently unknown.
+I believe Ethereum makes sense for things that do not require mainstream adoption and/or high TPS, i.e. as a "settlement layer". It is more decentralized than EOS and suited for things that need that. Casper, Plasma, and sharding are certainly very promising, but it will be a while before these are out. The real world performance of these solutions is currently unknown.
 
 For things like social networks or real time matchmaking (think Uber or exchanges), I believe EOS will find significant traction due to its performance. DApp developers are already running into Ethereum performance bottlenecks, and it is pretty clear that the average user does not want to buy Ether to pay for gas. I believe the average web user-- arguably a large portion of the market for dApp users-- are willing to tradeoff decentralization for usabilty, and they probably care more about the blockchain being public and auditable rather than it being forgeable on any random laptop.
 
