@@ -4,7 +4,7 @@ title: Why EOS will overtake Ethereum in high performance smart contracts
 
 I've always been a huge fan of Ethereum; however, it has some shortcomings, as recently made evident by [CryptoKitties](http://www.bbc.com/news/technology-42237162).
 
-There are many problems with Ethereum in its current state that EOS has solutions for, which I will list some of below.
+There are many problems with Ethereum **in its current state** that EOS has solutions for, which I will list some of below.
 
 ### Scalability/Speed
 
@@ -39,7 +39,7 @@ EOS encourages people to buy and hold their tokens-- not just for speculation, b
 Other less important but still notable factors include:
 
 * **Named account system** Use a username rather than a long hexadecimal string.
-* **Storage** IPFS-based storage works by replicating files across all 21 delegates. This is an insane level of redundancy, and these nodes are trusted and voted on by the network to hold your data. Ethereum has no file storage built in.
+* **Storage** IPFS-based storage works by replicating files across all 21 delegates. This is an amazing level of redundancy, and these nodes are trusted and voted on by the network to hold your data. Ethereum has no file storage built in. One could argue that file storage should not be part of the blockchain platform, but having an all-inclusive solution makes development easier. [Read the EOS Storage whitepaper here.](https://github.com/EOSIO/Documentation/raw/master/EOS.IO%20Storage.pdf)
 * **WASM** Rather than writing Solidity, you write C++ (officially supported) or any language that compiles to WASM.
 
 ## EOS "Shortcomings"
@@ -54,6 +54,10 @@ The Wikipedia definition of decentralization is quite different:
 
 Having massive block producers is not decentralized in Vitalik's definition, but it is definitely decentralized by the Wikipedia definition. Block producers can be and will be anyone token holders decide to vote for.
 
+Note that Ethereum in its current state is much more centralized than Bitshares and Steem, both based on the same DPOS technology as EOS.
+
+![centralization](https://i.imgur.com/0eT9SAE.jpg)
+
 *If you'd like to read the debate between Vitalik and Dan, see [Vitalik's criticism](https://np.reddit.com/r/ethereum/comments/6qm0y2/is_the_ethereum_team_defending_their_ground/dkyk94c/) and [Dan's response](https://steemit.com/eos/@dan/reponse-to-vitalik-s-written-remarks).*
 
 There is also the looming factor that EOS may not deliver on its promises. Unlike most of the other major cryptocurrencies currently on the market, they do not have a mainnet deployed-- EOS is currently an ERC20 token that you can later redeem for "real" EOS in the future. Although the testnet is out, they have a way to go before building the 100K TPS platform they promised. Also, their ICO is uncapped, meaning that they are collecting as much money as they can for their ICO-- many consider this to be a "scammy" play.
@@ -62,7 +66,11 @@ However, the lead developer of EOS, Daniel Larimer, has built two other extremel
 
 ## Ethereum has its place
 
-I believe Ethereum makes sense for things that do not require mainstream adoption and/or high TPS, i.e. as a "settlement layer". It is more decentralized than EOS and suited for things that need that. However, for things like social networks or real time matchmaking (think Uber or exchanges), I believe EOS will find significant traction.
+I believe Ethereum makes sense for things that do not require mainstream adoption and/or high TPS, i.e. as a "settlement layer". It is more decentralized than EOS and suited for things that need that. Casper, Plasma, and sharding are certainly very promising, but it will be a while before these are out. The performance of these solutions is currently unknown. I personally believe that delegating block production to elected nodes will have higher performance than any such system, but only time will tell.
+
+For things like social networks or real time matchmaking (think Uber or exchanges), I believe EOS will find significant traction due to its performance. DApp developers are already running into Ethereum performance bottlenecks, and it is pretty clear that the average user does not want to buy Ether to pay for gas. I believe the average web user-- arguably a large portion of the market for dApp users-- are willing to tradeoff decentralization for usabilty, and they probably care more about the blockchain being public and auditable rather than it being forgeable on any random laptop.
+
+If EOS can fulfill its promises before Ethereum can solve its scaling dilemma, EOS is likely to have a strong advantage in finding traction among common internet users, and thus overtake Ethereum in high performance smart contracts/dApps.
 
 [Read the EOS whitepaper here.](https://github.com/EOSIO/Documentation/blob/master/TechnicalWhitePaper.md)
 
