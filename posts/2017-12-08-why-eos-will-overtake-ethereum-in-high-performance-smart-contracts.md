@@ -70,7 +70,7 @@ I believe Ethereum makes sense for things that do not require mainstream adoptio
 
 Ethereum is aware of its performance problems, with Casper, Plasma, and sharding being solutions currently in the ideation phase. However, it will be a while before these are implemented in production. The real world performance of these solutions is currently unknown.
 
-For things like social networks or real time matchmaking (think Uber or exchanges), I believe EOS will find significant traction due to its performance. DApp developers are already running into Ethereum performance bottlenecks, and it is pretty clear that the average user does not want to buy Ether to pay for gas. I believe average web users-- arguably a large portion of the market for dApp users-- are willing to tradeoff decentralization for usabilty, and they probably care more about the blockchain being public and auditable rather than it being forgeable on any random laptop.
+For applications such as social networks or Uber, I believe EOS will find significant traction due to its performance. DApp developers are already running into Ethereum performance bottlenecks. I believe average web users-- arguably a large portion of the market for dApp users-- are willing to tradeoff decentralization for usabilty, and they probably care more about the blockchain being public and auditable rather than it being forgeable on any random laptop.
 
 If EOS can fulfill its promises before Ethereum can solve its scaling dilemma, EOS is likely to have a strong advantage in finding traction among common internet users, and thus overtake Ethereum in high performance smart contracts/dApps.
 
