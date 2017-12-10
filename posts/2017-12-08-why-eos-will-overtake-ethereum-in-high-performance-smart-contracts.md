@@ -63,3 +63,5 @@ However, the lead developer of EOS, Daniel Larimer, has built two other extremel
 ## Ethereum has its place
 
 I believe Ethereum makes sense for things that do not require mainstream adoption and/or high TPS, i.e. as a "settlement layer". It is more decentralized than EOS and suited for things that need that. However, for things like social networks or real time matchmaking, I believe EOS will find significant traction.
+
+Thanks to Dylan Macalinao for reading drafts of this.
