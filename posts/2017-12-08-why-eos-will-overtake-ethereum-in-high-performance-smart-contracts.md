@@ -2,7 +2,17 @@
 title: Why EOS will overtake Ethereum in high performance smart contracts
 ---
 
-I've always been a huge fan of Ethereum; however, it has some shortcomings, as recently made evident by [CryptoKitties](http://www.bbc.com/news/technology-42237162).
+I've always been a huge fan of Ethereum; however, it has some shortcomings, as recently made evident by [CryptoKitties](http://www.bbc.com/news/technology-42237162). In this blog post, I will introduce EOS and explain how it will solve many of Ethereum's current problems.
+
+## What is EOS and DPoS?
+
+Similar to Ethereum, EOS is a blockchain platform supporting smart contracts. It differs from Ethereum mainly by its consensus algorithm: DPoS.
+
+Ethereum blocks are generated just like Bitcoin in that it requires miners to compute hashes to compete in finding a block (proof of work). Similar to Bitcoin, there is a limit to how big a block can be, which allows for anyone to be able to run a full node.
+
+EOS, on the other hand, uses nodes that are voted on called "block producers" which are in charge of processing transactions into blocks. There is no block size limit, and block producers can be massive datacenters processing many transactions in parallel. Due to this, not everyone is intended to be able to run a full node; however, the system has much greater performance as a result.
+
+## Ethereum vs EOS
 
 There are many problems with Ethereum **in its current state** that EOS has solutions for, which I will list some of below.
 
@@ -78,4 +88,8 @@ If EOS can fulfill its promises before Ethereum can solve its scaling dilemma, E
 
 Also, a fun video: [Vitalik reveals Ethereum 2.0.](https://www.youtube.com/watch?v=pSNv1mBb3Qs)
 
-Thanks to Dylan Macalinao for reading drafts of this.
+> First they ignore you, then they laugh at you, then they fight you, then you win. ~Gandhi
+
+Thanks to Dylan Macalinao, Michael Huang, Tejas Manohar, and Justin Park for reading drafts of this.
+
+*(If you liked this post, [join our crypto Discord!](https://discord.gg/5AkBWSY))*
