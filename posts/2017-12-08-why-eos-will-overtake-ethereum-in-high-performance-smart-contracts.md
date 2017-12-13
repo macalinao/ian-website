@@ -12,6 +12,10 @@ Ethereum blocks are generated just like Bitcoin in that it requires miners to co
 
 EOS, on the other hand, uses nodes that are voted on called "block producers" which are in charge of processing transactions into blocks. There is no block size limit, and block producers can be massive datacenters processing many transactions in parallel. Due to this, not everyone is intended to be able to run a full node; however, the system has much greater performance as a result.
 
+![DPoS under normal operation](https://steemitimages.com/0x0/https://steemitimages.com/DQmUnFg35XqTednrwUiZo7AHX7SHQ7hAUTytA8BLwk64EN7/image.png)
+
+[Find more information on DPoS here.](https://steemit.com/dpos/@dantheman/dpos-consensus-algorithm-this-missing-white-paper)
+
 ## Ethereum vs EOS
 
 There are many problems with Ethereum **in its current state** that EOS has solutions for, which I will list some of below.
@@ -22,7 +26,7 @@ Ethereum can only handle ~23 transactions per second (TPS) on average. Larger tr
 
 Furthermore, the Ethereum block time is around 30 seconds, which will be reduced to around 5-7 seconds when PoS is introduced. **You may have a lag of up to 30 seconds after every action.** This prohibits many types of applications that require more real-time feedback, e.g. decentralized asset exchange.
 
-EOS has a projected TPS of 100k/sec and a block time of 2 seconds on the testnet with a target time of 500ms on the mainnet. EOS can do this because it uses an algorithm called DPOS (delegated proof of stake) which basically lets you vote for "delegates" to process the blockchain. These delegates can be massive datacenters that can process many transactions in parallel, unlike Ethereum which is built to run on anything and where every node executes every transaction.
+EOS has a projected TPS of 100k/sec and a block time of 2 seconds on the testnet with a target time of 500ms on the mainnet. DPoS enables EOS to do things that the Ethereum network never will be able to do: higher TPS per node and lower block times, since all nodes are known.
 
 ### Contract execution fees
 
