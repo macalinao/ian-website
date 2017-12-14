@@ -24,7 +24,7 @@ There are many problems with Ethereum **in its current state** that EOS has solu
 
 Ethereum can only handle ~23 transactions per second (TPS) on average. Larger transactions require more gas, so this could be even less. This is due to block size limits: larger blocks cannot be processed by all nodes, so Ethereum resorts to using smaller blocks in favor of decentralization.
 
-Furthermore, the Ethereum block time is around 30 seconds, which will be reduced to around 5-7 seconds when PoS is introduced. **You may have a lag of up to 30 seconds after every action.** This prohibits many types of applications that require more real-time feedback, e.g. decentralized asset exchange.
+Furthermore, the Ethereum block time is around 15 seconds, which will be reduced to around 5-7 seconds when PoS is introduced. Taking confirmations into account, this causes a lot of lag between performing a transaction and the transaction being recorded on chain. This prohibits many types of applications that require more real-time feedback, e.g. decentralized asset exchange.
 
 EOS has a projected TPS of 100k/sec and a block time of 2 seconds on the testnet with a target time of 500ms on the mainnet. DPoS enables EOS to do things that the Ethereum network never will be able to do: higher TPS per node and lower block times, since all nodes are known.
 
