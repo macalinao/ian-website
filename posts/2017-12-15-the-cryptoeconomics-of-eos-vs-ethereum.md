@@ -6,7 +6,7 @@ As mentioned [in a previous post](https://ian.pw/posts/2017-12-08-why-eos-will-o
 
 ## Transaction fees
 
-In order to understand EOS's economic model, one must first understand the reason behind transaction fees.
+In order to understand EOS's economic model, one must first understand the reason behind Ethereum's transaction fees.
 
 Imagine a world where there were no transaction fees. In Bitcoin and Ethereum, there is a limit to the number of transactions that can be included in a block. Thus, if I were a malicious individual who wanted the network to fail, I could make a lot of transactions between my own wallets without losing any money. However, due to the transaction limit, I would render the blockchain useless for anyone else, and it would be difficult to determine what transactions are legitimate.
 
