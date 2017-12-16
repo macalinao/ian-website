@@ -45,4 +45,6 @@ Unlike Ethereum's token model, EOS encourages:
 * hodling -- via token rental and bandwidth allocation
 * usage of dapps -- Ethereum hodlers do not want to spend their tokens on transaction fees
 
+Read more on this anti-spam model from Dan Larimer, creator of EOS: [How to build a Decentralized Application without Fees](http://bytemaster.github.io/article/2016/02/10/How-to-build-a-decentralized-application-without-fees/).
+
 *(If you liked this post, [join our crypto Discord!](https://discord.gg/5AkBWSY))*
