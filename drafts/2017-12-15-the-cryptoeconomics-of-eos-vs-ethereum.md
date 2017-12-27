@@ -48,8 +48,6 @@ A token holder wants the network to continue functioning, so if a block producer
 
 Block producers are paid very well for their performance (EOS has an initial 5% annual inflation), and if voted off, they lose access to all block rewards. Thus they are highly incentivized to not underperform.
 
-I'm worried that with only 21 block producers and way more transactions to process compared to ETH, processing will be hella intensive. And EOS is based on trusting these block producers. Are there real-world equivalents of block producers able to handle the volume? If not, just gimme a decent sentence saying it can be done and I don't need to worry.
-
 ## Conclusion
 
 Unlike Ethereum's token model, EOS encourages:
