@@ -26,7 +26,11 @@
   <link href="//cdnjs.cloudflare.com/ajax/libs/normalize/3.0.1/normalize.min.css" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="/css/default.css">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Ian Macalinao. I'm a software engineer addicted to functional programming, esports, and cryptocurrency.">
+  $if(description)$
+    <meta name="description" content="$description$">
+  $else$
+    <meta name="description" content="The personal website and blog of Ian Macalinao, software engineer and mathematician.">
+  $endif$
   <title>$title$ | Ian Macalinao</title>
 </head>
 
