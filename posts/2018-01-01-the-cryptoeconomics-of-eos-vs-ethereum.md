@@ -2,7 +2,7 @@
 title: The Cryptoeconomics of EOS vs Ethereum
 ---
 
-As mentioned [in a previous post](https://ian.pw/posts/2017-12-08-why-eos-will-overtake-ethereum-in-high-performance-smart-contracts.html), I believe EOS will overtake Ethereum as the smart contract platform used by the mainstream audience. Part of this is due to its economic model which encourages people to use the platform and to not sell their currency. In this post, I will argue why EOS's economic model is superior to Ethereum's.
+As mentioned [in a previous post](https://ian.pw/posts/2017-12-08-why-eos-will-overtake-ethereum-in-high-performance-smart-contracts.html), I believe EOS will overtake Ethereum as the smart contract platform used by the mainstream audience. Part of this is due to its economic model which encourages people to use the platform and to not sell their currency. In this post, I will argue why EOS's economic model offers more benefits to token holders than Ethereum's.
 
 ## Transaction fees
 
@@ -38,9 +38,9 @@ One may wonder why a miner (in EOS, block producer) would process transactions w
 
 The block reward is a guaranteed amount of tokens given to the miner of the block. This reward is specified in the rules of the blockchain. For example, in Bitcoin, a block grants the miner 12.5 bitcoins. Ethereum is a bit more complex than this but follows a similar structure.
 
-Miners are incentivized to include transactions in blocks due to transaction fees. They include the highest fee trnsactions in their blocks to make more money.
+Miners are incentivized to include transactions in blocks due to transaction fees. They include the highest fee transactions in their blocks to make more money.
 
-Without transaction fees, why would an EOS block producer include as many transactions as possible into blocks? The answer is *voting*.
+Without transaction fees, why would an EOS block producer include as many transactions as possible into blocks? The answer is _voting_.
 
 EOS has 21 block producers which process transactions into blocks on the EOS blockchain. These block producers are voted on by token holders, of which token holder voting power is based on the amount of tokens they hold.
 
@@ -50,11 +50,13 @@ Block producers are paid very well for their performance (EOS has an initial 5% 
 
 ## Conclusion
 
-Unlike Ethereum's token model, EOS encourages:
+Compared to traditional token models, EOS encourages:
 
 * Hodling -- EOS users want to hold tokens to rent out or gain access to more bandwidth.
-* Usage of dApps -- EOS users will use the platform more because there are no tx fees.
+* Usage of dApps -- EOS users will use the platform more because there are no transaction fees.
 
 Its economic model is better poised to encourage activity on the platform and thus make it the dominant platform in the mainstream.
 
-*(If you liked this post, [join our crypto Discord!](https://discord.gg/5AkBWSY))*
+Thanks to Michael Huang, Grace Jiang, Tejas Manohar, and Andrew Tian for reading drafts of this.
+
+_(If you liked this post, [join our crypto Discord!](https://discord.gg/5AkBWSY))_
