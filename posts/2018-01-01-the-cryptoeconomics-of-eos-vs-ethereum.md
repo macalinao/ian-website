@@ -3,6 +3,8 @@ title: The Cryptoeconomics of EOS vs Ethereum
 description: An analysis on the economic models of EOS and Ethereum and the advantages and disadvantages to both.
 ---
 
+![](https://i.imgur.com/9Hjp4MH.png)
+
 As mentioned [in a previous post](https://ian.pw/posts/2017-12-08-why-eos-will-overtake-ethereum-in-high-performance-smart-contracts.html), I believe EOS will overtake Ethereum as the smart contract platform used by the mainstream audience. Part of this is due to its economic model which encourages people to use the platform and to not sell their currency. In this post, I will argue why EOS's economic model offers more benefits to token holders than Ethereum's.
 
 ## Transaction fees
@@ -16,6 +18,8 @@ However, with transaction fees, miners have an incentive to prioritize certain t
 As seen in this scenario, transaction fees exist to prevent spam. These fees are acceptable and almost expected for transferring currency. However, smart contracts do not solely encompass currency: they exist to provide a way for anyone to access a decentralized, immutable ledger of anything. It is unreasonable to have transaction fees for many applications of blockchain technology.
 
 Consider a dApp where one can share links and text, similar to Reddit. If you had to pay a bit of currency every time you posted something, would you be motivated to add more content to the website, or would you keep your content to yourself? Let's say you had to pay a fee every time you upvoted or downvoted content-- again, would you vote if you had to pay a few cents for them?
+
+![Ethereum gas prices. A few cents per transaction adds up. Source: ethgasstation.info](https://i.imgur.com/wQlH7pa.png)
 
 ## Proof-of-stake bandwidth allocation
 
