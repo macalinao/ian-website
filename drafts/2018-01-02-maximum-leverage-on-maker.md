@@ -58,10 +58,6 @@ If one generates the maximum amount of Dai from the CDP, they are at immediate r
 
 In theory, one could write a smart contract that performs this entire 4-step process in one transaction. Before this exists, however, it would be foolish to take on a position of maximum leverage.
 
-### Calculating actual leverage
+In order to account for the this factors, one can simply increase the liquidation ratio when computing max actual leverage.
 
-In order to account for the above factors, one can simply increase the liquidation ratio when computing max actual leverage.
-
-The multiplier of the liquidation ratio would be the multiplicative inverse of the percentage of Dai generated each round. For example, if I will only generate 90% of my possible Dai on each round, I must multiply the liquidation ratio by $1/0.9 \simeq 1.11$ to get $150\% * 1.11 \approx 167\%$.
-
-This works because the above risk factors are all mitigated by generating less Dai. All risk factors 
+The multiplier of the liquidation ratio would be the multiplicative inverse of the percentage of Dai generated each round. For example, if I will only generate 90% of my possible Dai on each round, I must multiply the liquidation ratio by $1/0.9 \simeq 1.11$ to get $150\% \* 1.11 \approx 167\%$.
