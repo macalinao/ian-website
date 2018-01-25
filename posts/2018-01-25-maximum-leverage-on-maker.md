@@ -3,6 +3,8 @@ title: Maximum Leverage on Maker
 description: A summary of how to compute and obtain maximum leverage on MakerDAO.
 ---
 
+![](/images/20180125_mkrbanner.png)
+
 First off, this article assumes familiarity with [Maker](https://makerdao.com/) CDP's. (If not, I highly suggest reading up on it!)
 
 Recall that the liquidation ratio of a CDP is the collateral-to-debt ratio of the CDP. For example, if the liquidation ratio is 150% on ETH/USD, if ETH is $100 and you have 1 ETH in the CDP, you may accrue up to $66 of debt (that is, generate up to $66 Dai) as your collateral is worth 150% of your debt. This gives us a leverage ratio of 1.6x. But can we go higher?
