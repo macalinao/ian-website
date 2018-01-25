@@ -1,5 +1,6 @@
 ---
 title: Maximum Leverage on Maker
+description: A summary of how to compute and obtain maximum leverage on MakerDAO.
 ---
 
 First off, this article assumes familiarity with [Maker](https://makerdao.com/) CDP's. (If not, I highly suggest reading up on it!)
@@ -56,8 +57,6 @@ One should note that step 3 will not exist in the final version of Maker -- pool
 
 If one generates the maximum amount of Dai from the CDP, they are at immediate risk of liquidation if the price of Ether drops even one cent. Since the process of refunding the CDP is not atomic, there is a very real risk of this liquidation taking place.
 
-In theory, one could write a smart contract that performs this entire 4-step process in one transaction. Before this exists, however, it would be foolish to take on a position of maximum leverage.
+In theory, one could write a smart contract that performs this entire 4-step process in one transaction with a specified minimum accepted price. Before this exists, however, one is subject to the aformentioned risks.
 
-In order to account for the this factors, one can simply increase the liquidation ratio when computing max actual leverage.
-
-The multiplier of the liquidation ratio would be the multiplicative inverse of the percentage of Dai generated each round. For example, if I will only generate 90% of my possible Dai on each round, I must multiply the liquidation ratio by $1/0.9 \simeq 1.11$ to get $150\% \* 1.11 \approx 167\%$.
+*(If you liked this post, [join our crypto Discord!](https://discord.gg/5AkBWSY))*
