@@ -31,6 +31,12 @@ For complex numbers all arithmetic goes through as we would expect.
 
 For complex-valued functions of a real variable, differential and integration are linear operations with teh same properties as for a real-valued function.
 
+### Laplace's Equation
+
+$$\phi_{xx}(x, y) + \phi_{yy}(x, y) = 0$$
+
+Solutions of Laplace's equation are called harmonic functions; they are all analytic within the domain where the equation is satisfied.
+
 ### Integration
 
 Two functions: $w_1(t), w_2(t)$ where $w_a(t) = u_a(t) + iv_a(t)$.
