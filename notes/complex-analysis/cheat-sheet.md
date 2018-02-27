@@ -9,7 +9,7 @@ $$\bar{z} = x - iy$$
 
 Modulus: $|z| = \sqrt{x^2 + y^2} = \sqrt{z\bar{z}}$
 
-$$z = |\theta|e^{i\theta}$$
+$$z = |z|e^{i\theta}$$
 
 where
 
@@ -29,7 +29,11 @@ $$f \text{analytic} \iff \frac{\partial f}{\partial \bar{z}} = 0$$
 
 For complex numbers all arithmetic goes through as we would expect.
 
-For complex-valued functions of a real variable, differential and integration are linear operations with teh same properties as for a real-valued function.
+For complex-valued functions of a real variable, differential and integration are linear operations with the same properties as for a real-valued function.
+
+$$
+z^\alpha = e^{\alpha \log z}
+$$
 
 ### Laplace's Equation
 
