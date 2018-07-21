@@ -4,9 +4,9 @@ title: Contact
 
 <h1>Contact</h1>
 
-You should contact me through email at [me@ian.pw](mailto:me@ian.pw).
+My preferred method of contact is [Keybase](https://keybase.io/ianm). You can also contact me through email at [me@ian.pw](mailto:me@ian.pw).
 
-In the event that you would like to send me an encrypted message, here is my [Keybase profile](https://keybase.io/ianm) and [public key](/ianmacalinao.asc).
+If for some reason you need to send me an encrypted message via some other medium, [here is my public key](./ianmacalinao.asc).
 
 ```
 pub   4096R/F126F8E8 2017-01-23
