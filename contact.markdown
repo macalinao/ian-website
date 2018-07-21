@@ -15,4 +15,8 @@ sub   4096R/90AD9567 2017-01-23
 sub   4096R/9D0739CA 2017-01-24
 ```
 
+<div id="quoteBar"></div>
+
+<blockquote id="quote">Aut tace, aut loquere meliora silentio.</blockquote>
+
 [Back to Home](/)
