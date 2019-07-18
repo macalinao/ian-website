@@ -7,9 +7,19 @@ title: Ian Macalinao
   <h1 class="mobile">Ian M.</h1>
 
   <div id="info">
-    <p>Hi, I'm Ian<span class="mobile"> Macalinao</span>. I'm currently working on <a href="https://abacusprotocol.com">Abacus Protocol</a>, an identity and regulatory compliance platform for blockchain securities.</p>
-    <p>I prefer high level abstractions over for-loops and mutexes, and<br />I prefer a strong type system over preventable runtime errors.<br />I believe that the best code is the code you don’t have to write.</p>
-    <p>You can find my resume <a href="/resume" target="_blank">here</a>. &#9632;</p>
+    <p>
+      Hi, I'm Ian<span class="mobile"> Macalinao</span>. I'm currently working
+      on <a href="https://abacusfi.com">Abacus</a>, an onboarding workflow
+      management platform for alternative investments.
+    </p>
+    <p>
+      I prefer high level abstractions over for-loops and mutexes, and<br />I
+      prefer a strong type system over preventable runtime errors.<br />I
+      believe that the best code is the code you don’t have to write.
+    </p>
+    <p>
+      You can find my resume <a href="/resume" target="_blank">here</a>. &#9632;
+    </p>
   </div>
 
   <div id="connect">
@@ -31,19 +41,21 @@ title: Ian Macalinao
 
   <div id="quoteBar"></div>
 
-  <blockquote id="quote">"Success isn't about being the best. It's about always getting better."</blockquote>
+  <blockquote id="quote">
+    "Success isn't about being the best. It's about always getting better."
+  </blockquote>
 </div>
 
 <script>
-var quotes = [
-  "Success isn't about being the best. It's about always getting better.",
-  "Nothing ventured, nothing gained.",
-  "The world is your oyster."
-];
+  var quotes = [
+    "Success isn't about being the best. It's about always getting better.",
+    "Nothing ventured, nothing gained.",
+    "The world is your oyster."
+  ];
 
-function randomQuote() {
-  return quotes[Math.floor(Math.random() * quotes.length)];
-}
+  function randomQuote() {
+    return quotes[Math.floor(Math.random() * quotes.length)];
+  }
 
-document.getElementById('quote').innerHTML = '"' + randomQuote() + '"';
+  document.getElementById("quote").innerHTML = '"' + randomQuote() + '"';
 </script>
