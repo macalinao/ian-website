@@ -131,6 +131,6 @@ I've had a really great experience with Nix so far, despite its high learning cu
 - **Managing my config with overlays.** I followed what I was taught on Google, but there are definitely better ways of doing what I'm doing.
 - **The Hydra build server.** I've been using Jenkins X so there really isn't a reason for me to do this right now, but it's supposedly much faster and easier than any other CI tool out there. After seeing the virtues of Nix over the past few months, I believe it.
 
-I highly recommend Nix/NixOS to anyone adept at \*Nix (no pun intended), and I also recommend it for anyone trying to provision a suite of applications on Macs (like an IT person). It's truly the best OS and package manager I've used.
+I highly recommend Nix/NixOS to anyone adept at \*nix (no pun intended), and I also recommend it for anyone trying to provision a suite of applications on Macs (like an IT person). It's truly the best OS and package manager I've used.
 
 You can see my current configuration [in my dotfiles repo on GitHub](https://github.com/macalinao/dotfiles). Feel free to fork it and [reach out](https://ian.pw/contact.html) if you have any questions!
