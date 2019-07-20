@@ -1,5 +1,5 @@
 ---
-title: Nix and NixOS -- first impressions
+title: "Nix and NixOS: first impressions"
 ---
 
 Since March, I've been using NixOS as my primary operating system and Nix as my primary package manager. Everything is configured in my dotfiles which are synchronized via Git between three machines:
