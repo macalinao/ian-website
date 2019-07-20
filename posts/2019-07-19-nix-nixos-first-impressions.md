@@ -103,7 +103,7 @@ A package I wanted to install uses Wine on the backend, but when I tried to inst
 
 This is all really annoying to do, and you can waste a lot of time if you don't know Nix very well (like me). I often just don't install the package and wait for it to get fixed in Nixpkgs. There's also a simple workaround: to install via Brew/installer script on my Mac.
 
-## Sometimes you get a random build error with no error message.
+### Sometimes you get a random build error with no error message.
 
 While writing this blog post, I was trying to upgrade my Hakyll installation (what I use to generate my blog). I was getting an error that `digest-0.0.1.2` failed to build with a cryptic error message. The solution was to add `zlib` to the `nix` section of my `stack.yaml`, but _nowhere_ in the error message did it say that I had missing zlib headers, that I needed to install zlib, etc.
 
