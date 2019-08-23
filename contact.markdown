@@ -15,6 +15,16 @@ sub   4096R/90AD9567 2017-01-23
 sub   4096R/9D0739CA 2017-01-24
 ```
 
+### Conversation starters
+
+I enjoy talking about a lot of things. Ask me about:
+
+- [my dotfiles](https://github.com/macalinao/dotfiles), Nix/NixOS, my VSCode setup, my computer/keyboard, etc;
+- [my startup](https://abacusfi.com), fintech, SEC regulations, AML/KYC, YC, startups in general;
+- [my music taste](https://open.spotify.com/user/1230232553?si=5DNDSsmaRiWaS7L8b4j37w) (at the time of writing: IDM, math rock), guitar, piano;
+- my full stack tech stack: React, GraphQL, Typescript, Kubernetes;
+- programming languages: Scala, Haskell, functional programming
+
 <div id="quoteBar"></div>
 
 <blockquote id="quote">Aut tace, aut loquere meliora silentio.</blockquote>
