@@ -22,6 +22,7 @@ sub   4096R/9D0739CA 2017-01-24
 - [music](https://open.spotify.com/user/1230232553?si=5DNDSsmaRiWaS7L8b4j37w), guitar, piano
 - exercise/weightlifting
 - cooking/eating
+- exploring the Bay Area
 - my full stack tech stack: React, GraphQL, Typescript, Kubernetes
 - functional programming: Scala, Haskell
 
