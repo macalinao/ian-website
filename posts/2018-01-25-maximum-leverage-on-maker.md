@@ -7,13 +7,13 @@ description: A summary of how to compute and obtain maximum leverage on MakerDAO
 
 First off, this article assumes familiarity with [Maker](https://makerdao.com/) CDP's. (If not, I highly suggest reading up on it!)
 
-Recall that the liquidation ratio of a CDP is the collateral-to-debt ratio of the CDP. For example, if the liquidation ratio is 150% on ETH/USD, if ETH is $100 and you have 1 ETH in the CDP, you may accrue up to $66 of debt (that is, generate up to $66 Dai) as your collateral is worth 150% of your debt. This gives us a leverage ratio of 1.6x. But can we go higher?
+Recall that the liquidation ratio of a CDP is the collateral-to-debt ratio of the CDP. For example, if the liquidation ratio is 150% on ETH/USD, if ETH is $100 and you have 1 ETH in the CDP, you may accrue up to $66 of debt (that is, generate up to \$66 Dai) as your collateral is worth 150% of your debt. This gives us a leverage ratio of 1.6x. But can we go higher?
 
 Assuming enough liquidity exists, we can then buy 0.66 ETH with this Dai.
 
 ![The amount of additional leverage drops off each round.](/images/20180102_additional-leverage-per-round.png)
 
-We can then put this ETH back into our CDP to draw more Dai. We can draw $\$66.66 \* 1/1.5 = $44.44$ more Dai from our CDP. We can keep doing this forever to generate more Dai and thus more leverage; however, we get less Dai each time. But how much?
+We can then put this ETH back into our CDP to draw more Dai. We can draw $\$66.66 \* 1/1.5 = $44.44\$ more Dai from our CDP. We can keep doing this forever to generate more Dai and thus more leverage; however, we get less Dai each time. But how much?
 
 ![Cumulative leverage converges to a finite value.](/images/20180102_cumulative-leverage-per-round.png)
 
@@ -37,8 +37,8 @@ which in the case of $\lambda = 1.5$, 3x leverage.
 
 The above calculation accounts for the maximum leverage in an infinitely liquid ETH/DAI market with an instant ability to fund a CDP. However, there are several factors that come into play:
 
-* Finite liquidity on ETH/DAI
-* CDP funding and trade delays
+- Finite liquidity on ETH/DAI
+- CDP funding and trade delays
 
 ### Finite liquidity
 
@@ -61,4 +61,4 @@ If one generates the maximum amount of Dai from the CDP, they are at immediate r
 
 In theory, one could write a smart contract that performs this entire 4-step process in one transaction with a specified minimum accepted price. Before this exists, however, one is subject to the aformentioned risks.
 
-*(If you liked this post, [join our crypto Discord!](https://discord.gg/5AkBWSY))*
+_(If you liked this post, [join our crypto Discord!](https://discord.gg/5AkBWSY))_

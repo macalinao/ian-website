@@ -2,15 +2,32 @@
 
 <div id="post">
   $if(incomplete)$
-  <em>Note: This section is incomplete. You can help finish it <a href="https://github.com/macalinao/ian.pw/blob/master/$path$" target="_blank">here</a>.</em>
-  $endif$
-
-  $body$
+  <em
+    >Note: This section is incomplete. You can help finish it
+    <a
+      href="https://github.com/macalinao/ian.pw/blob/master/$path$"
+      target="_blank"
+      >here</a
+    >.</em
+  >
+  $endif$ $body$
 </div>
 
 <div id="thanks">
-  <p>Thanks for reading! Have any questions, comments, or suggestions? Feel free to use the comment section below or email me at <a href="mailto:me@ian.pw">me@ian.pw</a> and I'll do my best to respond.</p>
-  <p>Alternatively, you can view the source of the post <a href="https://github.com/macalinao/ian.pw/blob/master/$path$" target="_blank">here</a> and send a pull request.</p>
+  <p>
+    Thanks for reading! Have any questions, comments, or suggestions? Feel free
+    to use the comment section below or email me at
+    <a href="mailto:me@ian.pw">me@ian.pw</a> and I'll do my best to respond.
+  </p>
+  <p>
+    Alternatively, you can view the source of the post
+    <a
+      href="https://github.com/macalinao/ian.pw/blob/master/$path$"
+      target="_blank"
+      >here</a
+    >
+    and send a pull request.
+  </p>
 </div>
 
 $partial("templates/notebook-nav.html")$
@@ -18,14 +35,16 @@ $partial("templates/notebook-nav.html")$
 <div id="disqus_thread"></div>
 
 <script>
-var disqus_config = function() {
-  this.page.url = 'http://ian.pw$url$';
-  this.page.identifier = '$path$';
+  var disqus_config = function() {
+    this.page.url = "http://ian.pw$url$";
+    this.page.identifier = "$path$";
   };
-(function() { // DON'T EDIT BELOW THIS LINE
-var d = document, s = d.createElement('script');
-s.src = '//ianpw.disqus.com/embed.js';
-s.setAttribute('data-timestamp', +new Date());
-(d.head || d.body).appendChild(s);
-})();
+  (function() {
+    // DON'T EDIT BELOW THIS LINE
+    var d = document,
+      s = d.createElement("script");
+    s.src = "//ianpw.disqus.com/embed.js";
+    s.setAttribute("data-timestamp", +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
 </script>

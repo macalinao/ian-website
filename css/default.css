@@ -44,6 +44,7 @@ h2 {
 #body {
   width: 750px;
   margin: 0px auto;
+  padding-bottom: 60px;
 }
 
 #homeWrapper {
@@ -244,18 +245,23 @@ pre {
   padding: 5px 25px;
 }
 
-.figure {
+#post p > img {
+  width: 100%;
+  margin: 0 0 60px;
+}
+
+figure {
   width: 100%;
   margin: 60px auto;
 }
 
-.figure img {
+figure img {
   max-width: 100%;
   display: block;
   margin: 0px auto;
 }
 
-.figure .caption {
+figcaption {
   text-align: center;
   font-style: italic;
   color: #777;
