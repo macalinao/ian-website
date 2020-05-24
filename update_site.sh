@@ -1,4 +1,13 @@
 #!/usr/bin/env bash
 
-stack exec site build
-git subtree push --prefix _site origin gh-pages
+# delete site
+rm -fr _cache && rm -fr _site && git clone git@github.com:macalinao/ian.pw.git _site && \
+
+  # checkout gh-pages
+  cd _site && git checkout gh-pages && cd .. && \
+
+  # build site
+  stack exec site build && cd _site && \
+
+  # commit changes
+  git add -A . && git commit -m "Update site" && git push origin gh-pages
