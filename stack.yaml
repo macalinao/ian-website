@@ -68,4 +68,7 @@ extra-package-dbs: []
 
 nix:
   enable: true
-  packages: [zlib]
+  packages:
+    - zlib
+    - darwin.apple_sdk.frameworks.CoreServices
+    - darwin.apple_sdk.frameworks.Cocoa
