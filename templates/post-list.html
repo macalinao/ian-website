@@ -1,7 +1,5 @@
 <ul>
-    $for(posts)$
-        <li>
-            <a href="$url$">$title$</a> - $date$
-        </li>
-    $endfor$
+  $for(posts)$ $if(draft)$ $else$
+  <li><a href="$url$">$title$</a> - $date$</li>
+  $endif$ $endfor$
 </ul>
