@@ -17,17 +17,11 @@ sub   4096R/9D0739CA 2017-01-24
 
 ### Hobbies and Interests
 
-- [my dotfiles](https://github.com/macalinao/dotfiles), Nix/NixOS, my VSCode setup, my computer/keyboard, etc
-- [my startup](https://abacusfi.com), fintech, SEC regulations, AML/KYC, YC, startups in general
-- [music](https://open.spotify.com/user/1230232553?si=5DNDSsmaRiWaS7L8b4j37w), guitar, piano
-- exercise/weightlifting
-- cooking/eating
-- exploring the Bay Area
-- my full stack tech stack: React, GraphQL, Typescript, Kubernetes
-- functional programming: Scala, Haskell
+- Cryptocurrency, cryptoeconomics, and [DeFi](https://defi.network)
+- StepMania, hangboarding (thanks covid)
+- [my dotfiles](https://github.com/macalinao/dotfiles)
+- [all sorts of music](https://open.spotify.com/user/1230232553?si=5DNDSsmaRiWaS7L8b4j37w)
 
 <div id="quoteBar"></div>
-
-<blockquote id="quote">Aut tace, aut loquere meliora silentio.</blockquote>
 
 [Back to Home](/)
