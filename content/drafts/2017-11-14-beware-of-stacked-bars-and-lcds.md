@@ -1,5 +1,6 @@
 ---
 title: Beware of Colored Rectangles on LCDs
+draft: true
 ---
 
 When developing Legends.ai, we highly followed the advice of Tufte's [The Visual Display of Quantitative Information][visual-display] and optimized for data density. Our designs use stacked bar graphs whenever displaying relative and absolute magnitude, as opposed to more ubiquitous but much less dense pie charts.

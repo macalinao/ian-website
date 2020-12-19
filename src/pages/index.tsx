@@ -1,65 +1,79 @@
 import Head from "next/head";
-import styles from "../styles/Home.module.css";
+import Link from "next/link";
+import React, { useEffect, useState } from "react";
 
-export default function Home() {
+const quotes = [
+  "Success isn't about being the best. It's about always getting better.",
+  "Nothing ventured, nothing gained.",
+  "The world is your oyster.",
+];
+
+const randomQuote = (): string => {
+  return quotes[Math.floor(Math.random() * quotes.length)] ?? quotes[0] ?? "";
+};
+
+const Home: React.FC = () => {
+  const [quote, setQuote] = useState<string>(
+    "Success isn't about being the best. It's about always getting better."
+  );
+
+  useEffect(() => {
+    setQuote(randomQuote());
+  }, []);
+
   return (
-    <div className={styles.container}>
+    <div id="homeWrapper">
       <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
+        <title>Ian Macalinao</title>
       </Head>
+      <h1 className="desktop">Ian Macalinao</h1>
+      <h1 className="mobile">Ian M.</h1>
 
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-
-        <p className={styles.description}>
-          Get started by editing{" "}
-          <code className={styles.code}>pages/index.js</code>
+      <div id="info">
+        <p>
+          Hi, I'm Ian<span className="mobile"> Macalinao</span>. I'm currently
+          working on <a href="https://abacusfi.com">Abacus</a>, an onboarding
+          workflow management platform for alternative investments.
         </p>
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
+        <p>
+          I prefer high level abstractions over for-loops and mutexes, and
+          <br />I prefer a strong type system over preventable runtime errors.
+          <br />I believe that the best code is the code you don’t have to
+          write.
+        </p>
+        <p>
+          You can find my resume{" "}
+          <a href="/resume" target="_blank">
+            here
           </a>
+          . &#9632;
+        </p>
+      </div>
 
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
+      <div id="connect">
+        <ul>
+          <li>
+            <Link href="/posts" passHref>
+              <a>Writing</a>
+            </Link>
+          </li>
+          <li>
+            <a href="http://twitter.com/simplyianm">Twitter</a>
+          </li>
+          <li>
+            <a href="http://github.com/macalinao">GitHub</a>
+          </li>
+          <li>
+            <a href="/contact.html">Contact</a>
+          </li>
+        </ul>
+      </div>
 
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
+      <div id="quoteBar"></div>
 
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
-      </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{" "}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
-      </footer>
+      <blockquote id="quote">"{quote}"</blockquote>
     </div>
   );
-}
+};
+
+export default Home;
