@@ -1,0 +1,33 @@
+{
+  "name": "ian.pw-v2",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.1.2",
+    "@emotion/styled": "^11.0.0",
+    "disqus-react": "^1.0.10",
+    "gray-matter": "^4.0.2",
+    "lodash": "^4.17.20",
+    "next": "10.0.3",
+    "next-google-fonts": "^1.2.1",
+    "next-mdx-remote": "^1.0.1",
+    "react": "17.0.1",
+    "react-dom": "17.0.1"
+  },
+  "devDependencies": {
+    "@emotion/babel-plugin": "^11.1.2",
+    "@simplyianm/babel-plugin-inline-react-svg": "^1.2.0",
+    "@types/lodash": "^4.14.165",
+    "@types/node": "^14.14.14",
+    "@types/react": "^17.0.0",
+    "@types/react-dom": "^17.0.0",
+    "prettier": "^2.2.1",
+    "typescript": "^4.1.3"
+  },
+  "prettier": {}
+}
