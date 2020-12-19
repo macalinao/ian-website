@@ -45,6 +45,9 @@ const PostsPage: React.FC<IProps> = ({ posts }) => {
             </ul>
           </div>
         ))}
+      <Link href="/">
+        <a>Back to home</a>
+      </Link>
     </>
   );
 };
