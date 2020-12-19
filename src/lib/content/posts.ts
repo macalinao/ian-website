@@ -11,6 +11,7 @@ export interface IPost {
   publishedAt: string;
   content: string;
   path: string;
+  incomplete: boolean;
 }
 
 export const getAllPosts = async (): Promise<readonly IPost[]> => {
@@ -34,5 +35,6 @@ export const getPostByID = async (postID: string): Promise<IPost> => {
     publishedAt: publishedAt.toISOString(),
     content,
     path: `/posts/${postID}.html`,
+    incomplete: data.incomplete === true,
   };
 };

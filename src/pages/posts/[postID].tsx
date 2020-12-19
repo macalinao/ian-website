@@ -33,7 +33,40 @@ const Post: React.FC<IProps> = ({ source, post }) => {
         <p>{formatDate(new Date(post.publishedAt))}</p>
       </div>
 
-      <div id="post">{content}</div>
+      <div id="post">
+        {post.incomplete && (
+          <em>
+            Note: This section is incomplete. You can help finish it
+            <a
+              href="https://github.com/macalinao/ian.pw/blob/master/$path$"
+              target="_blank"
+            >
+              here
+            </a>
+            .
+          </em>
+        )}
+        {content}
+      </div>
+
+      <div id="thanks">
+        <p>
+          Thanks for reading! Have any questions, comments, or suggestions? Feel
+          free to use the comment section below or email me at{" "}
+          <a href="mailto:blog@igm.pub">blog@igm.pub</a> and I'll do my best to
+          respond.
+        </p>
+        <p>
+          Alternatively, you can view the source of the post{" "}
+          <a
+            href={`https://github.com/macalinao/ian.pw/blob/master/content/posts/${post.id}.md`}
+            target="_blank"
+          >
+            here
+          </a>{" "}
+          and send a pull request.
+        </p>
+      </div>
 
       {typeof window !== "undefined" && (
         <DiscussionEmbed

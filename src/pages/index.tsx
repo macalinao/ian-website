@@ -32,8 +32,17 @@ const Home: React.FC = () => {
       <div id="info">
         <p>
           Hi, I'm Ian<span className="mobile"> Macalinao</span>. I'm currently
-          working on <a href="https://abacusfi.com">Abacus</a>, an onboarding
-          workflow management platform for alternative investments.
+          working at{" "}
+          <a href="https://pipe.com" target="_blank">
+            Pipe
+          </a>
+          , an exchange for companies to get liquidity on their recurring
+          revenue streams.
+        </p>
+        <p>
+          I believe in a future where capital can flow freely to its most
+          productive economic purpose&mdash; a future with truly efficient
+          markets.
         </p>
         <p>
           I prefer high level abstractions over for-loops and mutexes, and
@@ -64,7 +73,9 @@ const Home: React.FC = () => {
             <a href="http://github.com/macalinao">GitHub</a>
           </li>
           <li>
-            <a href="/contact.html">Contact</a>
+            <Link href="/contact" passHref>
+              <a>Contact</a>
+            </Link>
           </li>
         </ul>
       </div>
