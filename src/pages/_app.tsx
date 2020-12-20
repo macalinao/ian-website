@@ -115,6 +115,7 @@ const AppWrapper = styled.div`
   margin: 0px auto;
   max-width: calc(100% - 40px);
   padding: 0px 20px;
+  margin-bottom: 60px;
 `;
 
 export default App;

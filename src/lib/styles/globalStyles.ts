@@ -11,6 +11,7 @@ export const globalStyles = css`
   body {
     font-family: "Merriweather", "Helvetica Neue", Helvetica, Arial, sans-serif;
     color: #233343;
+    letter-spacing: 0.31415926px;
   }
 
   ul,
