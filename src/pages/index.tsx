@@ -3,7 +3,11 @@ import styled from "@emotion/styled";
 import Head from "next/head";
 import Link from "next/link";
 import React from "react";
-import { lineCountAtWidth, mobileOnly } from "~src/lib/styles/mobileOnly";
+import {
+  clampWidth,
+  lineCountAtWidth,
+  mobileOnly,
+} from "~src/lib/styles/mobileOnly";
 
 const quote =
   "The best time to plant a tree was 20 years ago. The second best time is now.";
@@ -57,7 +61,26 @@ const Home: React.FC = () => {
           <a href="/resume" target="_blank">
             here
           </a>
-          . &#9632;
+          .
+          <span
+            css={css`
+              ${clampWidth(
+                css`
+                  display: none;
+                `,
+                367
+              )}
+              ${clampWidth(
+                css`
+                  display: inline;
+                `,
+                350
+              )}
+            `}
+          >
+            {" "}
+            &#9632;
+          </span>
         </p>
       </div>
 
