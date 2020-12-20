@@ -1,5 +1,6 @@
 ---
 title: Understanding Compound protocol's interest rates
+description: A deep dive into the factors that calculate Compound's interest rates.
 ---
 
 <KaTeXCSS />

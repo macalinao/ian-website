@@ -61,7 +61,14 @@ const Post: React.FC<IProps> = ({ source, post }) => {
           <meta name="description" content={post.description} />
         )}
       </Head>
-      <h1 className="post">{post.title}</h1>
+      <h1
+        css={css`
+          margin-bottom: 30px;
+          line-height: 1.3;
+        `}
+      >
+        {post.title}
+      </h1>
 
       <PostUnder>
         <p>

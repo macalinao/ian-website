@@ -24,9 +24,9 @@ const PostsPage: React.FC<IProps> = ({ posts }) => {
   return (
     <>
       <Head>
-        <title>Posts | Ian Macalinao</title>
+        <title>All Posts | Ian Macalinao</title>
       </Head>
-      <h1>Posts</h1>
+      <h1>Writing</h1>
       <p>Shower thoughts, rants, opinions, etc.</p>
       {Object.entries(grouped)
         .sort((a, b) => parseInt(b[0]) - parseInt(a[0]))

@@ -6,7 +6,6 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head />
-        <div id="bar"></div>
         <Main />
         <NextScript />
         <script

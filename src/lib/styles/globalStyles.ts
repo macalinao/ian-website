@@ -40,14 +40,8 @@ export const globalStyles = css`
   }
 
   h2 {
-    font-size: 20pt;
+    font-size: 32px;
     font-weight: bold;
-  }
-
-  #bar {
-    background-color: #3873a3;
-    height: 10px;
-    width: 100%;
   }
 
   a {
@@ -56,10 +50,6 @@ export const globalStyles = css`
 
   a:hover {
     color: #888;
-  }
-
-  h1.post {
-    margin-bottom: 30px;
   }
 
   pre {
