@@ -2,25 +2,12 @@ import { css } from "@emotion/react";
 import styled from "@emotion/styled";
 import Head from "next/head";
 import Link from "next/link";
-import React, { useEffect, useState } from "react";
+import React from "react";
 
-const quotes = [
-  "The best time to plant a tree was 20 years ago. The second best time is now.",
-  "Success isn't about being the best. It's about always getting better.",
-  "Nothing ventured, nothing gained.",
-];
-
-const randomQuote = (): string => {
-  return quotes[Math.floor(Math.random() * quotes.length)] ?? quotes[0] ?? "";
-};
+const quote =
+  "The best time to plant a tree was 20 years ago. The second best time is now.";
 
 const Home: React.FC = () => {
-  const [quote, setQuote] = useState<string>(quotes[0] ?? "");
-
-  useEffect(() => {
-    setQuote(randomQuote());
-  }, []);
-
   return (
     <HomeWrapper>
       <Head>

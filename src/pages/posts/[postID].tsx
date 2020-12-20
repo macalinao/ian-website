@@ -37,6 +37,11 @@ const Post: React.FC<IProps> = ({ source, post }) => {
         {post.description && (
           <meta name="description" content={post.description} />
         )}
+        <script
+          type="text/javascript"
+          defer
+          src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+        />
       </Head>
       <h1 className="post">{post.title}</h1>
 

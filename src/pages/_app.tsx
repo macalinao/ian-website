@@ -1,6 +1,5 @@
 import { Global } from "@emotion/react";
 import styled from "@emotion/styled";
-import GoogleFonts from "next-google-fonts";
 import { AppProps } from "next/app";
 import Head from "next/head";
 import React from "react";
@@ -9,9 +8,12 @@ import { globalStyles } from "~src/lib/styles/globalStyles";
 const App: React.FC<AppProps> = ({ Component, pageProps }) => {
   return (
     <AppWrapper>
-      <GoogleFonts href="https://fonts.googleapis.com/css?family=Merriweather:300,700&display=swap" />
       <Global styles={globalStyles} />
       <Head>
+        <link
+          href="https://fonts.googleapis.com/css?family=Merriweather:300,700"
+          rel="stylesheet"
+        />
         <link
           rel="apple-touch-icon"
           sizes="57x57"
@@ -94,11 +96,6 @@ const App: React.FC<AppProps> = ({ Component, pageProps }) => {
           content="aEZXQ9Sa6ffNUZlsa_5niffn9eSFTty4CqdiVz-OqyA"
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <script
-          type="text/javascript"
-          defer
-          src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
-        ></script>
       </Head>
       <Component {...pageProps} />
     </AppWrapper>
