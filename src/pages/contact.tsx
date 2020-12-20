@@ -12,7 +12,7 @@ const ContactPage: React.FC<IContent> = ({ data, source }) => (
 export const getStaticProps: GetStaticProps<
   IContent,
   { postID: string }
-> = async (req) => {
+> = async () => {
   const content = await fetchContent("contact.md");
   return { props: content };
 };
