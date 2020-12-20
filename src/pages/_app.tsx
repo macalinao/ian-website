@@ -1,4 +1,5 @@
 import { Global } from "@emotion/react";
+import styled from "@emotion/styled";
 import GoogleFonts from "next-google-fonts";
 import { AppProps } from "next/app";
 import Head from "next/head";
@@ -7,8 +8,8 @@ import { globalStyles } from "~src/lib/styles/globalStyles";
 
 const App: React.FC<AppProps> = ({ Component, pageProps }) => {
   return (
-    <div>
-      <GoogleFonts href="https://fonts.googleapis.com/css?family=PT+Sans:400,700|Gentium+Basic|Gentium+Book+Basic:700&display=swap" />
+    <AppWrapper>
+      <GoogleFonts href="https://fonts.googleapis.com/css?family=Merriweather:300,700&display=swap" />
       <Global styles={globalStyles} />
       <Head>
         <link
@@ -105,8 +106,15 @@ const App: React.FC<AppProps> = ({ Component, pageProps }) => {
         ></script>
       </Head>
       <Component {...pageProps} />
-    </div>
+    </AppWrapper>
   );
 };
+
+const AppWrapper = styled.div`
+  width: 750px;
+  margin: 0px auto;
+  max-width: calc(100% - 40px);
+  padding: 0px 20px;
+`;
 
 export default App;

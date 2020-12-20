@@ -1,3 +1,5 @@
+import { css } from "@emotion/react";
+import styled from "@emotion/styled";
 import { DiscussionEmbed } from "disqus-react";
 import { GetStaticPaths, GetStaticProps } from "next";
 import hydrate from "next-mdx-remote/hydrate";
@@ -7,11 +9,24 @@ import Link from "next/link";
 import React from "react";
 import { getAllPosts, getPostByID, IPost } from "~src/lib/content/posts";
 import { formatDate } from "~src/lib/formatDate";
+import { mobileOnly } from "~src/lib/styles/mobileOnly";
 
 interface IProps {
   source: string;
   post: IPost;
 }
+
+const PostUnder = styled.div`
+  color: #3271a7;
+  text-align: center;
+  line-height: 10px;
+  margin-bottom: 60px;
+  font-weight: normal;
+
+  ${mobileOnly(css`
+    text-align: left;
+  `)}
+`;
 
 const Post: React.FC<IProps> = ({ source, post }) => {
   const content = hydrate(source);
@@ -19,19 +34,21 @@ const Post: React.FC<IProps> = ({ source, post }) => {
     <div className="wrapper">
       <Head>
         <title>{post.title} | Ian Macalinao</title>
-        {post.description && <meta name="description" content={description} />}
+        {post.description && (
+          <meta name="description" content={post.description} />
+        )}
       </Head>
       <h1 className="post">{post.title}</h1>
 
-      <div id="postUnder">
+      <PostUnder>
         <p>
           by{" "}
           <Link href="/">
             <a>Ian Macalinao</a>
-          </Link>
+          </Link>{" "}
+          on {formatDate(new Date(post.publishedAt))}
         </p>
-        <p>{formatDate(new Date(post.publishedAt))}</p>
-      </div>
+      </PostUnder>
 
       <div id="post">
         {post.incomplete && (

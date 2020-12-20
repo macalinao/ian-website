@@ -9,22 +9,22 @@ export const globalStyles = css`
   }
 
   body {
-    font-family: "PT Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 16pt;
+    font-family: "Merriweather", "Helvetica Neue", Helvetica, Arial, sans-serif;
     color: #233343;
   }
 
   ul,
   p {
-    line-height: 1.4em;
+    font-size: 21px;
+    font-weight: 300;
+    line-height: 35px;
   }
 
-  h1 {
-    font-family: "Gentium Book Basic", serif;
+  li {
+    margin-bottom: 13px;
   }
 
   #quote {
-    font-family: "Gentium Basic", serif;
   }
 
   h1,
@@ -51,21 +51,6 @@ export const globalStyles = css`
     width: 100%;
   }
 
-  #body {
-    width: 750px;
-    margin: 0px auto;
-    padding-bottom: 60px;
-  }
-
-  #homeWrapper {
-    width: 590px;
-    margin: 0px auto;
-  }
-
-  #info {
-    margin-bottom: 40px;
-  }
-
   a {
     color: #3271a7;
   }
@@ -74,56 +59,8 @@ export const globalStyles = css`
     color: #888;
   }
 
-  #connect {
-    text-align: center;
-  }
-
-  #connect ul {
-    padding: 0px;
-  }
-
-  #connect li {
-    display: inline;
-    padding-right: 48pt;
-  }
-
-  #connect li:last-child {
-    padding-right: 0;
-  }
-
-  #connect a {
-    text-decoration: none;
-  }
-
-  #connect a:hover {
-    text-decoration: underline;
-  }
-
-  #quoteBar {
-    background-color: #979797;
-    height: 1px;
-    width: 120px;
-    margin-top: 47px;
-  }
-
-  #quote {
-    font-style: italic;
-    margin: 14px 0 0 0;
-    font-size: 14pt;
-    margin-bottom: 30px;
-  }
-
   h1.post {
     margin-bottom: 30px;
-  }
-
-  #postUnder {
-    color: #3271a7;
-    text-align: center;
-    line-height: 10px;
-    font-family: "Gentium Basic", serif;
-    margin-bottom: 60px;
-    font-weight: normal;
   }
 
   pre {
@@ -131,34 +68,11 @@ export const globalStyles = css`
     font-size: 12pt;
   }
 
-  @media only screen and (min-width: 768px) {
-    .mobile {
-      display: none;
-    }
-  }
-
   @media only screen and (max-width: 767px) {
-    #body {
-      width: calc(100% - 40px);
-      padding: 0px 20px;
-      text-align: center;
-      font-size: 16pt;
-    }
-    #homeWrapper {
-      width: 100%;
-    }
     h1 {
-      width: 100%;
-      text-align: center;
+      text-align: left;
+      font-size: 40px;
       margin: 35px 0 16px;
-    }
-    .desktop {
-      display: none !important;
-    }
-    #connect li {
-      font-size: 20pt;
-      display: block;
-      padding: 10pt 0;
     }
     #quote {
       text-align: left;

@@ -1,11 +1,13 @@
+import { css } from "@emotion/react";
+import styled from "@emotion/styled";
 import Head from "next/head";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 
 const quotes = [
+  "The best time to plant a tree was 20 years ago. The second best time is now.",
   "Success isn't about being the best. It's about always getting better.",
   "Nothing ventured, nothing gained.",
-  "The world is your oyster.",
 ];
 
 const randomQuote = (): string => {
@@ -13,16 +15,14 @@ const randomQuote = (): string => {
 };
 
 const Home: React.FC = () => {
-  const [quote, setQuote] = useState<string>(
-    "Success isn't about being the best. It's about always getting better."
-  );
+  const [quote, setQuote] = useState<string>(quotes[0] ?? "");
 
   useEffect(() => {
     setQuote(randomQuote());
   }, []);
 
   return (
-    <div id="homeWrapper">
+    <HomeWrapper>
       <Head>
         <title>Ian Macalinao</title>
         <meta
@@ -30,13 +30,14 @@ const Home: React.FC = () => {
           content="The personal website and blog of Ian Macalinao, software engineer and crypto-finance enthusiast."
         />
       </Head>
-      <h1 className="desktop">Ian Macalinao</h1>
-      <h1 className="mobile">Ian M.</h1>
-
-      <div id="info">
+      <h1>Ian Macalinao</h1>
+      <div
+        css={css`
+          margin-bottom: 40px;
+        `}
+      >
         <p>
-          Hi, I'm Ian<span className="mobile"> Macalinao</span>. I'm currently
-          working at{" "}
+          Hi, I'm Ian. I'm currently working at{" "}
           <a href="https://pipe.com" target="_blank">
             Pipe
           </a>
@@ -49,12 +50,6 @@ const Home: React.FC = () => {
           markets.
         </p>
         <p>
-          I prefer high level abstractions over for-loops and mutexes, and
-          <br />I prefer a strong type system over preventable runtime errors.
-          <br />I believe that the best code is the code you don’t have to
-          write.
-        </p>
-        <p>
           You can find my resume{" "}
           <a href="/resume" target="_blank">
             here
@@ -63,32 +58,73 @@ const Home: React.FC = () => {
         </p>
       </div>
 
-      <div id="connect">
-        <ul>
-          <li>
-            <Link href="/posts" passHref>
-              <a>Writing</a>
-            </Link>
-          </li>
-          <li>
-            <a href="https://twitter.com/simplyianm">Twitter</a>
-          </li>
-          <li>
-            <a href="https://github.com/macalinao">GitHub</a>
-          </li>
-          <li>
-            <Link href="/contact" passHref>
-              <a>Contact</a>
-            </Link>
-          </li>
-        </ul>
-      </div>
-
-      <div id="quoteBar"></div>
-
-      <blockquote id="quote">"{quote}"</blockquote>
-    </div>
+      <Connect>
+        <li>
+          <Link href="/posts" passHref>
+            <a>Writing</a>
+          </Link>
+        </li>
+        <li>
+          <a href="https://twitter.com/simplyianm">Twitter</a>
+        </li>
+        <li>
+          <a href="https://github.com/macalinao">GitHub</a>
+        </li>
+        <li>
+          <Link href="/contact" passHref>
+            <a>Contact</a>
+          </Link>
+        </li>
+      </Connect>
+      <Quote>"{quote}"</Quote>
+    </HomeWrapper>
   );
 };
+
+const Quote = styled.blockquote`
+  &::before {
+    display: block;
+    background-color: #979797;
+    height: 1px;
+    width: 120px;
+    content: "";
+    margin-bottom: 20px;
+  }
+
+  text-align: left;
+  color: #666;
+  font-style: italic;
+  margin-left: 0;
+  margin-top: 47px;
+  font-size: 16px;
+  margin-bottom: 30px;
+`;
+
+const HomeWrapper = styled.div`
+  width: 720px;
+  max-width: 100%;
+  margin: 0px auto;
+`;
+
+const Connect = styled.ul`
+  text-align: center;
+  padding: 0px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  max-width: 100%;
+  li {
+    display: inline;
+    &:last-child {
+      padding-right: 0;
+    }
+  }
+
+  a {
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+`;
 
 export default Home;

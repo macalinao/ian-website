@@ -7,9 +7,7 @@ class MyDocument extends Document {
       <Html>
         <Head />
         <div id="bar"></div>
-        <div id="body">
-          <Main />
-        </div>
+        <Main />
         <NextScript />
         <script
           dangerouslySetInnerHTML={{

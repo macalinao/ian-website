@@ -35,5 +35,8 @@
   "prettier": {},
   "engines": {
     "node": "12.x"
+  },
+  "resolutions": {
+    "js-yaml": "3.13.1"
   }
 }
