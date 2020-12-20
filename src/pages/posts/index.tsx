@@ -52,13 +52,6 @@ const PostsPage: React.FC<IProps> = ({ posts }) => {
   );
 };
 
-export const getStaticPaths = async () => {
-  return {
-    paths: ["/posts"],
-    fallback: false,
-  };
-};
-
 export const getStaticProps: GetStaticProps<
   IProps,
   { postID: string }
