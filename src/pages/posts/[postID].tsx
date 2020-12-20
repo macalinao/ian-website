@@ -86,8 +86,8 @@ const Post: React.FC<IProps> = ({ source, post }) => {
 export const getStaticPaths: GetStaticPaths = async () => {
   const posts = await getAllPosts();
   return {
-    paths: posts.map((post) => `/posts/${post.id}.html`),
-    fallback: false,
+    paths: posts.map((post) => post.path),
+    fallback: "blocking",
   };
 };
 
@@ -95,13 +95,29 @@ export const getStaticProps: GetStaticProps<
   IProps,
   { postID: string }
 > = async (req) => {
-  const postIDNoSuffix = req.params?.postID.split(".html")[0];
+  const postID = req.params?.postID;
+  if (!postID) {
+    return {
+      notFound: true,
+    };
+  }
+  const postIDNoSuffix = postID.split(".html")[0];
   if (!postIDNoSuffix) {
     return {
       notFound: true,
     };
   }
+
   const post = await getPostByID(postIDNoSuffix);
+  if (postID.endsWith(".html")) {
+    return {
+      redirect: {
+        permanent: true,
+        destination: post.path,
+      },
+    };
+  }
+
   const mdxSource = await renderToString(post.content);
   return { props: { source: mdxSource, post } };
 };

@@ -35,7 +35,7 @@ export const getPostByID = async (postID: string): Promise<IPost> => {
     draft: data.draft === true,
     publishedAt: publishedAt.toISOString(),
     content,
-    path: `/posts/${postID}.html`,
+    path: `/posts/${postID}`,
     incomplete: data.incomplete === true,
   };
 };

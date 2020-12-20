@@ -31,7 +31,7 @@ const PostsPage: React.FC<IProps> = ({ posts }) => {
       {Object.entries(grouped)
         .sort((a, b) => parseInt(b[0]) - parseInt(a[0]))
         .map(([year, yearPosts]) => (
-          <div>
+          <div key={year}>
             <h2>{year}</h2>
             <ul>
               {yearPosts.map((post) => (
