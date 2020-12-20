@@ -19,7 +19,7 @@ const Post: React.FC<IProps> = ({ source, post }) => {
     <div className="wrapper">
       <Head>
         <title>{post.title} | Ian Macalinao</title>
-        <meta name="description" content="$description$" />
+        {post.description && <meta name="description" content={description} />}
       </Head>
       <h1 className="post">{post.title}</h1>
 

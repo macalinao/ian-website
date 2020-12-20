@@ -13,6 +13,7 @@ export interface IPost {
   content: string;
   path: string;
   incomplete: boolean;
+  description?: string;
 }
 
 export const getAllPosts = async (): Promise<readonly IPost[]> => {
@@ -37,5 +38,6 @@ export const getPostByID = async (postID: string): Promise<IPost> => {
     content,
     path: `/posts/${postID}`,
     incomplete: data.incomplete === true,
+    description: data.description ?? undefined,
   };
 };

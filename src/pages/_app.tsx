@@ -98,19 +98,11 @@ const App: React.FC<AppProps> = ({ Component, pageProps }) => {
         />
         <link rel="stylesheet" type="text/css" href="/css/default.css" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta
-          name="description"
-          content="The personal website and blog of Ian Macalinao, software engineer and mathematician."
-        />
         <script
           type="text/javascript"
           defer
           src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
         ></script>
-        <meta
-          name="description"
-          content="The personal website and blog of Ian Macalinao, software engineer and crypto-finance enthusiast."
-        />
       </Head>
       <Component {...pageProps} />
     </div>

@@ -25,6 +25,10 @@ const Home: React.FC = () => {
     <div id="homeWrapper">
       <Head>
         <title>Ian Macalinao</title>
+        <meta
+          name="description"
+          content="The personal website and blog of Ian Macalinao, software engineer and crypto-finance enthusiast."
+        />
       </Head>
       <h1 className="desktop">Ian Macalinao</h1>
       <h1 className="mobile">Ian M.</h1>
