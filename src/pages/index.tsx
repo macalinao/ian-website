@@ -3,6 +3,7 @@ import styled from "@emotion/styled";
 import Head from "next/head";
 import Link from "next/link";
 import React from "react";
+import { mobileOnly } from "~src/lib/styles/mobileOnly";
 
 const quote =
   "The best time to plant a tree was 20 years ago. The second best time is now.";
@@ -23,7 +24,13 @@ const Home: React.FC = () => {
           margin-bottom: 40px;
         `}
       >
-        <p>
+        <p
+          css={css`
+            ${mobileOnly(css`
+              min-height: calc(35px * 5);
+            `)}
+          `}
+        >
           Hi, I'm Ian. I'm currently working at{" "}
           <a href="https://pipe.com" target="_blank">
             Pipe
@@ -35,6 +42,9 @@ const Home: React.FC = () => {
           css={css`
             // 3 lines tall to lessen layout shift
             min-height: calc(35px * 3);
+            ${mobileOnly(css`
+              min-height: calc(35px * 5);
+            `)}
           `}
         >
           I believe in a future where capital can flow freely to its most
@@ -104,6 +114,10 @@ const Connect = styled.ul`
   padding: 0px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+  ${mobileOnly(css`
+    grid-template-columns: repeat(2, 1fr);
+    text-align: left;
+  `)}
   max-width: 100%;
   li {
     display: inline;
