@@ -19,11 +19,7 @@ const Home: React.FC = () => {
         />
       </Head>
       <h1>Ian Macalinao</h1>
-      <div
-        css={css`
-          margin-bottom: 40px;
-        `}
-      >
+      <div>
         <p
           css={css`
             ${mobileOnly(css`
@@ -96,8 +92,7 @@ const Quote = styled.blockquote`
   text-align: left;
   color: #666;
   font-style: italic;
-  margin-left: 0;
-  margin-top: 47px;
+  margin: 0;
   font-size: 16px;
   margin-bottom: 30px;
   line-height: 30px;
@@ -132,6 +127,14 @@ const Connect = styled.ul`
       text-decoration: underline;
     }
   }
+
+  margin-top: 45px;
+  margin-bottom: 45px;
+
+  ${mobileOnly(css`
+    margin-top: 10px;
+    margin-bottom: 10px;
+  `)}
 `;
 
 export default Home;
