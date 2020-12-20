@@ -1,6 +1,7 @@
-import { readdir, readFile } from "fs/promises";
+import { readdir, readFile } from "fs";
 import matter from "gray-matter";
 import path from "path";
+import { promisify } from "util";
 
 const postsDir = path.join(process.cwd(), "content/posts");
 
@@ -15,7 +16,7 @@ export interface IPost {
 }
 
 export const getAllPosts = async (): Promise<readonly IPost[]> => {
-  const posts = await readdir(postsDir);
+  const posts = await promisify(readdir)(postsDir);
   return await Promise.all(
     posts.map(async (post) => {
       const postID = post.split(".").slice(0, -1).join(".");
@@ -25,7 +26,7 @@ export const getAllPosts = async (): Promise<readonly IPost[]> => {
 };
 
 export const getPostByID = async (postID: string): Promise<IPost> => {
-  const source = await readFile(`${postsDir}/${postID}.md`);
+  const source = await promisify(readFile)(`${postsDir}/${postID}.md`);
   const { content, data } = matter(source.toString());
   const publishedAt = new Date(postID.split("-").slice(0, 3).join("-"));
   return {

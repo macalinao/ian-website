@@ -18,7 +18,7 @@ let
   };
 in with pkgs;
 mkShell {
-  buildInputs = [ nodejs yarn ];
+  buildInputs = [ nodejs-12_x (yarn.override { nodejs = nodejs-12_x; }) ];
   shellHook = ''
     ${pre-commit-check.shellHook}
   '';
