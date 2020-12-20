@@ -1,5 +1,6 @@
 import { Global } from "@emotion/react";
 import styled from "@emotion/styled";
+import GoogleFonts from "next-google-fonts";
 import { AppProps } from "next/app";
 import Head from "next/head";
 import React from "react";
@@ -8,12 +9,9 @@ import { globalStyles } from "~src/lib/styles/globalStyles";
 const App: React.FC<AppProps> = ({ Component, pageProps }) => {
   return (
     <AppWrapper>
+      <GoogleFonts href="https://fonts.googleapis.com/css?family=Merriweather:300,700&display=swap" />
       <Global styles={globalStyles} />
       <Head>
-        <link
-          href="https://fonts.googleapis.com/css?family=Merriweather:300,700"
-          rel="stylesheet"
-        />
         <link
           rel="apple-touch-icon"
           sizes="57x57"
