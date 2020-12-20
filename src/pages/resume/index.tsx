@@ -5,7 +5,7 @@ const ResumePage = () => (
   <div>
     <h1>Resume</h1>
     <p>
-      <a href="http://macalinao.github.io/resume/resume.pdf">My Resume</a>
+      <a href="https://macalinao.github.io/resume/resume.pdf">My Resume</a>
     </p>
     <p>
       A lot of people have been asking for my resume source. I'm not actively

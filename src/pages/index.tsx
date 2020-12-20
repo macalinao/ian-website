@@ -67,10 +67,10 @@ const Home: React.FC = () => {
             </Link>
           </li>
           <li>
-            <a href="http://twitter.com/simplyianm">Twitter</a>
+            <a href="https://twitter.com/simplyianm">Twitter</a>
           </li>
           <li>
-            <a href="http://github.com/macalinao">GitHub</a>
+            <a href="https://github.com/macalinao">GitHub</a>
           </li>
           <li>
             <Link href="/contact" passHref>
