@@ -12,7 +12,7 @@ export const clampWidth = (
   width: number
 ): SerializedStyles =>
   css`
-    @media only screen and (max-width: ${width}) {
+    @media only screen and (max-width: ${width}px) {
       ${styles}
     }
   `;

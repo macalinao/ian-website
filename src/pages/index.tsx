@@ -47,6 +47,10 @@ const Home: React.FC = () => {
           css={css`
             max-height: 35px;
             ${lineCountAtWidth(1, 370)}
+
+            // hack for page speed to be happy
+            overflow: hidden;
+            ${lineCountAtWidth(2, 350)}
           `}
         >
           You can find my resume{" "}
