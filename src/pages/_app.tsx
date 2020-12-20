@@ -93,11 +93,6 @@ const App: React.FC<AppProps> = ({ Component, pageProps }) => {
           name="google-site-verification"
           content="aEZXQ9Sa6ffNUZlsa_5niffn9eSFTty4CqdiVz-OqyA"
         />
-        <link
-          href="//cdnjs.cloudflare.com/ajax/libs/normalize/3.0.1/normalize.min.css"
-          rel="stylesheet"
-        />
-        <link rel="stylesheet" type="text/css" href="/css/default.css" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <script
           type="text/javascript"
