@@ -2,14 +2,29 @@
 
 My personal website.
 
-## Building
+Stack:
 
-First install Stack, then:
+- NextJS/React
+- Emotion
+- MDX
+
+## Developing
+
+Use `nix-direnv` to source the `.envrc` in this project. Then do:
 
 ```
-$ stack build
-$ stack exec site build
+yarn
+yarn dev
 ```
+
+To package/run the app for production, run:
+
+```
+yarn build
+yarn start
+```
+
+This website is a typical Next.JS application, thus it can easily be deployed to [Vercel](https://vercel.com).
 
 ## License
 
