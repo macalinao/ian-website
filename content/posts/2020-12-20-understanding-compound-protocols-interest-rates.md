@@ -1,7 +1,9 @@
 ---
 title: Understanding Compound protocol's interest rates
-draft: true
 ---
+
+<KaTeXCSS />
+<NextImage src="https://static.ian.pw/images/2020-12-20-compound-banner.png" width="750" height="420" />
 
 The [Compound protocol](https://compound.finance) is an unprecedented technological advancement in the history of finance: for the first time in history, one can borrow money and earn interest with no humans or credit involved.
 
@@ -9,7 +11,7 @@ Rates vary frequently, though, and it is important to understand how the protoco
 
 ## The utilization rate
 
-All interest rates in Compound are determined as a function of the utilization rate. The utilization rate $U_a$ for a money market $a$ is defined[^cwhitepaper] as:
+All interest rates in Compound are determined as a function of the utilization rate. The utilization rate $U_a$ for a money market $a$ is defined[^1] as:
 
 $$U_a = Borrows_a / (Cash_a + Borrows_a - Reserves_a)$$
 
@@ -50,7 +52,10 @@ The graph is linear:
 
 $$\text{Borrow Interest Rate} = \text{Multiplier} * \text{Utilization Rate} + \text{Base Rate}$$
 
-![The USDC rate model. [Source here.](https://observablehq.com/@jflatow/compound-interest-rates)](https://static.ian.pw/images/2020-05-25-borrow-rate-vs-utlization.png)
+<figure>
+    <NextImage src="https://static.ian.pw/images/2020-12-20-wbtc-rate-model.png" width="512" height="467" alt="The WBTC rate model." />
+    <figcaption>The WBTC rate model.</figcaption>
+</figure>
 
 ### Example: USDC rates
 
@@ -67,11 +72,11 @@ $$\text{Supply Interest Rate}_a = 3\% * 10\% * (1 - 0) = 0.3\%$$
 For a sanity check, let's make sure that there is a net positive cash flow; that is, the protocol is not losing money:
 
 $$
-\begin{align}
+\begin{aligned}
 \text{Supply} * \text{Supply Interest Rate} &\geq \text{Borrows} * \text{Borrow Interest Rate} \\
 \$100,000,000 * 0.3\% &\geq \$10,000,000 * 3.0\% \\
 \$300,000 &\geq \$300,000
-\end{align}
+\end{aligned}
 $$
 
 ### Example: Effects of large withdraws of USDC on interest rates
@@ -116,4 +121,4 @@ Compound is a very powerful building block of the Ethereum DeFi ecosystem. Under
 
 If you enjoyed this post and/or would like to hear more, please leave a comment below!
 
-[^cwhitepaper]: Source: [Compound whitepaper](https://compound.finance)
+[^1]: Source: [Compound whitepaper](https://compound.finance)

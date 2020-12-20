@@ -1,15 +1,38 @@
 import { css } from "@emotion/react";
 import styled from "@emotion/styled";
-import { DiscussionEmbed } from "disqus-react";
+import { DiscussionEmbed as DiscussionEmbedType } from "disqus-react";
 import { GetStaticPaths, GetStaticProps } from "next";
 import hydrate from "next-mdx-remote/hydrate";
 import renderToString from "next-mdx-remote/render-to-string";
+import dynamic from "next/dynamic";
 import Head from "next/head";
+import NextImage from "next/image";
 import Link from "next/link";
 import React from "react";
+import rehypeKatex from "rehype-katex";
+import remarkMath from "remark-math";
 import { getAllPosts, getPostByID, IPost } from "~src/lib/content/posts";
 import { formatDate } from "~src/lib/formatDate";
 import { mobileOnly } from "~src/lib/styles/mobileOnly";
+
+const DiscussionEmbed = dynamic(
+  () => import("disqus-react").then((mod) => mod.DiscussionEmbed),
+  {
+    ssr: false,
+  }
+) as typeof DiscussionEmbedType;
+
+const components = {
+  NextImage,
+  KaTeXCSS: () => (
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/katex@0.11.0/dist/katex.min.css"
+      integrity="sha384-BdGj8xC2eZkQaxoQ8nSLefg4AV4/AwB3Fj+8SUSo7pnKP6Eoy18liIKTPn9oBYNG"
+      crossOrigin="anonymous"
+    />
+  ),
+};
 
 interface IProps {
   source: string;
@@ -29,7 +52,7 @@ const PostUnder = styled.div`
 `;
 
 const Post: React.FC<IProps> = ({ source, post }) => {
-  const content = hydrate(source);
+  const content = hydrate(source, { components });
   return (
     <div className="wrapper">
       <Head>
@@ -37,11 +60,6 @@ const Post: React.FC<IProps> = ({ source, post }) => {
         {post.description && (
           <meta name="description" content={post.description} />
         )}
-        <script
-          type="text/javascript"
-          defer
-          src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
-        />
       </Head>
       <h1 className="post">{post.title}</h1>
 
@@ -71,7 +89,7 @@ const Post: React.FC<IProps> = ({ source, post }) => {
         {content}
       </div>
 
-      <div id="thanks">
+      <Thanks>
         <p>
           Thanks for reading! Have any questions, comments, or suggestions? Feel
           free to use the comment section below or email me at{" "}
@@ -88,22 +106,26 @@ const Post: React.FC<IProps> = ({ source, post }) => {
           </a>{" "}
           and send a pull request.
         </p>
-      </div>
-
-      {typeof window !== "undefined" && (
-        <DiscussionEmbed
-          shortname="ianpw"
-          config={{
-            url: window.location.href,
-            identifier: `posts/${post.id}.md`,
-            title: post.title,
-            language: "en_US",
-          }}
-        />
-      )}
+      </Thanks>
+      <DiscussionEmbed
+        shortname="ianpw"
+        config={{
+          url: typeof window !== "undefined" ? window.location.href : "",
+          identifier: `posts/${post.id}.md`,
+          title: post.title,
+          language: "en_US",
+        }}
+      />
     </div>
   );
 };
+
+const Thanks = styled.div`
+  margin: 3em auto;
+  border-top: 1px solid #ddd;
+  padding: 1em 0.5em;
+  border-bottom: 1px solid #ddd;
+`;
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const posts = await getAllPosts();
@@ -140,7 +162,13 @@ export const getStaticProps: GetStaticProps<
     };
   }
 
-  const mdxSource = await renderToString(post.content);
+  const mdxSource = await renderToString(post.content, {
+    components,
+    mdxOptions: {
+      remarkPlugins: [remarkMath],
+      rehypePlugins: [rehypeKatex],
+    },
+  });
   return { props: { source: mdxSource, post } };
 };
 

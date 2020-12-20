@@ -3,7 +3,8 @@ title: Maximum Leverage on Maker
 description: A summary of how to compute and obtain maximum leverage on MakerDAO.
 ---
 
-![](/images/20180125_mkrbanner.png)
+<KaTeXCSS />
+<NextImage src="/images/20180125_mkrbanner.png" width="750" height="489" />
 
 First off, this article assumes familiarity with [Maker](https://makerdao.com/) CDP's. (If not, I highly suggest reading up on it!)
 
@@ -13,7 +14,7 @@ Assuming enough liquidity exists, we can then buy 0.66 ETH with this Dai.
 
 ![The amount of additional leverage drops off each round.](/images/20180102_additional-leverage-per-round.png)
 
-We can then put this ETH back into our CDP to draw more Dai. We can draw $\$66.66 \* 1/1.5 = $44.44\$ more Dai from our CDP. We can keep doing this forever to generate more Dai and thus more leverage; however, we get less Dai each time. But how much?
+We can then put this ETH back into our CDP to draw more Dai. We can draw $\$66.66 * 1/1.5 = \$44.44$ more Dai from our CDP. We can keep doing this forever to generate more Dai and thus more leverage; however, we get less Dai each time. But how much?
 
 ![Cumulative leverage converges to a finite value.](/images/20180102_cumulative-leverage-per-round.png)
 

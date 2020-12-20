@@ -15,6 +15,7 @@ export const globalStyles = css`
   }
 
   ul,
+  ol,
   p {
     font-size: 21px;
     font-weight: 300;
@@ -146,13 +147,7 @@ export const globalStyles = css`
     background-color: #f6f6f6;
     padding: 10px 20px;
     border-left: 4px solid #3873a3;
-  }
-
-  #thanks {
-    margin: 3em auto;
-    border-top: 1px solid #ddd;
-    padding: 1em 0.5em;
-    border-bottom: 1px solid #ddd;
+    overflow-x: scroll;
   }
 
   #post blockquote {
@@ -171,6 +166,9 @@ export const globalStyles = css`
   figure {
     width: 100%;
     margin: 60px auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
   }
 
   figure img {
