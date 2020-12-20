@@ -129,9 +129,10 @@ const Post: React.FC<IProps> = ({ source, post }) => {
 
 const Thanks = styled.div`
   margin: 3em auto;
-  border-top: 1px solid #ddd;
-  padding: 1em 0.5em;
-  border-bottom: 1px solid #ddd;
+  border: 1px solid #eee;
+  padding: 20px 40px;
+  background-color: #fafaff;
+  color: #656565;
 `;
 
 export const getStaticPaths: GetStaticPaths = async () => {
