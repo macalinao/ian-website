@@ -47,7 +47,7 @@ const Home: React.FC = () => {
 
       <Connect>
         <li>
-          <Link href="/posts" passHref>
+          <Link href="/posts" passHref prefetch={false}>
             <a>Writing</a>
           </Link>
         </li>
@@ -58,7 +58,7 @@ const Home: React.FC = () => {
           <a href="https://github.com/macalinao">GitHub</a>
         </li>
         <li>
-          <Link href="/contact" passHref>
+          <Link href="/contact" passHref prefetch={false}>
             <a>Contact</a>
           </Link>
         </li>
