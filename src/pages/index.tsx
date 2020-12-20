@@ -3,7 +3,7 @@ import styled from "@emotion/styled";
 import Head from "next/head";
 import Link from "next/link";
 import React from "react";
-import { mobileOnly } from "~src/lib/styles/mobileOnly";
+import { lineCountAtWidth, mobileOnly } from "~src/lib/styles/mobileOnly";
 
 const quote =
   "The best time to plant a tree was 20 years ago. The second best time is now.";
@@ -22,9 +22,7 @@ const Home: React.FC = () => {
       <div>
         <p
           css={css`
-            ${mobileOnly(css`
-              min-height: calc(35px * 5);
-            `)}
+            ${lineCountAtWidth(5, 370)}
           `}
         >
           Hi, I'm Ian. I'm currently working at{" "}
@@ -38,16 +36,19 @@ const Home: React.FC = () => {
           css={css`
             // 3 lines tall to lessen layout shift
             min-height: calc(35px * 3);
-            ${mobileOnly(css`
-              min-height: calc(35px * 5);
-            `)}
+            ${lineCountAtWidth(5, 370)}
           `}
         >
           I believe in a future where capital can flow freely to its most
           productive economic purpose&mdash; a future with truly efficient
           markets.
         </p>
-        <p>
+        <p
+          css={css`
+            max-height: 35px;
+            ${lineCountAtWidth(1, 370)}
+          `}
+        >
           You can find my resume{" "}
           <a href="/resume" target="_blank">
             here

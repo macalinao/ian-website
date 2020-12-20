@@ -6,3 +6,24 @@ export const mobileOnly = (styles: SerializedStyles): SerializedStyles =>
       ${styles}
     }
   `;
+
+export const clampWidth = (
+  styles: SerializedStyles,
+  width: number
+): SerializedStyles =>
+  css`
+    @media only screen and (max-width: ${width}) {
+      ${styles}
+    }
+  `;
+
+export const lineCountAtWidth = (
+  count: number,
+  width: number
+): SerializedStyles =>
+  clampWidth(
+    css`
+      min-height: calc(35px * ${count});
+    `,
+    width
+  );
