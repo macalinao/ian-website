@@ -10,7 +10,7 @@ export const globalStyles = css`
 
   body {
     font-family: "Merriweather", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    color: #233343;
+    color: #333333;
     letter-spacing: 0.31415926px;
   }
 
@@ -25,12 +25,9 @@ export const globalStyles = css`
     margin-bottom: 13px;
   }
 
-  #quote {
-  }
-
   h1,
   h2 {
-    color: #000;
+    color: #121212;
   }
 
   h1 {
