@@ -9,7 +9,7 @@ export const globalStyles = css`
   }
 
   body {
-    font-family: "Merriweather", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: "Merriweather", Georgia, serif;
     color: #333333;
     letter-spacing: 0.31415926px;
   }
@@ -33,7 +33,7 @@ export const globalStyles = css`
   h1 {
     font-weight: bold;
     text-align: center;
-    font-size: 45pt;
+    font-size: 60px;
     margin-top: 72px;
     margin-bottom: 50px;
   }
@@ -71,10 +71,6 @@ export const globalStyles = css`
       text-align: left;
       font-size: 40px;
       margin: 35px 0 16px;
-    }
-    #quote {
-      text-align: left;
-      font-size: 14pt;
     }
     #post {
       text-align: left;

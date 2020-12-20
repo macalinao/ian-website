@@ -31,7 +31,12 @@ const Home: React.FC = () => {
           , an exchange for companies to get liquidity on their recurring
           revenue streams.
         </p>
-        <p>
+        <p
+          css={css`
+            // 3 lines tall to lessen layout shift
+            min-height: calc(35px * 3);
+          `}
+        >
           I believe in a future where capital can flow freely to its most
           productive economic purpose&mdash; a future with truly efficient
           markets.
@@ -85,6 +90,7 @@ const Quote = styled.blockquote`
   margin-top: 47px;
   font-size: 16px;
   margin-bottom: 30px;
+  line-height: 30px;
 `;
 
 const HomeWrapper = styled.div`
