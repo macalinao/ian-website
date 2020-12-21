@@ -145,6 +145,11 @@ const PostWrapper = styled.div`
     hr {
       display: none;
     }
+
+    .footnote-backref {
+      margin-left: 8px;
+      font-size: 14px;
+    }
   }
 `;
 
