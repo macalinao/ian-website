@@ -29,8 +29,6 @@ export const PostComments: React.FC<IProps> = ({ post }) => {
     }
   }, [inView, loaded]);
 
-  console.log(inView, loaded);
-
   return (
     <div
       ref={ref}
