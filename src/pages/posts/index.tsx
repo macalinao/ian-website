@@ -35,7 +35,7 @@ const PostsPage: React.FC<IProps> = ({ posts }) => {
             <h2>{year}</h2>
             <ul>
               {yearPosts.map((post) => (
-                <li>
+                <li key={post.id}>
                   <Link href={post.path} passHref>
                     <a>{post.title}</a>
                   </Link>{" "}
