@@ -58,9 +58,9 @@ const Home: React.FC = () => {
           `}
         >
           You can find my resume{" "}
-          <a href="/resume" target="_blank">
-            here
-          </a>
+          <Link href="/resume">
+            <a>here</a>
+          </Link>
           .
           <span
             css={css`
