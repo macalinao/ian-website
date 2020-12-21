@@ -26,4 +26,16 @@ export const mdxComponents = {
   },
   TokenIcon,
   NextImage,
+  img: ({
+    src,
+    ...props
+  }: React.DetailedHTMLProps<
+    React.ImgHTMLAttributes<HTMLImageElement>,
+    HTMLImageElement
+  > & { src: string }) => {
+    if (src.startsWith("/")) {
+      return <img {...props} src={`https://static.ian.pw${src}`} />;
+    }
+    return <img {...props} src={src} />;
+  },
 };

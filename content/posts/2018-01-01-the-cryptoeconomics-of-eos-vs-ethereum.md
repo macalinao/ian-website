@@ -1,9 +1,12 @@
 ---
 title: The Cryptoeconomics of EOS vs Ethereum
 description: An analysis on the economic models of EOS and Ethereum and the advantages and disadvantages to both.
+banner:
+  alt: EOS logo
+  width: 750
+  height: 407
+  src: https://static.ian.pw/images/eos-banner.png
 ---
-
-![](https://i.imgur.com/9Hjp4MH.png)
 
 As mentioned [in a previous post](https://ian.pw/posts/2017-12-08-why-eos-will-overtake-ethereum-in-high-performance-smart-contracts.html), I believe EOS will overtake Ethereum as the smart contract platform used by the mainstream audience. Part of this is due to its economic model which encourages people to use the platform and to not sell their currency. In this post, I will argue why EOS's economic model offers more benefits to token holders than Ethereum's.
 

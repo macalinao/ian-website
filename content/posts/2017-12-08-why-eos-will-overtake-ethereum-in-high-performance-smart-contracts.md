@@ -1,5 +1,10 @@
 ---
 title: Why EOS will overtake Ethereum in high performance smart contracts
+banner:
+  alt: EOS logo
+  width: 750
+  height: 407
+  src: https://static.ian.pw/images/eos-banner.png
 ---
 
 I've always been a huge fan of Ethereum; however, it has some shortcomings, as recently made evident by [CryptoKitties](http://www.bbc.com/news/technology-42237162). In this blog post, I will introduce EOS and explain how it will solve many of Ethereum's current problems.
