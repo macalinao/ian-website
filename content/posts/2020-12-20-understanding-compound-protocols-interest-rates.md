@@ -44,7 +44,7 @@ $$\text{Supply Interest Rate}_a = \text{Borrowing Interest Rate}_a * U_a * (1 - 
 where
 
 - $U_a$ is the utilization rate of $a$
-- $\text{Reserve Factor}_a$ is the percentage of the spread between the supply and borrow rates that the protocol keeps as profit
+- $\text{Reserve Factor}_a$ is the percentage of the spread between the supply and borrow rates that the protocol keeps as profit[^2]
 - $\text{Borrowing Interest Rate}_a$ is the interest rate that borrowers should pay for $a$.
 
 ### The Compound Standard Interest Rate Model
@@ -166,7 +166,7 @@ In Compound, interest rate is not locked at the price of borrowing: it continuou
 
 Another way interest rates could spike is if the Chief Economist decides that the interest rates should go up. This has already happened in the case of MakerDAO, where the stability fee has ranged between 0% and 8%. Fortunately, both Compound and MakerDAO have transparent processes when changing interest rates with beautiful governance dashboards and decisions voted on by governance token holders.
 
-This is in stark contrast to the current quarterly speculation on the Fed/FOMC's decisions. Compound's decision making process on the other hand is transparent and decentralized, protecting the interests of financiers (pun intended).[^2]
+This is in stark contrast to the current quarterly speculation on the Fed/FOMC's decisions. Compound's decision making process on the other hand is transparent and decentralized, protecting the interests of financiers (pun intended).[^3]
 
 ### Predicting accrued interest
 
@@ -179,7 +179,7 @@ where
 - $B_y = 2102400$, the number of blocks in the year, and
 - $r$ is the expected value of the APR of the interest over the given period.
 
-The number 2,102,400 assumes 15 second blocks.[^3]
+The number 2,102,400 assumes 15 second blocks.[^4]
 
 ### Hedging against rate hikes
 
@@ -196,5 +196,6 @@ Compound is a very powerful building block of the Ethereum DeFi ecosystem. Under
 If you enjoyed this post and/or would like to hear more, please leave a comment below!
 
 [^1]: Source: [Compound whitepaper](https://compound.finance)
-[^2]: Technically, this system is not immune to insider trading. A member of governance can trade before voting. Also since COMP can be borrowed on Compound, one can stake a lot of ETH, borrow COMP, place a large vote, then repay all of the COMP.
-[^3]: At the time of writing Ethereum has been producing ~13 second blocks, so all annualized rates in Compound should be multiplied by approximately 15/13. Although [this number is hardcoded into the smart contract](https://etherscan.io/address/0xbae04cbf96391086dc643e842b517734e214d698#code), the rate model may be updated in the future via governance.
+[^2]: According to [proposal 31](https://compound.finance/governance/proposals/31), the Reserve Factor is a percentage of the borrowers paid interest which can be used by the governance or act as an insurance against borrower default which protects all the suppliers.
+[^3]: Technically, this system is not immune to insider trading. A member of governance can trade before voting. Also since COMP can be borrowed on Compound, one can stake a lot of ETH, borrow COMP, place a large vote, then repay all of the COMP.
+[^4]: At the time of writing Ethereum has been producing ~13 second blocks, so all annualized rates in Compound should be multiplied by approximately 15/13. Although [this number is hardcoded into the smart contract](https://etherscan.io/address/0xbae04cbf96391086dc643e842b517734e214d698#code), the rate model may be updated in the future via governance.
