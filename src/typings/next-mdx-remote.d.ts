@@ -7,7 +7,10 @@ declare module "next-mdx-remote" {
 
 declare module "next-mdx-remote/hydrate" {
   import { IMDXSource } from "next-mdx-remote";
-  const def: (source: IMDXSource, args: { components: any }) => React.ReactNode;
+  const def: (
+    source: IMDXSource,
+    args?: { components: any }
+  ) => React.ReactNode;
   export default def;
 }
 
