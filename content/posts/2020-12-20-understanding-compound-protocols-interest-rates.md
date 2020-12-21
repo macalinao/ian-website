@@ -175,7 +175,7 @@ $$\text{Total Interest} = P(1 + \frac{r}{B_y})^{B_y * t}$$
 
 where
 
-- $B_y = 2,102,400$, the number of blocks in the year, and
+- $B_y = 2102400$, the number of blocks in the year, and
 - $r$ is the expected value of the APR of the interest over the given period.
 
 The number 2,102,400 assumes 15 second blocks.[^3]
