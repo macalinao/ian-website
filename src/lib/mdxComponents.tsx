@@ -12,9 +12,7 @@ export const mdxComponents = {
     HTMLAnchorElement
   > & { href: string }) => {
     if (href?.startsWith("http")) {
-      return (
-        <a {...props} href={href} target="_blank" rel="noopener noreferrer"></a>
-      );
+      return <a {...props} href={href} target="_blank"></a>;
     } else if (href?.startsWith("#")) {
       // footnotes
       return <a {...props} href={href}></a>;

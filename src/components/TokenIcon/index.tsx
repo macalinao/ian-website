@@ -29,7 +29,6 @@ export const TokenIcon = ({ token }: IProps) => {
     <a
       href={link}
       target="_blank"
-      rel="noopener noreferrer"
       css={css`
         color: #333;
         font-weight: 400;
