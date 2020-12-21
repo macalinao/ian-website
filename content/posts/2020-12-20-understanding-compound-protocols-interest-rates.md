@@ -131,6 +131,30 @@ $$
     <figcaption>The USDC rate model is a jump rate model.</figcaption>
 </figure>
 
+The USDC rate model is a jump rate model with the following parameters:
+
+- Base rate: 0%/yr
+- Multiplier: 5%/yr
+- Kink: 80%
+- Jump multiplier: 109%/yr
+
+The USDC market also has a reserve factor of 7%.
+
+Let's say that the market has the following status:
+
+- \$180M in borrows
+- \$20M in cash
+
+What is the borrow rate and supply rate?
+
+Doing the math:
+
+$$U_a = \$180M/(\$180M + \$20M) = 90\%$$
+
+$$\text{Borrow Interest Rate} = 5\% * 80\% + 109\% * (90\% - 80\%) + 0\% = 14.9\%$$
+
+$$\text{Supply Interest Rate}_a = 14.9\% * 90\% * (1 - 7\%) = 12.5\%$$
+
 ## Interest rate spikes
 
 In Compound, interest rate is not locked at the price of borrowing: it continuously fluctuates based on changes in the utilization rate.
