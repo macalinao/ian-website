@@ -117,9 +117,11 @@ but it also introduces two new parameters:
 The borrow rate of the jump rate model is defined as follows:
 
 $$
-\text{Borrow Interest Rate} = \\
-    \text{Multiplier} * min(\text{Utilization Rate}, \text{Kink}) + \\
-    \text{Jump Multiplier} * max(0, \text{Utilization Rate} - \text{Kink})  + \text{Base Rate}
+\begin{aligned}
+\text{Borrow Interest Rate} &= \text{Multiplier} * min(U_a, \text{Kink}) \\
+    &+ \text{Jump Multiplier} * max(0, U_a - \text{Kink}) \\
+    &+ \text{Base Rate}
+\end{aligned}
 $$
 
 ### Example: USDC rate model
