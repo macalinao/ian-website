@@ -7,6 +7,39 @@ import React from "react";
 import { globalStyles } from "~src/lib/styles/globalStyles";
 import { useAnalytics } from "~src/lib/useAnalytics";
 
+const favicons = (
+  <>
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/apple-touch-icon.png?v=00awvKA8lm"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/favicon-32x32.png?v=00awvKA8lm"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/favicon-16x16.png?v=00awvKA8lm"
+    />
+    <link rel="manifest" href="/site.webmanifest?v=00awvKA8lm" />
+    <link
+      rel="mask-icon"
+      href="/safari-pinned-tab.svg?v=00awvKA8lm"
+      color="#3873a3"
+    />
+    <link rel="shortcut icon" href="/favicon.ico?v=00awvKA8lm" />
+    <meta name="apple-mobile-web-app-title" content="ian.pw" />
+    <meta name="application-name" content="ian.pw" />
+    <meta name="msapplication-TileColor" content="#3873a3" />
+    <meta name="theme-color" content="#3873a3" />
+  </>
+);
+
 const App: React.FC<AppProps> = ({ Component, pageProps }) => {
   useAnalytics();
   return (
@@ -15,83 +48,8 @@ const App: React.FC<AppProps> = ({ Component, pageProps }) => {
         <GoogleFonts href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap" />
         <Global styles={globalStyles} />
         <Head>
-          <link
-            rel="apple-touch-icon"
-            sizes="57x57"
-            href="/images/apple-icon-57x57.png"
-          />
-          <link
-            rel="apple-touch-icon"
-            sizes="60x60"
-            href="/images/apple-icon-60x60.png"
-          />
-          <link
-            rel="apple-touch-icon"
-            sizes="72x72"
-            href="/images/apple-icon-72x72.png"
-          />
-          <link
-            rel="apple-touch-icon"
-            sizes="76x76"
-            href="/images/apple-icon-76x76.png"
-          />
-          <link
-            rel="apple-touch-icon"
-            sizes="114x114"
-            href="/images/apple-icon-114x114.png"
-          />
-          <link
-            rel="apple-touch-icon"
-            sizes="120x120"
-            href="/images/apple-icon-120x120.png"
-          />
-          <link
-            rel="apple-touch-icon"
-            sizes="144x144"
-            href="/images/apple-icon-144x144.png"
-          />
-          <link
-            rel="apple-touch-icon"
-            sizes="152x152"
-            href="/images/apple-icon-152x152.png"
-          />
-          <link
-            rel="apple-touch-icon"
-            sizes="180x180"
-            href="/images/apple-icon-180x180.png"
-          />
-          <link
-            rel="icon"
-            type="image/png"
-            sizes="192x192"
-            href="/images/android-icon-192x192.png"
-          />
-          <link
-            rel="icon"
-            type="image/png"
-            sizes="32x32"
-            href="/images/favicon-32x32.png"
-          />
-          <link
-            rel="icon"
-            type="image/png"
-            sizes="96x96"
-            href="/images/favicon-96x96.png"
-          />
-          <link
-            rel="icon"
-            type="image/png"
-            sizes="16x16"
-            href="/images/favicon-16x16.png"
-          />
-          <link rel="manifest" href="/images/manifest.json" />
-          <meta name="msapplication-TileColor" content="#ffffff" />
-          <meta
-            name="msapplication-TileImage"
-            content="/images/ms-icon-144x144.png"
-          />
-          <meta name="theme-color" content="#ffffff" />
           <meta charSet="UTF-8" />
+          {favicons}
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <meta property="og:site_name" content="Ian Macalinao" />
           <meta property="og:locale" content="en_US" />
