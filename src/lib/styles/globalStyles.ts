@@ -27,12 +27,13 @@ export const globalStyles = css`
   }
 
   h1,
-  h2 {
+  h2,
+  h3 {
+    font-weight: bold;
     color: #121212;
   }
 
   h1 {
-    font-weight: bold;
     text-align: center;
     font-size: 60px;
     margin-top: 72px;
@@ -41,7 +42,10 @@ export const globalStyles = css`
 
   h2 {
     font-size: 32px;
-    font-weight: bold;
+  }
+
+  h3 {
+    font-size: 24px;
   }
 
   a {
@@ -171,5 +175,9 @@ export const globalStyles = css`
     text-align: center;
     font-style: italic;
     color: #777;
+  }
+
+  strong {
+    font-weight: 700;
   }
 `;

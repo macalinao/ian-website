@@ -1,18 +1,22 @@
 ---
 title: Understanding Compound protocol's interest rates
 description: A deep dive into the factors that calculate Compound's interest rates.
+tags:
+  - DeFi
+  - Finance
+  - Crypto
 ---
 
 <KaTeXCSS />
 <NextImage src="https://static.ian.pw/images/2020-12-20-compound-banner.png" width="750" height="420" />
 
-The [Compound protocol](https://compound.finance) is an unprecedented technological advancement in the history of finance: for the first time in history, one can borrow money and earn interest with no humans or credit involved.
+The [Compound protocol](https://compound.finance) is an unprecedented technological advancement in the history of finance: for the first time in history, one can borrow money and earn interest with no humans, governments, or credit involved.
 
 Rates vary frequently, though, and it is important to understand how the protocol determines interest rates.
 
 ## The utilization rate
 
-All interest rates in Compound are determined as a function of the utilization rate. The utilization rate $U_a$ for a money market $a$ is defined[^1] as:
+All interest rates in Compound are determined as a function of a metric known as the **utilization rate**. The utilization rate $U_a$ for a money market $a$ is defined[^1] as:
 
 $$U_a = Borrows_a / (Cash_a + Borrows_a - Reserves_a)$$
 
@@ -22,7 +26,7 @@ $$U_a = Borrows_a / (Cash_a + Borrows_a - Reserves_a)$$
 
 Intuitively speaking, this is the percentage of money borrowed out of the total money supplied.
 
-For example: given that reserves are 0, if Alice lends \$500 USDC and Bob lends \$500 USDC, but Charles borrows \$100 USDC, the total borrows is \$100 and the total cash is $500 + 500 - 100 = 900$, so the utilization rate is $100 / (900 + 100) = 10\%$.
+For example: given that reserves are 0, if Alice supplies \$500 <TokenIcon token="USDC" /> and Bob supplies \$500 USDC, but Charles borrows \$100 USDC, the total borrows is \$100 and the total cash is $500 + 500 - 100 = 900$, so the utilization rate is $100 / (900 + 100) = 10\%$.
 
 A high ratio signifies that a lot of borrowing is taking place, so interest rates go up to get more people to inject cash into the system. A low ratio signifies that demand for borrowing is low, so interest rates go down to encourage more people to borrow cash from the system. This follows economic theory's idea of price (the "price" of money is its interest rate) relative to supply and demand.
 
@@ -58,39 +62,43 @@ $$\text{Borrow Interest Rate} = \text{Multiplier} * \text{Utilization Rate} + \t
     <figcaption>The WBTC rate model.</figcaption>
 </figure>
 
-### Example: USDC rates
+### Example: WBTC rates
 
-Let's say the protocol has \$100,000,000 supplied to it and users are borrowing \$10,000,000. The utilization rate is thus 10%. What should the rates be?
+Let's say the protocol has 10,000 <TokenIcon token="WBTC" /> supplied to it and users are borrowing 1,000 WBTC. The utilization rate is thus 10%. What should the rates be?
 
-The cUSDC market uses the Base200bps_Slope1000bps model, meaning that the base rate is 2% and the multiplier is 10%. To calculate our **borrow interest rate**:
+The cWBTC market uses a model where the base rate is 2% and the multiplier is 30%. To calculate our **borrow interest rate**:
 
-$$\text{Borrow Interest Rate} = 10\% * 10\% + 2\% = 3\%$$
+$$\text{Borrow Interest Rate} = 30\% * 10\% + 2\% = 5.0\%$$
 
-Next, let's assume the **reserve factor** of the USDC market is 0. We can now calculate the **supply interest rate**:
+Next, let's assume the **reserve factor** of the WBTC market is 20%. We can now calculate the **supply interest rate**:
 
-$$\text{Supply Interest Rate}_a = 3\% * 10\% * (1 - 0) = 0.3\%$$
+$$\text{Supply Interest Rate}_a = 5.0\% * 10\% * (1 - 20\%) = 0.4\%$$
 
 For a sanity check, let's make sure that there is a net positive cash flow; that is, the protocol is not losing money:
 
 $$
 \begin{aligned}
 \text{Supply} * \text{Supply Interest Rate} &\geq \text{Borrows} * \text{Borrow Interest Rate} \\
-\$100,000,000 * 0.3\% &\geq \$10,000,000 * 3.0\% \\
-\$300,000 &\geq \$300,000
+10,000 * 0.4\% &\geq 1,000 * 3.0\% \\
+40 &\geq 30
 \end{aligned}
 $$
 
-### Example: Effects of large withdraws of USDC on interest rates
+You can view the effect of utilization rate on the supply using this interactive graph on [the Compound WBTC market's summary page](https://compound.finance/markets/WBTC). Note that the numbers are slightly different due to the graph on the website including <TokenIcon token="COMP" /> rewards APY.
 
-Let's say that with the previous example, a whale decided to withdraw \$50,000,000 from the protocol. What happens to rates?
+[Here is the underlying smart contract of the rate model.](https://etherscan.io/address/0xbae04cbf96391086dc643e842b517734e214d698)
 
-The new utilization factor is $10M/50M = 20%$, up 2x from 10%.
+### Example: Effects of large withdraws of WBTC on interest rates
 
-$$\text{Borrow Interest Rate} = 10\% * 20\% + 2\% = 4\%$$
+Let's say that with the previous example, a whale decided to withdraw an additional 8,000 WBTC from the protocol. What happens to rates?
 
-$$\text{Supply Interest Rate}_a = 4\% * 20\% * (1 - 0) = 0.8\%$$
+The new utilization factor is $(8,000+1,000)/10,000 = 90\%$, up 9x from 10%.
 
-An interesting thing to note here is that the supply interest rate more than doubled (up 166%), but the borrow rate only increased by 33%. This is because the supply interest rate is proportional to the square of the utilization rate, whereas the borrow interest rate is only linearly proportional to the utilization rate.
+$$\text{Borrow Interest Rate} = 30\% * 90\% + 2\% = 29\%$$
+
+$$\text{Supply Interest Rate}_a = 29\% * 90\% * (1 - 20\%) = 20.88\%$$
+
+An interesting thing to note here is that the supply interest rate increased dramatically (up 5120%), but the borrow rate only increased by 480%. This is because the supply interest rate is proportional to the square of the utilization rate, whereas the borrow interest rate is only linearly proportional to the utilization rate.
 
 ## Interest rate spikes
 
@@ -98,15 +106,20 @@ In Compound, interest rate is not locked at the price of borrowing: it continuou
 
 Another way interest rates could spike is if the Chief Economist decides that the interest rates should go up. This has already happened in the case of MakerDAO, where the stability fee has ranged between 0% and 8%. Fortunately, both Compound and MakerDAO have transparent processes when changing interest rates with beautiful governance dashboards and decisions voted on by governance token holders.
 
-This is in stark contrast to the current quarterly speculation on the Fed/FOMC's decisions. Compound's decision making process on the other hand is transparent and decentralized, protecting the interests of financiers (pun intended).
+This is in stark contrast to the current quarterly speculation on the Fed/FOMC's decisions. Compound's decision making process on the other hand is transparent and decentralized, protecting the interests of financiers (pun intended).[^2]
 
 ### Predicting accrued interest
 
 One can compute the total interest they will pay on a principal balance $P$ for a duration in days $t$ with the following equation:
 
-$$\text{Total Interest} = P(1 + \frac{r}{5760})^{5760t}$$
+$$\text{Total Interest} = P(1 + \frac{r}{B_y})^{B_y * t}$$
 
-where $r$ is the time-weighted average APR of the interest. 5760 comes from the expected number of Ethereum blocks to be mined in one day ($24 * 60 * 60 / 15$), as this is the interval of compounding in Compound.
+where
+
+- $B_y = 2,102,400$, the number of blocks in the year, and
+- $r$ is the expected value of the APR of the interest over the given period.
+
+The number 2,102,400 assumes 15 second blocks.[^3]
 
 ### Hedging against rate hikes
 
@@ -123,3 +136,5 @@ Compound is a very powerful building block of the Ethereum DeFi ecosystem. Under
 If you enjoyed this post and/or would like to hear more, please leave a comment below!
 
 [^1]: Source: [Compound whitepaper](https://compound.finance)
+[^2]: Technically, this system is not immune to insider trading. A member of governance can trade before voting. Also since COMP can be borrowed on Compound, one can stake a lot of ETH, borrow COMP, place a large vote, then repay all of the COMP.
+[^3]: At the time of writing Ethereum has been producing ~13 second blocks, so all annualized rates in Compound should be multiplied by approximately 15/13. Although [this number is hardcoded into the smart contract](https://etherscan.io/address/0xbae04cbf96391086dc643e842b517734e214d698#code), the rate model may be updated in the future via governance.

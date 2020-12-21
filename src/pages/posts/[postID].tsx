@@ -6,13 +6,13 @@ import hydrate from "next-mdx-remote/hydrate";
 import renderToString from "next-mdx-remote/render-to-string";
 import dynamic from "next/dynamic";
 import Head from "next/head";
-import NextImage from "next/image";
 import Link from "next/link";
 import React from "react";
 import rehypeKatex from "rehype-katex";
 import remarkMath from "remark-math";
 import { getAllPosts, getPostByID, IPost } from "~src/lib/content/posts";
 import { formatDate } from "~src/lib/formatDate";
+import { mdxComponents } from "~src/lib/mdxComponents";
 import { mobileOnly } from "~src/lib/styles/mobileOnly";
 
 const DiscussionEmbed = dynamic(
@@ -21,18 +21,6 @@ const DiscussionEmbed = dynamic(
     ssr: false,
   }
 ) as typeof DiscussionEmbedType;
-
-const components = {
-  NextImage,
-  KaTeXCSS: () => (
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/katex@0.11.0/dist/katex.min.css"
-      integrity="sha384-BdGj8xC2eZkQaxoQ8nSLefg4AV4/AwB3Fj+8SUSo7pnKP6Eoy18liIKTPn9oBYNG"
-      crossOrigin="anonymous"
-    />
-  ),
-};
 
 interface IProps {
   source: string;
@@ -52,9 +40,9 @@ const PostUnder = styled.div`
 `;
 
 const Post: React.FC<IProps> = ({ source, post }) => {
-  const content = hydrate(source, { components });
+  const content = hydrate(source, { components: mdxComponents });
   return (
-    <div className="wrapper">
+    <PostWrapper>
       <Head>
         <title>{post.title} | Ian Macalinao</title>
         {post.description && (
@@ -64,7 +52,6 @@ const Post: React.FC<IProps> = ({ source, post }) => {
       <h1
         css={css`
           margin-bottom: 30px;
-          line-height: 1.3;
         `}
       >
         {post.title}
@@ -123,9 +110,43 @@ const Post: React.FC<IProps> = ({ source, post }) => {
           language: "en_US",
         }}
       />
-    </div>
+    </PostWrapper>
   );
 };
+
+const PostWrapper = styled.div`
+  h1,
+  h2 {
+    line-height: 1.3;
+  }
+  h3 {
+    line-height: 1.5;
+  }
+  h2,
+  h3 {
+    margin-top: 50px;
+  }
+
+  .math.math-display {
+    overflow-x: scroll;
+  }
+
+  .footnotes {
+    margin-top: 60px;
+    ol {
+      margin: 40px 0;
+    }
+    li {
+      font-size: 18px;
+    }
+    color: #454545;
+    border-top: 1px solid #ccc;
+
+    hr {
+      display: none;
+    }
+  }
+`;
 
 const Thanks = styled.div`
   margin: 3em auto;
@@ -133,6 +154,9 @@ const Thanks = styled.div`
   padding: 20px 40px;
   background-color: #fafaff;
   color: #656565;
+  p {
+    font-size: 18px;
+  }
 `;
 
 export const getStaticPaths: GetStaticPaths = async () => {
@@ -171,7 +195,7 @@ export const getStaticProps: GetStaticProps<
   }
 
   const mdxSource = await renderToString(post.content, {
-    components,
+    components: mdxComponents,
     mdxOptions: {
       remarkPlugins: [remarkMath],
       rehypePlugins: [rehypeKatex],

@@ -10,7 +10,7 @@ const App: React.FC<AppProps> = ({ Component, pageProps }) => {
   return (
     <AppOuter>
       <AppWrapper>
-        <GoogleFonts href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;700&display=swap" />
+        <GoogleFonts href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap" />
         <Global styles={globalStyles} />
         <Head>
           <link
