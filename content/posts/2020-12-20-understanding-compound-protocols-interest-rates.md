@@ -7,6 +7,7 @@ tags:
   - Crypto
 hasMath: true
 banner:
+  alt: Compound protocol logo
   width: 750
   height: 420
   src: https://static.ian.pw/images/2020-12-20-compound-banner.png

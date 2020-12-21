@@ -16,6 +16,7 @@ export interface IPost {
   description: string | null;
   hasMath: boolean;
   banner: {
+    alt: string;
     width: number;
     height: number;
     src: string;

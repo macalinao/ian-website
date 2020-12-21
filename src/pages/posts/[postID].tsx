@@ -47,6 +47,9 @@ const Post: React.FC<IProps> = ({ source, post }) => {
         <meta property="twitter:title" content={post.title} />
         <meta property="og:type" content="article" />
         <meta property="og:article:author" content="Ian Macalinao" />
+        <meta property="twitter:site" content="@simplyianm" />
+        <meta property="twitter:creator" content="@simplyianm" />
+        <meta name="author" content="Ian Macalinao, me@ian.pw" />
         <meta
           property="og:article:published_time"
           content={`${new Date(post.publishedAt).toISOString()}`}
@@ -54,6 +57,9 @@ const Post: React.FC<IProps> = ({ source, post }) => {
         {post.tags.map((tag) => (
           <meta property="og:article:tag" content={tag} />
         ))}
+        {post.tags.length > 0 && (
+          <meta name="keywords" content={post.tags.join(", ")} />
+        )}
         <meta property="og:title" content={`${post.title} | Ian Macalinao`} />
         <meta property="og:url" content={`https://ian.pw${post.path}`} />
         <meta property="twitter:url" content={`https://ian.pw${post.path}`} />
@@ -64,7 +70,7 @@ const Post: React.FC<IProps> = ({ source, post }) => {
             <meta property="twitter:description" content={post.description} />
           </>
         )}
-        {post.banner && (
+        {post.banner ? (
           <>
             <meta property="og:image" content={post.banner.src} />
             <meta
@@ -77,8 +83,12 @@ const Post: React.FC<IProps> = ({ source, post }) => {
             />
             <meta property="og:image:url" content={post.banner.src} />
             <meta property="twitter:image" content={post.banner.src} />
+            <meta property="twitter:image:alt" content={post.banner.alt} />
             <meta property="twitter:card" content="summary_large_image" />
           </>
+        ) : (
+          // If no banner is present, still display a card
+          <meta name="twitter:card" content="summary" />
         )}
       </Head>
       <h1
@@ -114,6 +124,7 @@ const Post: React.FC<IProps> = ({ source, post }) => {
         )}
         {post.banner && (
           <Image
+            alt={post.banner.alt}
             src={post.banner.src}
             width={post.banner.width}
             height={post.banner.height}

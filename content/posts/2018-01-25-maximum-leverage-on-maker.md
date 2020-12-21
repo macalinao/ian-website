@@ -2,9 +2,12 @@
 title: Maximum Leverage on Maker
 description: A summary of how to compute and obtain maximum leverage on MakerDAO.
 hasMath: true
+banner:
+  alt: MakerDAO logo
+  width: 750
+  height: 480
+  src: https://static.ian.pw/images/20180125_mkrbanner.png
 ---
-
-<NextImage src="/images/20180125_mkrbanner.png" width="750" height="489" />
 
 First off, this article assumes familiarity with [Maker](https://makerdao.com/) CDP's. (If not, I highly suggest reading up on it!)
 
