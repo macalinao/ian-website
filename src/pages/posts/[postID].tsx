@@ -60,7 +60,7 @@ const Post: React.FC<IProps> = ({ source, post }) => {
         {post.tags.length > 0 && (
           <meta name="keywords" content={post.tags.join(", ")} />
         )}
-        <meta property="og:title" content={`${post.title} | Ian Macalinao`} />
+        <meta property="og:title" content={post.title} />
         <meta property="og:url" content={`https://ian.pw${post.path}`} />
         <meta property="twitter:url" content={`https://ian.pw${post.path}`} />
         {post.description && (
