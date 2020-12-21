@@ -14,6 +14,7 @@ export interface IPost {
   path: string;
   incomplete: boolean;
   description: string | null;
+  hasMath: boolean;
 }
 
 export const getAllPosts = async (): Promise<readonly IPost[]> => {
@@ -39,5 +40,6 @@ export const getPostByID = async (postID: string): Promise<IPost> => {
     path: `/posts/${postID}`,
     incomplete: data.incomplete === true,
     description: data.description ?? null,
+    hasMath: data.hasMath === true,
   };
 };

@@ -1,26 +1,19 @@
 import { css } from "@emotion/react";
 import styled from "@emotion/styled";
-import { DiscussionEmbed as DiscussionEmbedType } from "disqus-react";
 import { GetStaticPaths, GetStaticProps } from "next";
 import hydrate from "next-mdx-remote/hydrate";
 import renderToString from "next-mdx-remote/render-to-string";
-import dynamic from "next/dynamic";
 import Head from "next/head";
 import Link from "next/link";
 import React from "react";
 import rehypeKatex from "rehype-katex";
 import remarkMath from "remark-math";
+import { PostComments } from "~src/components/PostComments";
 import { getAllPosts, getPostByID, IPost } from "~src/lib/content/posts";
 import { formatDate } from "~src/lib/formatDate";
 import { mdxComponents } from "~src/lib/mdxComponents";
+import { katexCss } from "~src/lib/styles/katexCss";
 import { mobileOnly } from "~src/lib/styles/mobileOnly";
-
-const DiscussionEmbed = dynamic(
-  () => import("disqus-react").then((mod) => mod.DiscussionEmbed),
-  {
-    ssr: false,
-  }
-) as typeof DiscussionEmbedType;
 
 interface IProps {
   source: string;
@@ -42,7 +35,7 @@ const PostUnder = styled.div`
 const Post: React.FC<IProps> = ({ source, post }) => {
   const content = hydrate(source, { components: mdxComponents });
   return (
-    <PostWrapper>
+    <PostWrapper post={post}>
       <Head>
         <title>{post.title} | Ian Macalinao</title>
         {post.description && (
@@ -101,20 +94,13 @@ const Post: React.FC<IProps> = ({ source, post }) => {
           and send a pull request.
         </p>
       </Thanks>
-      <DiscussionEmbed
-        shortname="ianpw"
-        config={{
-          url: typeof window !== "undefined" ? window.location.href : "",
-          identifier: `posts/${post.id}.md`,
-          title: post.title,
-          language: "en_US",
-        }}
-      />
+      <PostComments post={post} />
     </PostWrapper>
   );
 };
 
-const PostWrapper = styled.div`
+const PostWrapper = styled.div<{ post: IPost }>`
+  ${(props) => props.post.hasMath && katexCss}
   h1,
   h2 {
     line-height: 1.3;

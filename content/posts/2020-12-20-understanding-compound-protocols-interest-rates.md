@@ -5,9 +5,9 @@ tags:
   - DeFi
   - Finance
   - Crypto
+hasMath: true
 ---
 
-<KaTeXCSS />
 <NextImage src="https://static.ian.pw/images/2020-12-20-compound-banner.png" width="750" height="420" />
 
 The [Compound protocol](https://compound.finance) is an unprecedented technological advancement in the history of finance: for the first time in history, one can borrow money and earn interest with no humans, governments, or credit involved.
