@@ -1,9 +1,8 @@
 ---
 title: Beware of Colored Rectangles on LCDs
-draft: true
 ---
 
-When developing Legends.ai, we highly followed the advice of Tufte's [The Visual Display of Quantitative Information][http://amzn.to/2zi7a3l] and optimized for data density. Our designs use stacked bar graphs whenever displaying relative and absolute magnitude, as opposed to more ubiquitous but much less dense pie charts.
+When developing Legends.ai, we highly followed the advice of Tufte's [The Visual Display of Quantitative Information](http://amzn.to/2zi7a3l) and optimized for data density. Our designs use stacked bar graphs whenever displaying relative and absolute magnitude, as opposed to more ubiquitous but much less dense pie charts.
 
 After building our frontend, we noticed many things looked misaligned: squares looked like they had random margins, and the bars on our stacked bar charts simply didn't line up. We first thought this was a Chrome rendering error, but it turned out to be much worse: a fundamental problem in the way LCD's display pixels.
 
