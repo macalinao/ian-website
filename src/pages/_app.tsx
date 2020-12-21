@@ -5,8 +5,10 @@ import { AppProps } from "next/app";
 import Head from "next/head";
 import React from "react";
 import { globalStyles } from "~src/lib/styles/globalStyles";
+import { useAnalytics } from "~src/lib/useAnalytics";
 
 const App: React.FC<AppProps> = ({ Component, pageProps }) => {
+  useAnalytics();
   return (
     <AppOuter>
       <AppWrapper>
