@@ -1,5 +1,10 @@
 ---
 title: "Nix and NixOS: first impressions"
+banner:
+  alt: NixOS Logo
+  width: 750
+  height: 250
+  src: https://static.ian.pw/images/nixos-logo.svg
 ---
 
 Since March, I've been using NixOS as my primary operating system and Nix as my primary package manager. Everything is configured in my dotfiles which are synchronized via Git between three machines:

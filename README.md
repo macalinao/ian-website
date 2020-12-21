@@ -26,6 +26,10 @@ yarn start
 
 This website is a typical Next.JS application, thus it can easily be deployed to [Vercel](https://vercel.com).
 
+### Deploying
+
+Run `update-static-assets` to sync the static assets directory with AWS S3.
+
 ## License
 
 GPL3
