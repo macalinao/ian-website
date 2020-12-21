@@ -15,6 +15,11 @@ export interface IPost {
   incomplete: boolean;
   description: string | null;
   hasMath: boolean;
+  banner: {
+    width: number;
+    height: number;
+    src: string;
+  } | null;
 }
 
 export const getAllPosts = async (): Promise<readonly IPost[]> => {
@@ -41,5 +46,6 @@ export const getPostByID = async (postID: string): Promise<IPost> => {
     incomplete: data.incomplete === true,
     description: data.description ?? null,
     hasMath: data.hasMath === true,
+    banner: data.banner ?? null,
   };
 };

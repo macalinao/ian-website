@@ -1,9 +1,11 @@
 import { css } from "@emotion/react";
 import styled from "@emotion/styled";
 import { GetStaticPaths, GetStaticProps } from "next";
+import { IMDXSource } from "next-mdx-remote";
 import hydrate from "next-mdx-remote/hydrate";
 import renderToString from "next-mdx-remote/render-to-string";
 import Head from "next/head";
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import rehypeKatex from "rehype-katex";
@@ -16,7 +18,7 @@ import { katexCss } from "~src/lib/styles/katexCss";
 import { mobileOnly } from "~src/lib/styles/mobileOnly";
 
 interface IProps {
-  source: string;
+  source: IMDXSource;
   post: IPost;
 }
 
@@ -33,6 +35,10 @@ const PostUnder = styled.div`
 `;
 
 const Post: React.FC<IProps> = ({ source, post }) => {
+  // TODO(igm): the client likes to hydrate things differently than the
+  // server due to Emotion. We need to set up an emotion cache
+  // per-request to share the styles between frontend and backend.
+  // Not too important
   const content = hydrate(source, { components: mdxComponents });
   return (
     <PostWrapper post={post}>
@@ -72,6 +78,13 @@ const Post: React.FC<IProps> = ({ source, post }) => {
             </a>
             .
           </em>
+        )}
+        {post.banner && (
+          <Image
+            src={post.banner.src}
+            width={post.banner.width}
+            height={post.banner.height}
+          />
         )}
         {content}
       </div>
