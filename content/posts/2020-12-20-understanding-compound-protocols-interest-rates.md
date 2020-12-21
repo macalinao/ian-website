@@ -57,12 +57,14 @@ The graph is linear:
 
 $$\text{Borrow Interest Rate} = \text{Multiplier} * \text{Utilization Rate} + \text{Base Rate}$$
 
+### Example: WBTC rates
+
 <figure>
-    <NextImage src="https://static.ian.pw/images/2020-12-20-wbtc-rate-model.png" width="512" height="467" alt="The WBTC rate model." />
+    <a href="https://compound.finance/markets/WBTC">
+        <NextImage src="https://static.ian.pw/images/2020-12-20-wbtc-rate-model.png" width="512" height="467" alt="The WBTC rate model." />
+    </a>
     <figcaption>The WBTC rate model.</figcaption>
 </figure>
-
-### Example: WBTC rates
 
 Let's say the protocol has 10,000 <TokenIcon token="WBTC" /> supplied to it and users are borrowing 1,000 WBTC. The utilization rate is thus 10%. What should the rates be?
 
@@ -99,6 +101,35 @@ $$\text{Borrow Interest Rate} = 30\% * 90\% + 2\% = 29\%$$
 $$\text{Supply Interest Rate}_a = 29\% * 90\% * (1 - 20\%) = 20.88\%$$
 
 An interesting thing to note here is that the supply interest rate increased dramatically (up 5120%), but the borrow rate only increased by 480%. This is because the supply interest rate is proportional to the square of the utilization rate, whereas the borrow interest rate is only linearly proportional to the utilization rate.
+
+### The Jump Rate model
+
+Some markets follow what is known as the "Jump Rate" model. This model has the standard parameters:
+
+- Base rate per year, the minimum borrowing rate
+- Multiplier per year, the rate of increase in interest rate with respect to utilization
+
+but it also introduces two new parameters:
+
+- Kink, the point in the model in which the model follows the jump multiplier
+- Jump Multiplier per year, the rate of increase in interest rate with respect to utilization after the "kink"
+
+The borrow rate of the jump rate model is defined as follows:
+
+$$
+\text{Borrow Interest Rate} = \\
+    \text{Multiplier} * min(\text{Utilization Rate}, \text{Kink}) + \\
+    \text{Jump Multiplier} * max(0, \text{Utilization Rate} - \text{Kink})  + \text{Base Rate}
+$$
+
+### Example: USDC rate model
+
+<figure>
+    <a href="https://compound.finance/markets/USDC">
+        <NextImage src="https://static.ian.pw/images/2020-12-20-usdc-rate-model.png" width="512" height="467" alt="The WBTC rate model." />
+    </a>
+    <figcaption>The USDC rate model is a jump rate model.</figcaption>
+</figure>
 
 ## Interest rate spikes
 
