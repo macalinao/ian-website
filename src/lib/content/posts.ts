@@ -20,6 +20,7 @@ export interface IPost {
     height: number;
     src: string;
   } | null;
+  tags: readonly string[];
 }
 
 export const getAllPosts = async (): Promise<readonly IPost[]> => {
@@ -47,5 +48,6 @@ export const getPostByID = async (postID: string): Promise<IPost> => {
     description: data.description ?? null,
     hasMath: data.hasMath === true,
     banner: data.banner ?? null,
+    tags: data.tags ?? [],
   };
 };

@@ -44,8 +44,41 @@ const Post: React.FC<IProps> = ({ source, post }) => {
     <PostWrapper post={post}>
       <Head>
         <title>{post.title} | Ian Macalinao</title>
+        <meta property="twitter:title" content={post.title} />
+        <meta property="og:type" content="article" />
+        <meta property="og:article:author" content="Ian Macalinao" />
+        <meta
+          property="og:article:published_time"
+          content={`${new Date(post.publishedAt).toISOString()}`}
+        />
+        {post.tags.map((tag) => (
+          <meta property="og:article:tag" content={tag} />
+        ))}
+        <meta property="og:title" content={`${post.title} | Ian Macalinao`} />
+        <meta property="og:url" content={`https://ian.pw${post.path}`} />
+        <meta property="twitter:url" content={`https://ian.pw${post.path}`} />
         {post.description && (
-          <meta name="description" content={post.description} />
+          <>
+            <meta name="description" content={post.description} />
+            <meta property="og:description" content={post.description} />
+            <meta property="twitter:description" content={post.description} />
+          </>
+        )}
+        {post.banner && (
+          <>
+            <meta property="og:image" content={post.banner.src} />
+            <meta
+              property="og:image:width"
+              content={post.banner.width.toString()}
+            />
+            <meta
+              property="og:image:height"
+              content={post.banner.height.toString()}
+            />
+            <meta property="og:image:url" content={post.banner.src} />
+            <meta property="twitter:image" content={post.banner.src} />
+            <meta property="twitter:card" content="summary_large_image" />
+          </>
         )}
       </Head>
       <h1

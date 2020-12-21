@@ -97,6 +97,8 @@ const App: React.FC<AppProps> = ({ Component, pageProps }) => {
             content="aEZXQ9Sa6ffNUZlsa_5niffn9eSFTty4CqdiVz-OqyA"
           />
           <meta name="viewport" content="width=device-width, initial-scale=1" />
+          <meta property="og:site_name" content="Ian Macalinao" />
+          <meta property="og:locale" content="en_US" />
         </Head>
         <Component {...pageProps} />
       </AppWrapper>
