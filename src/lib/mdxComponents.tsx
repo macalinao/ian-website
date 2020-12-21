@@ -20,7 +20,7 @@ export const mdxComponents = {
       return <a {...props} href={href}></a>;
     } else {
       return (
-        <Link {...props} href={href}>
+        <Link {...props} href={href} passHref>
           <a>{props.children}</a>
         </Link>
       );
