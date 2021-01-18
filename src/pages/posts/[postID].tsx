@@ -55,7 +55,7 @@ const Post: React.FC<IProps> = ({ source, post }) => {
           content={`${new Date(post.publishedAt).toISOString()}`}
         />
         {post.tags.map((tag) => (
-          <meta property="og:article:tag" content={tag} />
+          <meta key={tag} property="og:article:tag" content={tag} />
         ))}
         {post.tags.length > 0 && (
           <meta name="keywords" content={post.tags.join(", ")} />
