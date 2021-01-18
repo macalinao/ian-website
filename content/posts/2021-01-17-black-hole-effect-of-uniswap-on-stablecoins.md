@@ -1,6 +1,6 @@
 ---
 title: The Black Hole Effect of Uniswap on Algorithmic Stablecoins
-description: Uniswap is a suboptimal place for stablecoins that rely on re-pegging to trade, as Uniswap encourages crashes to stay low.
+description: Uniswap is a suboptimal place for stablecoins that rely on mean reversion to $1 to trade, as Uniswap encourages price crashes to stay low.
 tags:
   - DeFi
   - Finance
