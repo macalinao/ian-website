@@ -37,7 +37,7 @@ Let's say the pool has the price of 1 ETH = $1000 DAI, and the pool has reserves
 
 Recall that $xy = k$ is the Uniswap invariant. Let the initial ETH reserves be $x_0$ and the initial DAI reserves be $y_0$, so $x_0 * y_0 = k$.
 
-Now let's say I want to buy 500 ETH. Thus the new ETH reserves $x_1 = 500 + 1000 = 1500$. Since $k$ is constant, we can compute that the new DAI reserves should be $y_1 = k/x_1 = x_0 * y_0 / x_1$ = 666,666.66 \text{DAI}\$.
+Now let's say I want to buy 500 ETH. Thus the new ETH reserves $x_1 = 500 + 1000 = 1500$. Since $k$ is constant, we can compute that the new DAI reserves should be $y_1 = k/x_1 = x_0 * y_0 / x_1$ = 666,666.66 DAI\$.
 
 Thus we will sell 500 ETH to buy 333,333.33 DAI.
 
