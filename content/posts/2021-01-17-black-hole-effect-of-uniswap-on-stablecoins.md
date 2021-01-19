@@ -56,10 +56,10 @@ $$
 Let $x$ be the number of TOKX in the pool and $y$ be the number of TOKY in the pool. Given that the current price of TOKX relative to TOKY $p = x/y$, the change in price with respect to the change in reserves $x$ of TOKX is given by the derivative:
 
 $$
-\frac{dp}{dx} = \frac{x}{y} \frac{d}{dx} = \frac{1}{y}
+\frac{dp}{dx} = \frac{x}{y} \frac{d}{dx} = \frac{x}{k/x} \frac{d}{dx} = \frac{x^2}{k} \frac{d}{dx} = \frac{2x}{k}
 $$
 
-This means that for every $x$ TOKX tokens sold into the pool for TOKY, the change in the price of the token decreases relative to $1/y$. Since $y$ is constantly growing in this relationship relative to $x$, the slippage in price for the same number of TOKY purchased is magnified the lower the price goes.
+This means that for every $x$ TOKX tokens sold into the pool for TOKY, the change in the price of TOKY increases at a rate of $2x/k$. Since $x$ will continue to grow as more TOKX are sold for TOKY, the slippage in price for the same number of TOKY purchased is magnified the lower the price goes.
 
 ### The black hole effect
 
