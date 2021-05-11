@@ -14,7 +14,7 @@
     "@emotion/styled": "^11.0.0",
     "disqus-react": "^1.0.10",
     "gray-matter": "^4.0.2",
-    "lodash": "^4.17.20",
+    "lodash": "^4.17.21",
     "next": "10.0.3",
     "next-google-fonts": "^1.2.1",
     "next-mdx-remote": "^1.0.1",
