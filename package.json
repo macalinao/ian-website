@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "typecheck": "tsc",
     "postbuild": "next-sitemap",
     "start": "next start",
     "postinstall": "patch-package"
@@ -41,7 +42,7 @@
   },
   "prettier": {},
   "engines": {
-    "node": "12.x"
+    "node": ">=12.x"
   },
   "resolutions": {
     "js-yaml": "3.13.1"
