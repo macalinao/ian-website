@@ -27,11 +27,10 @@ const PostUnder = styled.div`
   text-align: center;
   line-height: 10px;
   margin-bottom: 60px;
-  font-weight: normal;
-
   ${mobileOnly(css`
-    text-align: left;
+    margin-bottom: 30px;
   `)}
+  font-weight: normal;
 `;
 
 const Post: React.FC<IProps> = ({ source, post }) => {
@@ -94,6 +93,9 @@ const Post: React.FC<IProps> = ({ source, post }) => {
       <h1
         css={css`
           margin-bottom: 30px;
+          ${mobileOnly(css`
+            text-align: center;
+          `)}
         `}
       >
         {post.title}
@@ -169,6 +171,28 @@ const PostWrapper = styled.div<{ post: IPost }>`
   h3 {
     margin-top: 50px;
   }
+
+  ${mobileOnly(css`
+    h2 {
+      font-size: 22px;
+    }
+    h3 {
+      font-size: 18px;
+    }
+
+    h2 {
+      margin-top: 25px;
+    }
+    h3 {
+      margin-top: 12px;
+    }
+
+    p,
+    li {
+      font-size: 16px;
+      line-height: 1.5em;
+    }
+  `)}
 
   .math.math-display {
     overflow-x: scroll;

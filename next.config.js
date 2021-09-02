@@ -9,7 +9,9 @@ module.exports = {
     domains: ["static.ian.pw"],
   },
   webpack(config) {
-    config.devtool = "source-map";
+    if (process.env.NODE_ENV === "production") {
+      config.devtool = "source-map";
+    }
     return config;
   },
 };
