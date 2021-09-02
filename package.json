@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "typecheck": "tsc",
     "postbuild": "next-sitemap",
     "start": "next start",
     "postinstall": "patch-package"
