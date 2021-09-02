@@ -42,7 +42,7 @@
   },
   "prettier": {},
   "engines": {
-    "node": "14.x"
+    "node": ">=12.x"
   },
   "resolutions": {
     "js-yaml": "3.13.1"
