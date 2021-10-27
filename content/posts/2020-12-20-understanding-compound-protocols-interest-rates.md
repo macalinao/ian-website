@@ -83,9 +83,9 @@ For a sanity check, let's make sure that there is a net positive cash flow; that
 
 $$
 \begin{aligned}
-\text{Supply} * \text{Supply Interest Rate} &\geq \text{Borrows} * \text{Borrow Interest Rate} \\
-10,000 * 0.4\% &\geq 1,000 * 3.0\% \\
-40 &\geq 30
+\text{Supply} * \text{Supply Interest Rate} &\leq \text{Borrows} * \text{Borrow Interest Rate} \\
+10,000 * 0.4\% &\leq 1,000 * 5.0\% \\
+40 &\leq 50
 \end{aligned}
 $$
 
@@ -172,7 +172,7 @@ This is in stark contrast to the current quarterly speculation on the Fed/FOMC's
 
 One can compute the total interest they will pay on a principal balance $P$ for a duration in days $t$ with the following equation:
 
-$$\text{Total Interest} = P(1 + \frac{r}{B_y})^{B_y * t}$$
+$$\text{Total Interest} = P(1 + \frac{r}{B_y})^{B_y / 365 * t}$$
 
 where
 
