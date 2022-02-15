@@ -3,6 +3,7 @@ import styled from "@emotion/styled";
 import Head from "next/head";
 import Link from "next/link";
 import React from "react";
+
 import {
   clampWidth,
   lineCountAtWidth,
@@ -30,7 +31,7 @@ const Home: React.FC = () => {
           `}
         >
           Hi, I'm Ian. I'm currently working at{" "}
-          <a href="https://pipe.com" target="_blank">
+          <a href="https://pipe.com" target="_blank" rel="noreferrer">
             Pipe
           </a>
           , an exchange for companies to get liquidity on their recurring

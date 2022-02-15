@@ -1,16 +1,18 @@
-import { GetStaticProps } from "next";
-import hydrate from "next-mdx-remote/hydrate";
+import type { GetStaticProps } from "next";
 import Head from "next/head";
+import { MDXRemote } from "next-mdx-remote";
 import React from "react";
-import { fetchContent, IContent } from "~src/lib/content/fetchContent";
 
-const ContactPage: React.FC<IContent> = ({ data, source }) => (
+import type { IContent } from "~src/lib/content/fetchContent";
+import { fetchContent } from "~src/lib/content/fetchContent";
+
+const ContactPage: React.FC<IContent> = ({ data, source }: IContent) => (
   <div>
     <Head>
       <title>Contact | Ian Macalinao</title>
     </Head>
     <h1>{data.title}</h1>
-    {hydrate(source)}
+    <MDXRemote {...source} />
   </div>
 );
 

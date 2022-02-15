@@ -1,9 +1,9 @@
 import { Global } from "@emotion/react";
 import styled from "@emotion/styled";
-import GoogleFonts from "next-google-fonts";
-import { AppProps } from "next/app";
+import type { AppProps } from "next/app";
 import Head from "next/head";
 import React from "react";
+
 import { globalStyles } from "~src/lib/styles/globalStyles";
 import { useAnalytics } from "~src/lib/useAnalytics";
 
@@ -45,7 +45,6 @@ const App: React.FC<AppProps> = ({ Component, pageProps }) => {
   return (
     <AppOuter>
       <AppWrapper>
-        <GoogleFonts href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap" />
         <Global styles={globalStyles} />
         <Head>
           <meta charSet="UTF-8" />

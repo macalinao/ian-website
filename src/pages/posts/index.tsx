@@ -1,9 +1,11 @@
 import groupBy from "lodash/groupBy";
-import { GetStaticProps } from "next";
+import type { GetStaticProps } from "next";
 import Head from "next/head";
 import Link from "next/link";
 import React from "react";
-import { getAllPosts, IPost } from "~src/lib/content/posts";
+
+import type { IPost } from "~src/lib/content/posts";
+import { getAllPosts } from "~src/lib/content/posts";
 import { formatDate } from "~src/lib/formatDate";
 
 interface IProps {
@@ -55,7 +57,7 @@ const PostsPage: React.FC<IProps> = ({ posts }) => {
 export const getStaticProps: GetStaticProps<
   IProps,
   { postID: string }
-> = async (req) => {
+> = async () => {
   const posts = await getAllPosts();
   return { props: { posts } };
 };

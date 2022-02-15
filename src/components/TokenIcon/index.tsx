@@ -1,4 +1,5 @@
 import { css } from "@emotion/react";
+
 import COMP from "./COMP.svg";
 import USDC from "./USDC.svg";
 import WBTC from "./WBTC.svg";
@@ -35,6 +36,7 @@ export const TokenIcon = ({ token }: IProps) => {
         text-decoration: none;
         display: inline-block;
       `}
+      rel="noreferrer"
     >
       <span
         css={css`

@@ -15,22 +15,5 @@
       }
     ]
   ],
-  "plugins": [
-    [
-      "@simplyianm/babel-plugin-inline-react-svg",
-      {
-        "noReactAutoImport": true,
-        "svgo": {
-          "plugins": [
-            {
-              "cleanupIDs": {
-                "minify": false
-              }
-            }
-          ]
-        }
-      }
-    ],
-    "@emotion"
-  ]
+  "plugins": ["@emotion"]
 }

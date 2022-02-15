@@ -1,9 +1,10 @@
 import { css } from "@emotion/react";
-import { DiscussionEmbed as DiscussionEmbedType } from "disqus-react";
+import type { DiscussionEmbed as DiscussionEmbedType } from "disqus-react";
 import dynamic from "next/dynamic";
 import { useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
-import { IPost } from "~src/lib/content/posts";
+
+import type { IPost } from "~src/lib/content/posts";
 
 const DiscussionEmbed = dynamic(
   () => import("disqus-react").then((mod) => mod.DiscussionEmbed),
@@ -19,8 +20,8 @@ interface IProps {
 /**
  * Lazy loaded comments section (only shows up when you get to it)
  */
-export const PostComments: React.FC<IProps> = ({ post }) => {
-  const { ref, inView, entry } = useInView();
+export const PostComments: React.FC<IProps> = ({ post }: IProps) => {
+  const { ref, inView } = useInView();
   const [loaded, setLoaded] = useState<boolean>(false);
 
   useEffect(() => {

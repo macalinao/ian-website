@@ -1,24 +1,26 @@
 import { css } from "@emotion/react";
 import styled from "@emotion/styled";
-import { GetStaticPaths, GetStaticProps } from "next";
-import { IMDXSource } from "next-mdx-remote";
-import hydrate from "next-mdx-remote/hydrate";
-import renderToString from "next-mdx-remote/render-to-string";
+import type { GetStaticPaths, GetStaticProps } from "next";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
+import type { MDXRemoteSerializeResult } from "next-mdx-remote";
+import { MDXRemote } from "next-mdx-remote";
+import { serialize } from "next-mdx-remote/serialize";
 import React from "react";
 import rehypeKatex from "rehype-katex";
 import remarkMath from "remark-math";
+
 import { PostComments } from "~src/components/PostComments";
-import { getAllPosts, getPostByID, IPost } from "~src/lib/content/posts";
+import type { IPost } from "~src/lib/content/posts";
+import { getAllPosts, getPostByID } from "~src/lib/content/posts";
 import { formatDate } from "~src/lib/formatDate";
 import { mdxComponents } from "~src/lib/mdxComponents";
 import { katexCss } from "~src/lib/styles/katexCss";
 import { mobileOnly } from "~src/lib/styles/mobileOnly";
 
 interface IProps {
-  source: IMDXSource;
+  source: MDXRemoteSerializeResult;
   post: IPost;
 }
 
@@ -38,7 +40,8 @@ const Post: React.FC<IProps> = ({ source, post }) => {
   // server due to Emotion. We need to set up an emotion cache
   // per-request to share the styles between frontend and backend.
   // Not too important
-  const content = hydrate(source, { components: mdxComponents });
+
+  const content = <MDXRemote {...source} components={mdxComponents} />;
   return (
     <PostWrapper post={post}>
       <Head>
@@ -118,6 +121,7 @@ const Post: React.FC<IProps> = ({ source, post }) => {
             <a
               href="https://github.com/macalinao/ian.pw/blob/master/$path$"
               target="_blank"
+              rel="noreferrer"
             >
               here
             </a>
@@ -147,6 +151,7 @@ const Post: React.FC<IProps> = ({ source, post }) => {
           <a
             href={`https://github.com/macalinao/ian.pw/blob/master/content/posts/${post.id}.md`}
             target="_blank"
+            rel="noreferrer"
           >
             here
           </a>{" "}
@@ -266,8 +271,7 @@ export const getStaticProps: GetStaticProps<
     };
   }
 
-  const mdxSource = await renderToString(post.content, {
-    components: mdxComponents,
+  const mdxSource = await serialize(post.content, {
     mdxOptions: {
       remarkPlugins: [remarkMath],
       rehypePlugins: [rehypeKatex],
