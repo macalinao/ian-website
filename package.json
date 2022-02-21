@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "@emotion/react": "^11.1.2",
-    "@emotion/styled": "^11.0.0",
+    "@emotion/styled": "^11.8.1",
     "disqus-react": "^1.0.10",
     "gray-matter": "^4.0.3",
     "lodash": "^4.17.21",
