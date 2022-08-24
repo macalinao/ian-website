@@ -30,12 +30,11 @@ const Home: React.FC = () => {
             ${lineCountAtWidth(5, 370)}
           `}
         >
-          Hi, I'm Ian. I'm currently working at{" "}
-          <a href="https://pipe.com" target="_blank" rel="noreferrer">
-            Pipe
+          Hi, I'm Ian. I'm currently working on{" "}
+          <a href="https://saber.so" target="_blank" rel="noreferrer">
+            Saber
           </a>
-          , an exchange for companies to get liquidity on their recurring
-          revenue streams.
+          , a stableswap AMM on Solana.
         </p>
         <p
           css={css`
