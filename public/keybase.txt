@@ -4,9 +4,9 @@ https://keybase.io/ianm
 
 I hereby claim:
 
-  * I am an admin of https://ian.pw
+  * I am an admin of https://ianm.com
   * I am ianm (https://keybase.io/ianm) on keybase.
-  * I have a public key ASAaCzh5wem8zaCVinDQ4tZBmQI1REj-YlyLQCV684i3mwo
+  * I have a public key ASCEDSl5SeG_AXGid48NcNCAZfR_pRcXo0tq1RT3g2XkPgo
 
 To do so, I am signing this object:
 
@@ -15,37 +15,38 @@ To do so, I am signing this object:
     "key": {
       "eldest_kid": "010158d968a1982b30b3f53888baa49eab34cf66c823d6ca72ff1f4548f59e412aff0a",
       "host": "keybase.io",
-      "kid": "01201a0b3879c1e9bccda0958a70d0e2d6419902354448fe625c8b40257af388b79b0a",
+      "kid": "0120840d297949e1bf0171a2778f0d70d08065f47fa51717a34b6ad514f78365e43e0a",
       "uid": "6eaa7b7cc5fe218616f7b742b964e600",
       "username": "ianm"
     },
     "merkle_root": {
-      "ctime": 1509132571,
-      "hash": "200bc2b4c215fed7b74fc900f284fc314ded4e9690a9bbd0c820e3bfa12eed57a7536e2609162ad1c43d9f538a457a9ef72148f04c68479c8d4cbbd7b8ffbc10",
-      "hash_meta": "0d2b6b561aa7d69b2b8a4c80929bb27d1d6b5ea2226a3c155758e1b525fdf834",
-      "seqno": 1638410
+      "ctime": 1661350620,
+      "hash": "e1abd8144b252ed82b3c7e02a0a7d3fa90d138f14ce83cde50d6a8b71b9ed076a8f3e69d985dd50cebaeafd811467be5aa94ac5cfe8bdbda9fa90fea66058c88",
+      "hash_meta": "42ab8e03ca63ca1f8d57503796d65028301baa69a6bc3e5cc2cda6479cbe7dd6",
+      "seqno": 23080073
     },
     "service": {
-      "hostname": "ian.pw",
+      "entropy": "iJkQD3Wk+HinvLUCmd276mN0",
+      "hostname": "ianm.com",
       "protocol": "https:"
     },
     "type": "web_service_binding",
-    "version": 1
+    "version": 2
   },
   "client": {
     "name": "keybase.io go client",
-    "version": "1.0.34"
+    "version": "6.0.1"
   },
-  "ctime": 1509132590,
+  "ctime": 1661350630,
   "expire_in": 504576000,
-  "prev": "b4d0acab51c88254962799cd19eabdd22cbd54da64ad02faadf0ea492802421b",
-  "seqno": 38,
+  "prev": "e5cfe82b7032761ee97cbb43808791479115e010978698cdb11bc0eb3c5b5918",
+  "seqno": 160,
   "tag": "signature"
 }
 
 which yields the signature:
 
-hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgGgs4ecHpvM2glYpw0OLWQZkCNURI/mJci0AlevOIt5sKp3BheWxvYWTFAzt7ImJvZHkiOnsia2V5Ijp7ImVsZGVzdF9raWQiOiIwMTAxNThkOTY4YTE5ODJiMzBiM2Y1Mzg4OGJhYTQ5ZWFiMzRjZjY2YzgyM2Q2Y2E3MmZmMWY0NTQ4ZjU5ZTQxMmFmZjBhIiwiaG9zdCI6ImtleWJhc2UuaW8iLCJraWQiOiIwMTIwMWEwYjM4NzljMWU5YmNjZGEwOTU4YTcwZDBlMmQ2NDE5OTAyMzU0NDQ4ZmU2MjVjOGI0MDI1N2FmMzg4Yjc5YjBhIiwidWlkIjoiNmVhYTdiN2NjNWZlMjE4NjE2ZjdiNzQyYjk2NGU2MDAiLCJ1c2VybmFtZSI6Imlhbm0ifSwibWVya2xlX3Jvb3QiOnsiY3RpbWUiOjE1MDkxMzI1NzEsImhhc2giOiIyMDBiYzJiNGMyMTVmZWQ3Yjc0ZmM5MDBmMjg0ZmMzMTRkZWQ0ZTk2OTBhOWJiZDBjODIwZTNiZmExMmVlZDU3YTc1MzZlMjYwOTE2MmFkMWM0M2Q5ZjUzOGE0NTdhOWVmNzIxNDhmMDRjNjg0NzljOGQ0Y2JiZDdiOGZmYmMxMCIsImhhc2hfbWV0YSI6IjBkMmI2YjU2MWFhN2Q2OWIyYjhhNGM4MDkyOWJiMjdkMWQ2YjVlYTIyMjZhM2MxNTU3NThlMWI1MjVmZGY4MzQiLCJzZXFubyI6MTYzODQxMH0sInNlcnZpY2UiOnsiaG9zdG5hbWUiOiJpYW4ucHciLCJwcm90b2NvbCI6Imh0dHBzOiJ9LCJ0eXBlIjoid2ViX3NlcnZpY2VfYmluZGluZyIsInZlcnNpb24iOjF9LCJjbGllbnQiOnsibmFtZSI6ImtleWJhc2UuaW8gZ28gY2xpZW50IiwidmVyc2lvbiI6IjEuMC4zNCJ9LCJjdGltZSI6MTUwOTEzMjU5MCwiZXhwaXJlX2luIjo1MDQ1NzYwMDAsInByZXYiOiJiNGQwYWNhYjUxYzg4MjU0OTYyNzk5Y2QxOWVhYmRkMjJjYmQ1NGRhNjRhZDAyZmFhZGYwZWE0OTI4MDI0MjFiIiwic2Vxbm8iOjM4LCJ0YWciOiJzaWduYXR1cmUifaNzaWfEQLFaJ/ft3/TifqKklLVqclQOFAFR9NuhH57tYxwRvMVWlfa4hfWOM0wmkFTlRCd908Iuq8n0Dl8b8eQk9ZqItA2oc2lnX3R5cGUgpGhhc2iCpHR5cGUIpXZhbHVlxCC1GWY1RZAshthu/hCJnrjKi/vxHrEftu5U71oe+UZ706N0YWfNAgKndmVyc2lvbgE=
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEghA0peUnhvwFxonePDXDQgGX0f6UXF6NLatUU94Nl5D4Kp3BheWxvYWTES5cCzKDEIOXP6CtwMnYe6Xy7Q4CHkUeRFeAQl4aYzbEbwOs8W1kYxCB55WvAsUchr/nl2seQnSIARpkRzWmIw0hLL5eMR+TksAIBwqNzaWfEQI95SGpAd659/2adBKmLtvpcHRiXqjbFQzGwUI2M7ZGuC5ykeNXa+4SBOSK1eJbzfSetk4+YQPIyU8j1panqVgioc2lnX3R5cGUgpGhhc2iCpHR5cGUIpXZhbHVlxCDC6Qr+3f0ejY0IvPxGhIyxtANhW+YUMKH3iuMT3dCIlqN0YWfNAgKndmVyc2lvbgE=
 
 And finally, I am proving ownership of this host by posting or
 appending to this document.
