@@ -54,7 +54,7 @@ const nextConfig = {
   },
 };
 
-if (process.env.EXPORT_STATIC) {
+if (process.env.NEXT_PUBLIC_EXPORT_STATIC) {
   nextConfig.experimental = {
     images: {
       unoptimized: true,
