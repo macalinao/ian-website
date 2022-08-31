@@ -186,6 +186,12 @@ export const getStaticProps: GetStaticProps<
   }
 
   const post = await getPostByID(postIDNoSuffix);
+  if (!post) {
+    return {
+      notFound: true,
+    };
+  }
+
   if (postID.endsWith(".html")) {
     return {
       redirect: {
