@@ -156,7 +156,7 @@ const Post: React.FC<IProps> = ({ source, post }) => {
 const PostWrapper = styled.div<{ post: IPost }>`
   ${(props) => props.post.hasMath && katexCss}
   .math.math-display {
-    overflow-x: scroll;
+    overflow-x: auto;
   }
 `;
 

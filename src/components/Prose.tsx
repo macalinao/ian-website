@@ -10,7 +10,7 @@ export const Prose = styled.div(() => [
       ${tw`list-decimal`}
     }
     ul {
-      ${tw`list-disc list-inside`}
+      ${tw`list-disc`}
     }
     ol,
     ul {
@@ -19,7 +19,7 @@ export const Prose = styled.div(() => [
       }
     }
     :not(li) > ol,
-    ul {
+    :not(li) > ul {
       ${tw`my-2 md:my-4`}
     }
     h2 {

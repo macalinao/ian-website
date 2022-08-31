@@ -89,7 +89,7 @@ To get to 1 dollar per BAC, the pool requires a whopping 250K DAI of reserves-- 
 <figure>
   <NextImage src="https://static.ian.pw/images/2021-01-17-bac-dai-repeg.png" width="640" height="480" alt="BAC/DAI reweight" />
   <figcaption>
-    Amount of DAI required to bring BAC from $0.01 to $1 with $50K liquidity
+    Amount of DAI required to bring BAC from \$0.01 to \$1 with \$50K liquidity
   </figcaption>
 </figure>
 
