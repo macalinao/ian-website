@@ -3,7 +3,7 @@ import Head from "next/head";
 import React from "react";
 
 import { MDXProse } from "~src/components/MDXProse";
-import { ProseTitle } from "~src/components/Prose";
+import { BasicPage } from "~src/layouts/BasicPage";
 import type { IContent } from "~src/lib/content/fetchContent";
 import { fetchContent } from "~src/lib/content/fetchContent";
 
@@ -12,8 +12,9 @@ const ContactPage: React.FC<IContent> = ({ data, source }: IContent) => (
     <Head>
       <title>Contact | Ian Macalinao</title>
     </Head>
-    <ProseTitle>{data.title}</ProseTitle>
-    <MDXProse {...source} />
+    <BasicPage title={data.title}>
+      <MDXProse {...source} />
+    </BasicPage>
   </div>
 );
 

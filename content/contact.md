@@ -19,7 +19,3 @@ sub   4096R/9D0739CA 2017-01-24
 - StepMania, hangboarding (thanks covid)
 - [my dotfiles](https://github.com/macalinao/dotfiles)
 - [all sorts of music](https://open.spotify.com/user/1230232553?si=5DNDSsmaRiWaS7L8b4j37w)
-
-<div id="quoteBar"></div>
-
-[Back to Home](/)

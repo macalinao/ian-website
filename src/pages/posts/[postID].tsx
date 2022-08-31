@@ -129,8 +129,8 @@ const Post: React.FC<IProps> = ({ source, post }) => {
         {content}
       </div>
 
-      <div tw="bg-gray-50 border border-gray-200 text-gray-500 mx-auto my-10 text-sm px-5 py-4 md:(text-base px-10 py-5)">
-        <p>
+      <div tw="bg-gray-50 border border-gray-200 text-gray-500 mx-auto my-10 text-sm px-5 py-4 md:(text-base px-7 py-5)">
+        <p tw="mb-2">
           Thanks for reading! Have any questions, comments, or suggestions? Feel
           free to use the comment section below or email me at{" "}
           <a href="mailto:blog@igm.pub">blog@igm.pub</a> and I'll do my best to
