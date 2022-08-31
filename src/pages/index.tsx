@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Link from "next/link";
 import React from "react";
-import { css, styled } from "twin.macro";
+import tw, { css, styled } from "twin.macro";
 
 import {
   clampWidth,
@@ -14,7 +14,7 @@ const quote =
 
 const Home: React.FC = () => {
   return (
-    <div tw="w-full max-w-3xl mx-auto pt-24">
+    <div tw="md:pt-24">
       <Head>
         <title>Ian Macalinao</title>
         <meta
@@ -22,7 +22,7 @@ const Home: React.FC = () => {
           content="The personal website and blog of Ian Macalinao, software engineer and crypto-finance enthusiast."
         />
       </Head>
-      <h1 tw="text-5xl my-8">Ian Macalinao</h1>
+      <h1 tw="text-4xl my-4 md:(text-5xl my-8)">Ian Macalinao</h1>
       <div tw="text-lg flex flex-col gap-4">
         <p
           css={css`
@@ -116,13 +116,7 @@ const Quote = styled.blockquote`
     margin-bottom: 20px;
   }
 
-  text-align: left;
-  color: #666;
-  font-style: italic;
-  margin: 0;
-  font-size: 16px;
-  margin-bottom: 30px;
-  line-height: 30px;
+  ${tw`text-left text-gray-500 italic m-0 text-base mb-7`}
 `;
 
 const Connect = styled.ul`

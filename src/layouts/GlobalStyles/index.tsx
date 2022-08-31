@@ -12,14 +12,6 @@ const globalStyles = css`
     ${tw`font-serif font-bold text-gray-900`}
   }
 
-  h2 {
-    font-size: 32px;
-  }
-
-  h3 {
-    font-size: 24px;
-  }
-
   a {
     color: #3271a7;
   }
@@ -34,11 +26,6 @@ const globalStyles = css`
   }
 
   @media only screen and (max-width: 767px) {
-    h1 {
-      text-align: left;
-      font-size: 40px;
-      margin: 35px 0 16px;
-    }
     #post {
       text-align: left;
     }

@@ -1,7 +1,7 @@
 import type { AppProps } from "next/app";
 import Head from "next/head";
 import React from "react";
-import { styled } from "twin.macro";
+import tw, { styled } from "twin.macro";
 
 import { GlobalStyles } from "~src/layouts/GlobalStyles";
 import { useAnalytics } from "~src/lib/useAnalytics";
@@ -63,12 +63,8 @@ const AppOuter = styled.div`
   width: 100%;
 `;
 
-const AppWrapper = styled.div`
-  width: 750px;
-  margin: 0px auto;
-  max-width: calc(100% - 40px);
-  padding: 0px 20px;
-  margin-bottom: 60px;
-`;
+const AppWrapper = styled.div(() => [
+  tw`w-full max-w-3xl mx-auto px-5 md:mb-16`,
+]);
 
 export default App;

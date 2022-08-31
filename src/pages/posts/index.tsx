@@ -1,4 +1,3 @@
-import groupBy from "lodash/groupBy";
 import type { GetStaticProps } from "next";
 import Head from "next/head";
 import Link from "next/link";
@@ -19,37 +18,32 @@ const PostsPage: React.FC<IProps> = ({ posts }) => {
       (a, b) =>
         new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
     );
-  const grouped = groupBy(sortedPosts, (post) =>
-    new Date(post.publishedAt).getFullYear()
-  );
 
   return (
     <>
       <Head>
         <title>All Posts | Ian Macalinao</title>
       </Head>
-      <h1>Writing</h1>
-      <p>Shower thoughts, rants, opinions, etc.</p>
-      {Object.entries(grouped)
-        .sort((a, b) => parseInt(b[0]) - parseInt(a[0]))
-        .map(([year, yearPosts]) => (
-          <div key={year}>
-            <h2>{year}</h2>
-            <ul>
-              {yearPosts.map((post) => (
-                <li key={post.id}>
-                  <Link href={post.path} passHref>
-                    <a>{post.title}</a>
-                  </Link>{" "}
-                  - {formatDate(new Date(post.publishedAt))}
-                </li>
-              ))}
-            </ul>
+      <h1 tw="text-3xl my-4 md:(text-4xl my-8)">Writing</h1>
+      <div tw="flex flex-col gap-4 my-4">
+        {sortedPosts.map((post) => (
+          <div tw="flex flex-col gap-1" key={post.id}>
+            <div tw="text-xs md:text-sm text-gray-800">
+              <time dateTime={post.publishedAt}>
+                {formatDate(new Date(post.publishedAt))}
+              </time>
+            </div>
+            <Link href={post.path} passHref>
+              <a tw="text-base md:text-lg font-normal">{post.title}</a>
+            </Link>{" "}
           </div>
         ))}
-      <Link href="/">
-        <a>Back to home</a>
-      </Link>
+      </div>
+      <div tw="my-8">
+        <Link href="/" passHref>
+          <a tw="font-medium underline">Back to home</a>
+        </Link>
+      </div>
     </>
   );
 };
