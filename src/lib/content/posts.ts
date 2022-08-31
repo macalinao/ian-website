@@ -1,5 +1,5 @@
+import { default as matter } from "@gr2m/gray-matter";
 import * as fs from "fs/promises";
-import matter from "gray-matter";
 import path from "path";
 
 const postsDir = path.join(process.cwd(), "content/posts");

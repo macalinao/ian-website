@@ -1,25 +1,27 @@
 {
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "extends": "@saberhq/tsconfig/tsconfig.lib.json",
   "compilerOptions": {
     "allowJs": true,
     "baseUrl": ".",
-    "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
-    "isolatedModules": true,
     "jsx": "preserve",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": ["DOM", "DOM.Iterable", "esnext"],
     "module": "esnext",
-    "moduleResolution": "node",
     "noEmit": true,
-    "noUncheckedIndexedAccess": true,
     "resolveJsonModule": true,
-    "skipLibCheck": false,
-    "strict": true,
+    "skipLibCheck": true,
     "target": "es5",
     "paths": {
       "~*": ["./*"]
     },
     "incremental": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".eslintrc.cjs",
+    "next.config.mjs"
+  ],
   "exclude": ["node_modules"]
 }

@@ -1,19 +1,35 @@
 name: Lint
+
 on: [push]
+
+defaults:
+  run:
+    shell: nix develop --command bash {0}
+
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout repo
-        uses: actions/checkout@v2
-      - name: Use Node 14.x
-        uses: actions/setup-node@v3.4.1
+      - uses: actions/checkout@v3
+      - uses: ./.github/actions/yarn
         with:
-          node-version: 14.x
-      - uses: actions/cache@v2
+          cachix-auth-token: ${{ secrets.CACHIX_AUTH_TOKEN }}
+      - run: yarn build
+
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: ./.github/actions/yarn
         with:
-          path: "**/node_modules"
-          key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
-      - run: yarn install
+          cachix-auth-token: ${{ secrets.CACHIX_AUTH_TOKEN }}
+      - run: yarn lint
+
+  typecheck:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: ./.github/actions/yarn
+        with:
+          cachix-auth-token: ${{ secrets.CACHIX_AUTH_TOKEN }}
       - run: yarn typecheck

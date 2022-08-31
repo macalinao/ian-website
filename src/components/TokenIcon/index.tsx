@@ -19,7 +19,7 @@ const tokenInfo = {
   },
 };
 
-interface IProps {
+export interface IProps {
   token: keyof typeof tokenInfo;
   hideName: boolean;
 }

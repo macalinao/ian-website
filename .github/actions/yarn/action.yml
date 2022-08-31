@@ -1,0 +1,33 @@
+name: Yarn
+description: Sets up the Yarn, the Yarn Cache, and installs
+
+inputs:
+  cachix-auth-token:
+    required: true
+    description: "Your Cachix auth token."
+
+runs:
+  using: composite
+  steps:
+    # Install Cachix
+    - uses: cachix/install-nix-action@v17
+    - name: Setup Cachix
+      uses: cachix/cachix-action@v10
+      with:
+        name: igm
+        authToken: ${{ inputs.cachix-auth-token }}
+
+    # Install Node
+    - name: Get yarn cache directory path
+      id: yarn-cache-dir-path
+      run: echo "::set-output name=dir::$(yarn config get cacheFolder)"
+      shell: nix develop --command bash {0}
+    - name: Yarn Cache
+      uses: actions/cache@v3
+      with:
+        path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+        key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
+        restore-keys: |
+          ${{ runner.os }}-modules-
+    - run: yarn install
+      shell: nix develop --command bash {0}
