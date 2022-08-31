@@ -7,6 +7,7 @@
     "lint": "next lint",
     "dev": "next dev",
     "build": "next build",
+    "build:static": "yarn build && EXPORT_STATIC=1 next export",
     "typecheck": "tsc",
     "postbuild": "next-sitemap",
     "start": "next start",

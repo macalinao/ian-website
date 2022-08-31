@@ -12,6 +12,11 @@ const nextConfig = {
     domains: ["static.ian.pw"],
     disableStaticImages: true,
   },
+  experimental: {
+    images: {
+      unoptimized: !!process.env.EXPORT_STATIC,
+    },
+  },
   webpack(
     /** @type import('webpack').Configuration */
     config,
