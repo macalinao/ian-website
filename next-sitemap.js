@@ -1,4 +1,4 @@
 module.exports = {
-  siteUrl: "https://ian.pw",
+  siteUrl: "https://ianm.com",
   generateRobotsTxt: true,
 };
