@@ -231,7 +231,7 @@ export const getStaticProps: GetStaticProps<
     props: {
       source: mdxSource,
       post,
-      exportStatic: !!process.env.EXPORT_STATIC,
+      exportStatic: !!process.env.NEXT_PUBLIC_EXPORT_STATIC,
     },
   };
 };
