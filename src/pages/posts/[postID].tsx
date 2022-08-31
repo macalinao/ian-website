@@ -5,7 +5,9 @@ import Link from "next/link";
 import type { MDXRemoteSerializeResult } from "next-mdx-remote";
 import { serialize } from "next-mdx-remote/serialize";
 import React from "react";
+import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypeKatex from "rehype-katex";
+import rehypeSlug from "rehype-slug";
 import remarkGfm from "remark-gfm";
 import remarkMath from "remark-math";
 import { styled } from "twin.macro";
@@ -196,7 +198,16 @@ export const getStaticProps: GetStaticProps<
   const mdxSource = await serialize(post.content, {
     mdxOptions: {
       remarkPlugins: [remarkMath, remarkGfm],
-      rehypePlugins: [rehypeKatex],
+      rehypePlugins: [
+        rehypeKatex,
+        rehypeSlug,
+        [
+          rehypeAutolinkHeadings,
+          {
+            behavior: "wrap",
+          },
+        ],
+      ],
     },
   });
   return { props: { source: mdxSource, post } };
