@@ -2013,6 +2013,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@saberhq/browserslist-config@npm:^2.0.4":
+  version: 2.0.4
+  resolution: "@saberhq/browserslist-config@npm:2.0.4"
+  checksum: 50571b2e4e7f688d44c53febc7717a50995c7ad88c1930cd52d02941b4031f55329d3236a521c926aa4706d987370d1b389669780c8782f6afead6ae10b0652b
+  languageName: node
+  linkType: hard
+
 "@saberhq/eslint-config-react@npm:^2.0.4":
   version: 2.0.4
   resolution: "@saberhq/eslint-config-react@npm:2.0.4"
@@ -5231,6 +5238,7 @@ __metadata:
     "@gr2m/gray-matter": "npm:^4.0.3-with-pr-137"
     "@next/bundle-analyzer": "npm:^12.2.5"
     "@next/env": "npm:^12.2.5"
+    "@saberhq/browserslist-config": "npm:^2.0.4"
     "@saberhq/eslint-config": "npm:^2.0.4"
     "@saberhq/eslint-config-react": "npm:^2.0.4"
     "@saberhq/tsconfig": "npm:^2.0.4"

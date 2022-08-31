@@ -15,6 +15,9 @@
     "start": "next start",
     "postinstall": "husky install"
   },
+  "browserslist": [
+    "extends @saberhq/browserslist-config"
+  ],
   "dependencies": {
     "@emotion/react": "^11.10.4",
     "@emotion/styled": "^11.10.4",
@@ -43,6 +46,7 @@
     "@emotion/babel-plugin": "^11.10.2",
     "@next/bundle-analyzer": "^12.2.5",
     "@next/env": "^12.2.5",
+    "@saberhq/browserslist-config": "^2.0.4",
     "@saberhq/eslint-config": "^2.0.4",
     "@saberhq/eslint-config-react": "^2.0.4",
     "@saberhq/tsconfig": "^2.0.4",
