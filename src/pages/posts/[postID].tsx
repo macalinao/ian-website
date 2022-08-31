@@ -1,7 +1,7 @@
 import type { GetStaticPaths, GetStaticProps } from "next";
-import Head from "next/head";
-import Image from "next/image";
-import Link from "next/link";
+import { default as Head } from "next/head.js";
+import { default as Image } from "next/image.js";
+import { default as Link } from "next/link.js";
 import type { MDXRemoteSerializeResult } from "next-mdx-remote";
 import { serialize } from "next-mdx-remote/serialize";
 import React from "react";
@@ -12,14 +12,14 @@ import remarkGfm from "remark-gfm";
 import remarkMath from "remark-math";
 import { styled } from "twin.macro";
 
-import { MDXProse } from "~src/components/MDXProse";
-import { PostComments } from "~src/components/PostComments";
-import { ProseTitle } from "~src/components/Prose";
-import type { IPost } from "~src/lib/content/posts";
-import { getAllPosts, getPostByID } from "~src/lib/content/posts";
-import { formatDate } from "~src/lib/formatDate";
-import { mdxComponents } from "~src/lib/mdxComponents";
-import { katexCss } from "~src/lib/styles/katexCss";
+import { MDXProse } from "~src/components/MDXProse.js";
+import { PostComments } from "~src/components/PostComments.js";
+import { ProseTitle } from "~src/components/Prose.js";
+import type { IPost } from "~src/lib/content/posts.js";
+import { getAllPosts, getPostByID } from "~src/lib/content/posts.js";
+import { formatDate } from "~src/lib/formatDate.js";
+import { mdxComponents } from "~src/lib/mdxComponents.js";
+import { katexCss } from "~src/lib/styles/katexCss.js";
 
 interface IProps {
   source: MDXRemoteSerializeResult;

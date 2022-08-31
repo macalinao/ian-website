@@ -1,6 +1,6 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
-  "extends": "@saberhq/tsconfig/tsconfig.lib.json",
+  "extends": "@saberhq/tsconfig/tsconfig.mono.json",
   "compilerOptions": {
     "allowJs": true,
     "baseUrl": ".",
@@ -14,7 +14,8 @@
     "paths": {
       "~*": ["./*"]
     },
-    "incremental": true
+    "incremental": true,
+    "moduleResolution": "node"
   },
   "include": [
     "next-env.d.ts",

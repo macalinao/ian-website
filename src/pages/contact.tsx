@@ -1,11 +1,11 @@
 import type { GetStaticProps } from "next";
-import Head from "next/head";
+import { default as Head } from "next/head.js";
 import React from "react";
 
-import { MDXProse } from "~src/components/MDXProse";
-import { BasicPage } from "~src/layouts/BasicPage";
-import type { IContent } from "~src/lib/content/fetchContent";
-import { fetchContent } from "~src/lib/content/fetchContent";
+import { MDXProse } from "~src/components/MDXProse.js";
+import { BasicPage } from "~src/layouts/BasicPage.js";
+import type { IContent } from "~src/lib/content/fetchContent.js";
+import { fetchContent } from "~src/lib/content/fetchContent.js";
 
 const ContactPage: React.FC<IContent> = ({ data, source }: IContent) => (
   <div>

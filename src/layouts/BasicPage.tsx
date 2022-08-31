@@ -1,7 +1,7 @@
-import Link from "next/link";
+import { default as Link } from "next/link.js";
 import React from "react";
 
-import { ProseTitle } from "~src/components/Prose";
+import { ProseTitle } from "~src/components/Prose.js";
 
 interface Props {
   title: string;

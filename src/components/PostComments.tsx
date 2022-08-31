@@ -1,10 +1,10 @@
 import type { DiscussionEmbed as DiscussionEmbedType } from "disqus-react";
-import dynamic from "next/dynamic";
+import { default as dynamic } from "next/dynamic.js";
 import { useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
 import { css } from "twin.macro";
 
-import type { IPost } from "~src/lib/content/posts";
+import type { IPost } from "~src/lib/content/posts.js";
 
 const DiscussionEmbed = dynamic(
   () => import("disqus-react").then((mod) => mod.DiscussionEmbed),

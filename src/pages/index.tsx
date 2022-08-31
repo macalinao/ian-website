@@ -1,13 +1,13 @@
-import Head from "next/head";
-import Link from "next/link";
+import { default as Head } from "next/head.js";
+import { default as Link } from "next/link.js";
 import React from "react";
-import tw, { css, styled } from "twin.macro";
+import { css, default as tw, styled } from "twin.macro";
 
 import {
   clampWidth,
   lineCountAtWidth,
   mobileOnly,
-} from "~src/lib/styles/mobileOnly";
+} from "~src/lib/styles/mobileOnly.js";
 
 const quote =
   "The best time to plant a tree was 20 years ago. The second best time is now.";
