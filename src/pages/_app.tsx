@@ -1,10 +1,9 @@
-import { Global } from "@emotion/react";
-import styled from "@emotion/styled";
 import type { AppProps } from "next/app";
 import Head from "next/head";
 import React from "react";
+import tw, { styled } from "twin.macro";
 
-import { globalStyles } from "~src/lib/styles/globalStyles";
+import { GlobalStyles } from "~src/layouts/GlobalStyles";
 import { useAnalytics } from "~src/lib/useAnalytics";
 
 const favicons = (
@@ -45,7 +44,7 @@ const App: React.FC<AppProps> = ({ Component, pageProps }) => {
   return (
     <AppOuter>
       <AppWrapper>
-        <Global styles={globalStyles} />
+        <GlobalStyles />
         <Head>
           <meta charSet="UTF-8" />
           {favicons}
@@ -64,12 +63,8 @@ const AppOuter = styled.div`
   width: 100%;
 `;
 
-const AppWrapper = styled.div`
-  width: 750px;
-  margin: 0px auto;
-  max-width: calc(100% - 40px);
-  padding: 0px 20px;
-  margin-bottom: 60px;
-`;
+const AppWrapper = styled.div(() => [
+  tw`w-full max-w-3xl mx-auto px-5 md:mb-16`,
+]);
 
 export default App;

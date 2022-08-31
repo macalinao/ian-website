@@ -1,4 +1,4 @@
-import { css } from "@emotion/react";
+import { css } from "twin.macro";
 
 import COMP from "./COMP.svg";
 import USDC from "./USDC.svg";

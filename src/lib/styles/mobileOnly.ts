@@ -1,5 +1,5 @@
 import type { SerializedStyles } from "@emotion/react";
-import { css } from "@emotion/react";
+import { css } from "twin.macro";
 
 export const mobileOnly = (styles: SerializedStyles): SerializedStyles =>
   css`
@@ -24,7 +24,7 @@ export const lineCountAtWidth = (
 ): SerializedStyles =>
   clampWidth(
     css`
-      min-height: calc(35px * ${count});
+      min-height: calc(28px * ${count});
     `,
     width
   );

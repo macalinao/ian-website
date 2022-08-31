@@ -1,4 +1,4 @@
-import { css } from "@emotion/react";
+import { css } from "twin.macro";
 
 const fontBaseURL = "https://cdn.jsdelivr.net/npm/katex@0.11.0/dist";
 

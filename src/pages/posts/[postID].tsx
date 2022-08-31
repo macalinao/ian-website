@@ -1,39 +1,30 @@
-import { css } from "@emotion/react";
-import styled from "@emotion/styled";
 import type { GetStaticPaths, GetStaticProps } from "next";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import type { MDXRemoteSerializeResult } from "next-mdx-remote";
-import { MDXRemote } from "next-mdx-remote";
 import { serialize } from "next-mdx-remote/serialize";
 import React from "react";
+import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypeKatex from "rehype-katex";
+import rehypeSlug from "rehype-slug";
+import remarkGfm from "remark-gfm";
 import remarkMath from "remark-math";
+import { styled } from "twin.macro";
 
+import { MDXProse } from "~src/components/MDXProse";
 import { PostComments } from "~src/components/PostComments";
+import { ProseTitle } from "~src/components/Prose";
 import type { IPost } from "~src/lib/content/posts";
 import { getAllPosts, getPostByID } from "~src/lib/content/posts";
 import { formatDate } from "~src/lib/formatDate";
 import { mdxComponents } from "~src/lib/mdxComponents";
 import { katexCss } from "~src/lib/styles/katexCss";
-import { mobileOnly } from "~src/lib/styles/mobileOnly";
 
 interface IProps {
   source: MDXRemoteSerializeResult;
   post: IPost;
 }
-
-const PostUnder = styled.div`
-  color: #3271a7;
-  text-align: center;
-  line-height: 10px;
-  margin-bottom: 60px;
-  ${mobileOnly(css`
-    margin-bottom: 30px;
-  `)}
-  font-weight: normal;
-`;
 
 const Post: React.FC<IProps> = ({ source, post }) => {
   // TODO(igm): the client likes to hydrate things differently than the
@@ -41,7 +32,7 @@ const Post: React.FC<IProps> = ({ source, post }) => {
   // per-request to share the styles between frontend and backend.
   // Not too important
 
-  const content = <MDXRemote {...source} components={mdxComponents} />;
+  const content = <MDXProse {...source} components={mdxComponents} />;
   return (
     <PostWrapper post={post}>
       <Head>
@@ -93,33 +84,30 @@ const Post: React.FC<IProps> = ({ source, post }) => {
           <meta name="twitter:card" content="summary" />
         )}
       </Head>
-      <h1
-        css={css`
-          margin-bottom: 30px;
-          ${mobileOnly(css`
-            text-align: center;
-          `)}
-        `}
-      >
+      <ProseTitle tw="mb-0 text-2xl md:(mb-0 text-3xl)">
         {post.title}
-      </h1>
+      </ProseTitle>
 
-      <PostUnder>
-        <p>
-          by{" "}
-          <Link href="/">
-            <a>Ian Macalinao</a>
-          </Link>{" "}
-          on {formatDate(new Date(post.publishedAt))}
-        </p>
-      </PostUnder>
+      <div tw="mt-1 mb-8 text-gray-600 flex items-center justify-between w-full border-t border-gray-200 pt-1.5 text-xs md:(mt-3 text-sm)">
+        <div>
+          <time>{formatDate(new Date(post.publishedAt))}</time>
+        </div>
+        <div>
+          <address tw="not-italic">
+            by{" "}
+            <Link href="/" passHref>
+              <a rel="author">Ian Macalinao</a>
+            </Link>
+          </address>
+        </div>
+      </div>
 
       <div id="post">
         {post.incomplete && (
           <em>
             Note: This section is incomplete. You can help finish it
             <a
-              href="https://github.com/macalinao/ian-website/blob/master/$path$"
+              href={`https://github.com/macalinao/ian-website/blob/master/${post.path}`}
               target="_blank"
               rel="noreferrer"
             >
@@ -129,18 +117,20 @@ const Post: React.FC<IProps> = ({ source, post }) => {
           </em>
         )}
         {post.banner && (
-          <Image
-            alt={post.banner.alt}
-            src={post.banner.src}
-            width={post.banner.width}
-            height={post.banner.height}
-          />
+          <div tw="mb-8 -mx-5 md:mx-0">
+            <Image
+              alt={post.banner.alt}
+              src={post.banner.src}
+              width={post.banner.width}
+              height={post.banner.height}
+            />
+          </div>
         )}
         {content}
       </div>
 
-      <Thanks>
-        <p>
+      <div tw="bg-gray-50 border border-gray-200 text-gray-500 mx-auto my-10 text-sm px-5 py-4 md:(text-base px-7 py-5)">
+        <p tw="mb-2">
           Thanks for reading! Have any questions, comments, or suggestions? Feel
           free to use the comment section below or email me at{" "}
           <a href="mailto:blog@igm.pub">blog@igm.pub</a> and I'll do my best to
@@ -157,7 +147,7 @@ const Post: React.FC<IProps> = ({ source, post }) => {
           </a>{" "}
           and send a pull request.
         </p>
-      </Thanks>
+      </div>
       <PostComments post={post} />
     </PostWrapper>
   );
@@ -165,74 +155,8 @@ const Post: React.FC<IProps> = ({ source, post }) => {
 
 const PostWrapper = styled.div<{ post: IPost }>`
   ${(props) => props.post.hasMath && katexCss}
-  h1,
-  h2 {
-    line-height: 1.3;
-  }
-  h3 {
-    line-height: 1.5;
-  }
-  h2,
-  h3 {
-    margin-top: 50px;
-  }
-
-  ${mobileOnly(css`
-    h2 {
-      font-size: 22px;
-    }
-    h3 {
-      font-size: 18px;
-    }
-
-    h2 {
-      margin-top: 25px;
-    }
-    h3 {
-      margin-top: 12px;
-    }
-
-    p,
-    li {
-      font-size: 16px;
-      line-height: 1.5em;
-    }
-  `)}
-
   .math.math-display {
-    overflow-x: scroll;
-  }
-
-  .footnotes {
-    margin-top: 60px;
-    ol {
-      margin: 40px 0;
-    }
-    li {
-      font-size: 18px;
-    }
-    color: #454545;
-    border-top: 1px solid #ccc;
-
-    hr {
-      display: none;
-    }
-
-    .footnote-backref {
-      margin-left: 8px;
-      font-size: 14px;
-    }
-  }
-`;
-
-const Thanks = styled.div`
-  margin: 3em auto;
-  border: 1px solid #eee;
-  padding: 20px 40px;
-  background-color: #fafaff;
-  color: #656565;
-  p {
-    font-size: 18px;
+    overflow-x: auto;
   }
 `;
 
@@ -273,8 +197,17 @@ export const getStaticProps: GetStaticProps<
 
   const mdxSource = await serialize(post.content, {
     mdxOptions: {
-      remarkPlugins: [remarkMath],
-      rehypePlugins: [rehypeKatex],
+      remarkPlugins: [remarkMath, remarkGfm],
+      rehypePlugins: [
+        rehypeKatex,
+        rehypeSlug,
+        [
+          rehypeAutolinkHeadings,
+          {
+            behavior: "wrap",
+          },
+        ],
+      ],
     },
   });
   return { props: { source: mdxSource, post } };

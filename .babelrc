@@ -1,9 +1,4 @@
 {
-  "env": {
-    "production": {
-      "plugins": ["@emotion"]
-    }
-  },
   "presets": [
     [
       "next/babel",
@@ -15,5 +10,5 @@
       }
     ]
   ],
-  "plugins": ["@emotion"]
+  "plugins": ["@emotion", "babel-plugin-twin", "babel-plugin-macros"]
 }

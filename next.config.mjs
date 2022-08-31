@@ -1,3 +1,4 @@
+import ResolveTypeScriptPlugin from "resolve-typescript-plugin";
 import { default as invariant } from "tiny-invariant";
 
 /** @type import('next').NextConfig */
@@ -11,11 +12,6 @@ const nextConfig = {
   images: {
     domains: ["static.ian.pw"],
     disableStaticImages: true,
-  },
-  experimental: {
-    images: {
-      unoptimized: !!process.env.EXPORT_STATIC,
-    },
   },
   webpack(
     /** @type import('webpack').Configuration */
@@ -51,8 +47,19 @@ const nextConfig = {
       ],
     });
 
+    invariant(config.resolve?.plugins);
+    config.resolve.plugins.push(new ResolveTypeScriptPlugin());
+
     return config;
   },
 };
+
+if (process.env.EXPORT_STATIC) {
+  nextConfig.experimental = {
+    images: {
+      unoptimized: true,
+    },
+  };
+}
 
 export default nextConfig;

@@ -1,8 +1,8 @@
-import { css } from "@emotion/react";
 import type { DiscussionEmbed as DiscussionEmbedType } from "disqus-react";
 import dynamic from "next/dynamic";
 import { useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
+import { css } from "twin.macro";
 
 import type { IPost } from "~src/lib/content/posts";
 
