@@ -6,6 +6,7 @@ import type { MDXRemoteSerializeResult } from "next-mdx-remote";
 import { serialize } from "next-mdx-remote/serialize";
 import React from "react";
 import rehypeKatex from "rehype-katex";
+import remarkGfm from "remark-gfm";
 import remarkMath from "remark-math";
 import { styled } from "twin.macro";
 
@@ -102,7 +103,7 @@ const Post: React.FC<IProps> = ({ source, post }) => {
           <em>
             Note: This section is incomplete. You can help finish it
             <a
-              href="https://github.com/macalinao/ian-website/blob/master/$path$"
+              href={`https://github.com/macalinao/ian-website/blob/master/${post.path}`}
               target="_blank"
               rel="noreferrer"
             >
@@ -112,12 +113,14 @@ const Post: React.FC<IProps> = ({ source, post }) => {
           </em>
         )}
         {post.banner && (
-          <Image
-            alt={post.banner.alt}
-            src={post.banner.src}
-            width={post.banner.width}
-            height={post.banner.height}
-          />
+          <div tw="mb-8 -mx-5 md:mx-0">
+            <Image
+              alt={post.banner.alt}
+              src={post.banner.src}
+              width={post.banner.width}
+              height={post.banner.height}
+            />
+          </div>
         )}
         {content}
       </div>
@@ -148,30 +151,8 @@ const Post: React.FC<IProps> = ({ source, post }) => {
 
 const PostWrapper = styled.div<{ post: IPost }>`
   ${(props) => props.post.hasMath && katexCss}
-
   .math.math-display {
     overflow-x: scroll;
-  }
-
-  .footnotes {
-    margin-top: 60px;
-    ol {
-      margin: 40px 0;
-    }
-    li {
-      font-size: 18px;
-    }
-    color: #454545;
-    border-top: 1px solid #ccc;
-
-    hr {
-      display: none;
-    }
-
-    .footnote-backref {
-      margin-left: 8px;
-      font-size: 14px;
-    }
   }
 `;
 
@@ -212,7 +193,7 @@ export const getStaticProps: GetStaticProps<
 
   const mdxSource = await serialize(post.content, {
     mdxOptions: {
-      remarkPlugins: [remarkMath],
+      remarkPlugins: [remarkMath, remarkGfm],
       rehypePlugins: [rehypeKatex],
     },
   });

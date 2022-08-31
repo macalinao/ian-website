@@ -33,7 +33,7 @@ While this model is very simple (and thus cheap in terms of transaction fees), i
 
 ### Example: buying tokens
 
-Let's say the pool has the price of 1 ETH = $1000 DAI, and the pool has reserves of $2M USD. Due to the constant product, this means there is $1M of ETH in the pool and $1M of DAI, so there are 1000 ETH and 1M DAI in the pool.
+Let's say the pool has the price of 1 ETH = \$1000 DAI, and the pool has reserves of \$2M USD. Due to the constant product, this means there is \$1M of ETH in the pool and \$1M of DAI, so there are 1000 ETH and 1M DAI in the pool.
 
 Recall that $xy = k$ is the Uniswap invariant. Let the initial ETH reserves be $x_0$ and the initial DAI reserves be $y_0$, so $x_0 * y_0 = k$.
 
