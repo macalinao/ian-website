@@ -1,8 +1,9 @@
 import type { GetStaticProps } from "next";
 import Head from "next/head";
-import { MDXRemote } from "next-mdx-remote";
 import React from "react";
 
+import { MDXProse } from "~src/components/MDXProse";
+import { ProseTitle } from "~src/components/Prose";
 import type { IContent } from "~src/lib/content/fetchContent";
 import { fetchContent } from "~src/lib/content/fetchContent";
 
@@ -11,8 +12,8 @@ const ContactPage: React.FC<IContent> = ({ data, source }: IContent) => (
     <Head>
       <title>Contact | Ian Macalinao</title>
     </Head>
-    <h1>{data.title}</h1>
-    <MDXRemote {...source} />
+    <ProseTitle>{data.title}</ProseTitle>
+    <MDXProse {...source} />
   </div>
 );
 

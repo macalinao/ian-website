@@ -7,35 +7,16 @@ const globalStyles = css`
   }
 
   h1,
-  h2,
-  h3 {
+  h2 {
     ${tw`font-serif font-bold text-gray-900`}
   }
 
   a {
-    color: #3271a7;
-  }
-
-  a:hover {
-    color: #888;
+    ${tw`transition-all text-ian hover:text-ian-200`}
   }
 
   pre {
-    text-align: left;
-    font-size: 12pt;
-  }
-
-  @media only screen and (max-width: 767px) {
-    #post {
-      text-align: left;
-    }
-  }
-
-  pre {
-    background-color: #f6f6f6;
-    padding: 10px 20px;
     border-left: 4px solid #3873a3;
-    overflow-x: scroll;
   }
 
   #post blockquote {
