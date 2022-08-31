@@ -148,3 +148,7 @@ dist
 .pnp.*
 
 out/
+
+# Sitemap stuff
+public/robots.txt
+public/sitemap*.xml

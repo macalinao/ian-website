@@ -20,7 +20,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    "next.config.mjs",
+    "*.mjs",
     ".eslintrc.cjs",
     "*.cjs"
   ],
