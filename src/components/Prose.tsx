@@ -29,7 +29,7 @@ export const Prose = styled.div(() => [
       ${tw`font-bold text-gray-900 text-base mt-4 mb-2 md:text-lg`}
     }
     pre {
-      ${tw`text-left text-base bg-gray-50 px-5 py-2.5 overflow-x-scroll`}
+      ${tw`text-left text-base bg-gray-50 px-5 py-2.5 overflow-x-auto`}
     }
     .data-footnote-backref {
       // system font uses emojis, so we override the backref font here
