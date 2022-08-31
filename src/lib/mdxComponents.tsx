@@ -1,10 +1,10 @@
 /* eslint-disable @next/next/no-img-element */
-import NextImage from "next/image";
-import Link from "next/link";
+import { default as NextImage } from "next/image.js";
+import { default as Link } from "next/link.js";
 import type { AnchorHTMLAttributes, DetailedHTMLProps } from "react";
 import React from "react";
 
-import { TokenIcon } from "~src/components/TokenIcon";
+import { TokenIcon } from "~src/components/TokenIcon/index.js";
 
 export const mdxComponents = {
   a: ({

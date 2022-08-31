@@ -1,12 +1,12 @@
 import type { GetStaticProps } from "next";
-import Head from "next/head";
-import Link from "next/link";
+import { default as Head } from "next/head.js";
+import { default as Link } from "next/link.js";
 import React from "react";
 
-import { BasicPage } from "~src/layouts/BasicPage";
-import type { IPost } from "~src/lib/content/posts";
-import { getAllPosts } from "~src/lib/content/posts";
-import { formatDate } from "~src/lib/formatDate";
+import { BasicPage } from "~src/layouts/BasicPage.js";
+import type { IPost } from "~src/lib/content/posts.js";
+import { getAllPosts } from "~src/lib/content/posts.js";
+import { formatDate } from "~src/lib/formatDate.js";
 
 interface IProps {
   posts: readonly IPost[];

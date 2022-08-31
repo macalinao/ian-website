@@ -1,7 +1,7 @@
 import React from "react";
 
-import { Prose } from "~src/components/Prose";
-import { BasicPage } from "~src/layouts/BasicPage";
+import { Prose } from "~src/components/Prose.js";
+import { BasicPage } from "~src/layouts/BasicPage.js";
 
 const ResumePage = () => (
   <div>

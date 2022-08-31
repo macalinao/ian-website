@@ -1,4 +1,4 @@
-import tw, { css, styled } from "twin.macro";
+import { css, default as tw, styled } from "twin.macro";
 
 export const Prose = styled.div(() => [
   tw`text-sm md:text-base`,

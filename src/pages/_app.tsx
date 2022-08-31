@@ -1,10 +1,10 @@
-import type { AppProps } from "next/app";
-import Head from "next/head";
+import type { AppProps } from "next/app.js";
+import { default as Head } from "next/head.js";
 import React from "react";
-import tw, { styled } from "twin.macro";
+import { default as tw, styled } from "twin.macro";
 
-import { GlobalStyles } from "~src/layouts/GlobalStyles";
-import { useAnalytics } from "~src/lib/useAnalytics";
+import { GlobalStyles } from "~src/layouts/GlobalStyles/index.js";
+import { useAnalytics } from "~src/lib/useAnalytics.js";
 
 const favicons = (
   <>

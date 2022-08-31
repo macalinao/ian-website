@@ -1,6 +1,6 @@
-import { useRouter } from "next/router";
+import { useRouter } from "next/router.js";
 import { useEffect } from "react";
-import TagManager from "react-gtm-module";
+import { default as TagManager } from "react-gtm-module";
 
 export const useAnalytics = (): void => {
   const router = useRouter();
