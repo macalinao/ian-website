@@ -3,6 +3,7 @@
   "description": "Ian Macalinao's personal website.",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "lint": "next lint",
     "dev": "next dev",
@@ -21,7 +22,6 @@
     "js-yaml": "^4.1.0",
     "lodash-es": "^4.17.21",
     "next": "12.2.5",
-    "next-google-fonts": "^2.2.0",
     "next-mdx-remote": "^4.1.0",
     "next-seo": "^5.5.0",
     "prop-types": "^15.8.1",
@@ -45,7 +45,6 @@
     "@saberhq/eslint-config-react": "^2.0.4",
     "@saberhq/tsconfig": "^2.0.4",
     "@svgr/webpack": "^6.3.1",
-    "@types/babel__core": "^7.1.19",
     "@types/eslint": "^8.4.6",
     "@types/js-yaml": "^4.0.5",
     "@types/lodash-es": "^4",

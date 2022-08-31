@@ -13,11 +13,6 @@ const nextConfig = {
     domains: ["static.ian.pw"],
     disableStaticImages: true,
   },
-  experimental: {
-    images: {
-      unoptimized: !!process.env.EXPORT_STATIC,
-    },
-  },
   webpack(
     /** @type import('webpack').Configuration */
     config,
@@ -58,5 +53,13 @@ const nextConfig = {
     return config;
   },
 };
+
+if (process.env.EXPORT_STATIC) {
+  nextConfig.experimental = {
+    images: {
+      unoptimized: true,
+    },
+  };
+}
 
 export default nextConfig;
