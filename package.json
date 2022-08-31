@@ -9,6 +9,7 @@
     "dev": "next dev",
     "sitemap": "next-sitemap --config next-sitemap.config.mjs",
     "build": "next build && yarn sitemap",
+    "build:analyze": "ANALYZE=1 next build",
     "build:static": "NEXT_PUBLIC_EXPORT_STATIC=1 yarn build && NEXT_PUBLIC_EXPORT_STATIC=1 next export",
     "typecheck": "tsc",
     "start": "next start",
@@ -40,6 +41,7 @@
   "devDependencies": {
     "@babel/core": "^7.18.13",
     "@emotion/babel-plugin": "^11.10.2",
+    "@next/bundle-analyzer": "^12.2.5",
     "@next/env": "^12.2.5",
     "@saberhq/eslint-config": "^2.0.4",
     "@saberhq/eslint-config-react": "^2.0.4",

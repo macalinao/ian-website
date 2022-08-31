@@ -1,3 +1,4 @@
+import { default as NextBundleAnalyzer } from "@next/bundle-analyzer";
 import ResolveTypeScriptPlugin from "resolve-typescript-plugin";
 import { default as invariant } from "tiny-invariant";
 
@@ -54,6 +55,10 @@ const nextConfig = {
   },
 };
 
+const withBundleAnalyzer = NextBundleAnalyzer({
+  enabled: !!process.env.ANALYZE,
+});
+
 if (process.env.NEXT_PUBLIC_EXPORT_STATIC) {
   nextConfig.experimental = {
     images: {
@@ -62,4 +67,4 @@ if (process.env.NEXT_PUBLIC_EXPORT_STATIC) {
   };
 }
 
-export default nextConfig;
+export default withBundleAnalyzer(nextConfig);
