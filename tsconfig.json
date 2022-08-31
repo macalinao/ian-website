@@ -9,7 +9,7 @@
     "module": "esnext",
     "noEmit": true,
     "resolveJsonModule": true,
-    "skipLibCheck": false,
+    "skipLibCheck": true,
     "target": "es5",
     "paths": {
       "~*": ["./*"]
@@ -19,7 +19,6 @@
   "include": [
     "next-env.d.ts",
     "**/*.ts",
-    "**/*.cts",
     "**/*.tsx",
     ".eslintrc.cjs",
     "next.config.mjs"

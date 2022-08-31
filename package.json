@@ -39,11 +39,10 @@
     "@saberhq/eslint-config-react": "^2.0.4",
     "@saberhq/tsconfig": "^2.0.4",
     "@svgr/webpack": "^6.3.1",
-    "@types/babel__core": "^7",
-    "@types/js-yaml": "^4",
+    "@types/babel__core": "^7.1.19",
+    "@types/js-yaml": "^4.0.5",
     "@types/lodash": "^4.14.184",
     "@types/node": "^18.7.14",
-    "@types/prop-types": "^15",
     "@types/react": "^18.0.18",
     "@types/react-dom": "^18.0.6",
     "@types/react-gtm-module": "^2.0.1",
@@ -57,9 +56,11 @@
   },
   "prettier": {},
   "engines": {
-    "node": ">=14.x"
+    "node": ">=16.x"
   },
   "resolutions": {
+    "react": "^18",
+    "@types/react": "^18",
     "js-yaml": "4"
   },
   "packageManager": "yarn@4.0.0-rc.15"

@@ -2,7 +2,7 @@ import Document, { Head, Html, Main, NextScript } from "next/document";
 import React from "react";
 
 class MyDocument extends Document {
-  render() {
+  override render() {
     return (
       <Html>
         <Head>

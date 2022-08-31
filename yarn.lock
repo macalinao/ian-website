@@ -2189,7 +2189,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/babel__core@npm:^7":
+"@types/babel__core@npm:^7.1.19":
   version: 7.1.19
   resolution: "@types/babel__core@npm:7.1.19"
   dependencies:
@@ -2291,7 +2291,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/js-yaml@npm:^4, @types/js-yaml@npm:^4.0.0":
+"@types/js-yaml@npm:^4.0.0, @types/js-yaml@npm:^4.0.5":
   version: 4.0.5
   resolution: "@types/js-yaml@npm:4.0.5"
   checksum: 586a99838928dc20d7e8826b3d8cab16ae131e36c00e7be4c519c51d30e90d0cbdfa92b4b5564bb1f3168c830e9750816c5e004577da0d207496da16bb0d0487
@@ -2398,13 +2398,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/prop-types@npm:^15":
-  version: 15.7.5
-  resolution: "@types/prop-types@npm:15.7.5"
-  checksum: a6e04a01e1f632cc3fa5fffd79779f2f83a8fec1293cdf29b5a02aa4e1a1b38a124e824205a40de4e66532a0fa33c4f60337b55cec635080ea2571e55910460f
-  languageName: node
-  linkType: hard
-
 "@types/react-dom@npm:^18.0.6":
   version: 18.0.6
   resolution: "@types/react-dom@npm:18.0.6"
@@ -2421,17 +2414,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:*":
-  version: 17.0.0
-  resolution: "@types/react@npm:17.0.0"
-  dependencies:
-    "@types/prop-types": "npm:*"
-    csstype: "npm:^3.0.2"
-  checksum: cd3617d3082622bf632219a6a4d56932c26be81dc85e5b7454864b57c34bb7179ab34a4a27d5479dbb3fb61c6a8bf04cf69f4fa2cd31ca200fc901e15e4b21e8
-  languageName: node
-  linkType: hard
-
-"@types/react@npm:>=16, @types/react@npm:^18.0.18":
+"@types/react@npm:^18":
   version: 18.0.18
   resolution: "@types/react@npm:18.0.18"
   dependencies:
@@ -4637,11 +4620,10 @@ __metadata:
     "@saberhq/eslint-config-react": "npm:^2.0.4"
     "@saberhq/tsconfig": "npm:^2.0.4"
     "@svgr/webpack": "npm:^6.3.1"
-    "@types/babel__core": "npm:^7"
-    "@types/js-yaml": "npm:^4"
+    "@types/babel__core": "npm:^7.1.19"
+    "@types/js-yaml": "npm:^4.0.5"
     "@types/lodash": "npm:^4.14.184"
     "@types/node": "npm:^18.7.14"
-    "@types/prop-types": "npm:^15"
     "@types/react": "npm:^18.0.18"
     "@types/react-dom": "npm:^18.0.6"
     "@types/react-gtm-module": "npm:^2.0.1"
@@ -6322,7 +6304,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react@npm:18.2.0":
+"react@npm:^18":
   version: 18.2.0
   resolution: "react@npm:18.2.0"
   dependencies:

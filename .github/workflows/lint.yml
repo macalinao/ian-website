@@ -9,26 +9,19 @@ defaults:
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v3
-      - uses: cachix/install-nix-action@v17
-      - uses: cachix/cachix-action@v10
+      - uses: ./.github/actions/yarn
         with:
-          name: igm
-          authToken: "${{ secrets.CACHIX_AUTH_TOKEN }}"
-
-      - name: Get yarn cache directory path
-        id: yarn-cache-dir-path
-        run: echo "::set-output name=dir::$(yarn config get cacheFolder)"
-      - name: Yarn Cache
-        uses: actions/cache@v3.0.1
-        with:
-          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
-          key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-modules-
-
-      - run: yarn install
-      - run: yarn typecheck
+          cachix-auth-token: ${{ secrets.CACHIX_AUTH_TOKEN }}
       - run: yarn build
+
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: ./.github/actions/yarn
+        with:
+          cachix-auth-token: ${{ secrets.CACHIX_AUTH_TOKEN }}
+      - run: yarn lint
+      - run: yarn typecheck
