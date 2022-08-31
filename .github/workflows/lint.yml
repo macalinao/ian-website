@@ -7,14 +7,14 @@ defaults:
     shell: nix develop --command bash {0}
 
 jobs:
-  build:
+  build-static:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - uses: ./.github/actions/yarn
         with:
           cachix-auth-token: ${{ secrets.CACHIX_AUTH_TOKEN }}
-      - run: yarn build
+      - run: yarn build:static
 
   lint:
     runs-on: ubuntu-latest
