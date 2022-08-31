@@ -82,9 +82,11 @@ const Post: React.FC<IProps> = ({ source, post }) => {
           <meta name="twitter:card" content="summary" />
         )}
       </Head>
-      <ProseTitle tw="mb-0 text-2xl md:text-3xl">{post.title}</ProseTitle>
+      <ProseTitle tw="mb-0 text-2xl md:(mb-0 text-3xl)">
+        {post.title}
+      </ProseTitle>
 
-      <div tw="mt-1 mb-8 text-gray-600 flex items-center justify-between w-full border-t border-gray-200 pt-1.5 text-xs">
+      <div tw="mt-1 mb-8 text-gray-600 flex items-center justify-between w-full border-t border-gray-200 pt-1.5 text-xs md:(mt-3 text-sm)">
         <div>
           <time>{formatDate(new Date(post.publishedAt))}</time>
         </div>
