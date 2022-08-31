@@ -26,7 +26,7 @@ const Home: React.FC = () => {
       <div tw="text-lg flex flex-col gap-4">
         <p
           css={css`
-            ${lineCountAtWidth(5, 370)}
+            ${lineCountAtWidth(2, 370)}
           `}
         >
           Hi, I'm Ian. I'm currently working on{" "}
@@ -39,7 +39,7 @@ const Home: React.FC = () => {
           css={css`
             // 2 lines tall to lessen layout shift
             min-height: calc(28px * 2);
-            ${lineCountAtWidth(5, 370)}
+            ${lineCountAtWidth(4, 370)}
           `}
         >
           I believe in a future where capital can flow freely to its most
@@ -50,7 +50,6 @@ const Home: React.FC = () => {
           css={css`
             max-height: 35px;
             ${lineCountAtWidth(1, 370)}
-
             // hack for page speed to be happy
             overflow: hidden;
             ${lineCountAtWidth(2, 350)}
