@@ -9,7 +9,8 @@
     "build": "next build",
     "typecheck": "tsc",
     "postbuild": "next-sitemap",
-    "start": "next start"
+    "start": "next start",
+    "postinstall": "husky install"
   },
   "dependencies": {
     "@emotion/react": "^11.10.4",
@@ -49,6 +50,8 @@
     "@types/webpack": "^5.28.0",
     "eslint": "^8.23.0",
     "eslint-config-next": "^12.2.5",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.3",
     "next-sitemap": "^3.1.21",
     "prettier": "^2.7.1",
     "typescript": "^4.8.2",
@@ -62,6 +65,10 @@
     "react": "^18",
     "@types/react": "^18",
     "js-yaml": "4"
+  },
+  "lint-staged": {
+    "*.{ts,tsx,mts,cts,cjs,mjs}": "eslint --fix --cache",
+    "*.{css,md,json,webmanifest,yml,yaml,js,jsx}": "prettier --write"
   },
   "packageManager": "yarn@4.0.0-rc.15"
 }
