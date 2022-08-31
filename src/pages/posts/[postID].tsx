@@ -24,9 +24,10 @@ import { katexCss } from "~src/lib/styles/katexCss.js";
 interface IProps {
   source: MDXRemoteSerializeResult;
   post: IPost;
+  exportStatic: boolean;
 }
 
-const Post: React.FC<IProps> = ({ source, post }) => {
+const Post: React.FC<IProps> = ({ source, post, exportStatic }) => {
   // TODO(igm): the client likes to hydrate things differently than the
   // server due to Emotion. We need to set up an emotion cache
   // per-request to share the styles between frontend and backend.
@@ -118,12 +119,22 @@ const Post: React.FC<IProps> = ({ source, post }) => {
         )}
         {post.banner && (
           <div tw="mb-8 -mx-5 md:mx-0">
-            <Image
-              alt={post.banner.alt}
-              src={post.banner.src}
-              width={post.banner.width}
-              height={post.banner.height}
-            />
+            {exportStatic ? (
+              // eslint-disable-next-line @next/next/no-img-element
+              <img
+                src={post.banner.src}
+                alt={post.banner.alt}
+                width={post.banner.width}
+                height={post.banner.height}
+              />
+            ) : (
+              <Image
+                alt={post.banner.alt}
+                src={post.banner.src}
+                width={post.banner.width}
+                height={post.banner.height}
+              />
+            )}
           </div>
         )}
         {content}
@@ -216,7 +227,13 @@ export const getStaticProps: GetStaticProps<
       ],
     },
   });
-  return { props: { source: mdxSource, post } };
+  return {
+    props: {
+      source: mdxSource,
+      post,
+      exportStatic: !!process.env.EXPORT_STATIC,
+    },
+  };
 };
 
 export default Post;
