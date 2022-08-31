@@ -61,6 +61,8 @@ const withBundleAnalyzer = NextBundleAnalyzer({
 
 if (process.env.NEXT_PUBLIC_EXPORT_STATIC) {
   nextConfig.experimental = {
+    browsersListForSwc: true,
+    legacyBrowsers: false,
     images: {
       unoptimized: true,
     },
