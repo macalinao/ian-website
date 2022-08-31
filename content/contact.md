@@ -8,7 +8,7 @@ If for some reason you need to send me an encrypted message via some other mediu
 
 ```
 pub   4096R/F126F8E8 2017-01-23
-uid                  Ian Macalinao (ian-mac) <me@ian.pw>
+uid                  Ian Macalinao (ian-mac) <me@ianm.com>
 sub   4096R/90AD9567 2017-01-23
 sub   4096R/9D0739CA 2017-01-24
 ```

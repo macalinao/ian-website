@@ -51,7 +51,7 @@ const Post: React.FC<IProps> = ({ source, post }) => {
         <meta property="og:article:author" content="Ian Macalinao" />
         <meta property="twitter:site" content="@simplyianm" />
         <meta property="twitter:creator" content="@simplyianm" />
-        <meta name="author" content="Ian Macalinao, me@ian.pw" />
+        <meta name="author" content="Ian Macalinao, me@ianm.com" />
         <meta
           property="og:article:published_time"
           content={`${new Date(post.publishedAt).toISOString()}`}
@@ -63,8 +63,8 @@ const Post: React.FC<IProps> = ({ source, post }) => {
           <meta name="keywords" content={post.tags.join(", ")} />
         )}
         <meta property="og:title" content={post.title} />
-        <meta property="og:url" content={`https://ian.pw${post.path}`} />
-        <meta property="twitter:url" content={`https://ian.pw${post.path}`} />
+        <meta property="og:url" content={`https://ianm.com${post.path}`} />
+        <meta property="twitter:url" content={`https://ianm.com${post.path}`} />
         {post.description && (
           <>
             <meta name="description" content={post.description} />
@@ -119,7 +119,7 @@ const Post: React.FC<IProps> = ({ source, post }) => {
           <em>
             Note: This section is incomplete. You can help finish it
             <a
-              href="https://github.com/macalinao/ian.pw/blob/master/$path$"
+              href="https://github.com/macalinao/ian-website/blob/master/$path$"
               target="_blank"
               rel="noreferrer"
             >
@@ -149,7 +149,7 @@ const Post: React.FC<IProps> = ({ source, post }) => {
         <p>
           Alternatively, you can view the source of the post{" "}
           <a
-            href={`https://github.com/macalinao/ian.pw/blob/master/content/posts/${post.id}.md`}
+            href={`https://github.com/macalinao/ian-website/blob/master/content/posts/${post.id}.md`}
             target="_blank"
             rel="noreferrer"
           >

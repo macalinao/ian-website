@@ -33,8 +33,8 @@ const favicons = (
       color="#3873a3"
     />
     <link rel="shortcut icon" href="/favicon.ico?v=00awvKA8lm" />
-    <meta name="apple-mobile-web-app-title" content="ian.pw" />
-    <meta name="application-name" content="ian.pw" />
+    <meta name="apple-mobile-web-app-title" content="ianm.com" />
+    <meta name="application-name" content="ianm.com" />
     <meta name="msapplication-TileColor" content="#3873a3" />
     <meta name="theme-color" content="#3873a3" />
   </>

@@ -4750,9 +4750,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ian.pw@workspace:.":
+"ianm.com@workspace:.":
   version: 0.0.0-use.local
-  resolution: "ian.pw@workspace:."
+  resolution: "ianm.com@workspace:."
   dependencies:
     "@babel/core": "npm:^7.18.13"
     "@emotion/babel-plugin": "npm:^11.10.2"
