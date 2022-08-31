@@ -1,5 +1,3 @@
-import { css } from "@emotion/react";
-import styled from "@emotion/styled";
 import type { GetStaticPaths, GetStaticProps } from "next";
 import Head from "next/head";
 import Image from "next/image";
@@ -10,6 +8,7 @@ import { serialize } from "next-mdx-remote/serialize";
 import React from "react";
 import rehypeKatex from "rehype-katex";
 import remarkMath from "remark-math";
+import { css, styled } from "twin.macro";
 
 import { PostComments } from "~src/components/PostComments";
 import type { IPost } from "~src/lib/content/posts";

@@ -1,3 +1,4 @@
+import ResolveTypeScriptPlugin from "resolve-typescript-plugin";
 import { default as invariant } from "tiny-invariant";
 
 /** @type import('next').NextConfig */
@@ -50,6 +51,9 @@ const nextConfig = {
         },
       ],
     });
+
+    invariant(config.resolve?.plugins);
+    config.resolve.plugins.push(new ResolveTypeScriptPlugin());
 
     return config;
   },

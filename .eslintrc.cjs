@@ -1,6 +1,7 @@
 "use strict";
 
-module.exports = {
+/** @type {import('eslint').ESLint.ConfigData} */
+const config = {
   env: {
     browser: true,
     es2021: true,
@@ -22,3 +23,5 @@ module.exports = {
     ],
   },
 };
+
+module.exports = config;

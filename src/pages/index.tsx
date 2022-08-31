@@ -1,8 +1,7 @@
-import { css } from "@emotion/react";
-import styled from "@emotion/styled";
 import Head from "next/head";
 import Link from "next/link";
 import React from "react";
+import { css, styled } from "twin.macro";
 
 import {
   clampWidth,
@@ -15,7 +14,7 @@ const quote =
 
 const Home: React.FC = () => {
   return (
-    <HomeWrapper>
+    <div tw="w-full max-w-3xl mx-auto pt-24">
       <Head>
         <title>Ian Macalinao</title>
         <meta
@@ -23,8 +22,8 @@ const Home: React.FC = () => {
           content="The personal website and blog of Ian Macalinao, software engineer and crypto-finance enthusiast."
         />
       </Head>
-      <h1>Ian Macalinao</h1>
-      <div>
+      <h1 tw="text-5xl my-8">Ian Macalinao</h1>
+      <div tw="text-lg flex flex-col gap-4">
         <p
           css={css`
             ${lineCountAtWidth(5, 370)}
@@ -38,8 +37,8 @@ const Home: React.FC = () => {
         </p>
         <p
           css={css`
-            // 3 lines tall to lessen layout shift
-            min-height: calc(35px * 3);
+            // 2 lines tall to lessen layout shift
+            min-height: calc(28px * 2);
             ${lineCountAtWidth(5, 370)}
           `}
         >
@@ -103,7 +102,7 @@ const Home: React.FC = () => {
         </li>
       </Connect>
       <Quote>"{quote}"</Quote>
-    </HomeWrapper>
+    </div>
   );
 };
 
@@ -124,12 +123,6 @@ const Quote = styled.blockquote`
   font-size: 16px;
   margin-bottom: 30px;
   line-height: 30px;
-`;
-
-const HomeWrapper = styled.div`
-  width: 720px;
-  max-width: 100%;
-  margin: 0px auto;
 `;
 
 const Connect = styled.ul`
