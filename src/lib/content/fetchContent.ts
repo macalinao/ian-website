@@ -1,5 +1,5 @@
+import matter from "@gr2m/gray-matter";
 import { readFile } from "fs/promises";
-import matter from "gray-matter";
 import type { MDXRemoteSerializeResult } from "next-mdx-remote";
 import { serialize } from "next-mdx-remote/serialize";
 import path from "path";

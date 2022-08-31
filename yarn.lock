@@ -1686,6 +1686,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@gr2m/gray-matter@npm:^4.0.3-with-pr-137":
+  version: 4.0.3-with-pr-137
+  resolution: "@gr2m/gray-matter@npm:4.0.3-with-pr-137"
+  dependencies:
+    js-yaml: "npm:^4.1.0"
+    kind-of: "npm:^6.0.2"
+    section-matter: "npm:^1.0.0"
+    strip-bom-string: "npm:^1.0.0"
+  checksum: b2504a82f8210e11147f1aee47e5766b246de78cf10e2c67102b3ea2910dcdc539800bbe3f25c9157c1501a9f78d10b0e9ce22524a15a91d894d2e6a59b0e9e4
+  languageName: node
+  linkType: hard
+
 "@humanwhocodes/config-array@npm:^0.10.4":
   version: 0.10.4
   resolution: "@humanwhocodes/config-array@npm:0.10.4"
@@ -1817,7 +1829,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@next/env@npm:12.2.5":
+"@next/env@npm:12.2.5, @next/env@npm:^12.2.5":
   version: 12.2.5
   resolution: "@next/env@npm:12.2.5"
   checksum: a14c9bc658651cb0325ed69d03da61d5d313b23a433711a8a20400713aba5fe6d403398f6c191a80078156ea6dd57612cfcd0aa5847ed445fa76e8603163d954
@@ -1988,6 +2000,13 @@ __metadata:
   peerDependencies:
     eslint: ">=7"
   checksum: c80edea0624a8a3f76ddba4d3a95e0a494ea848a9688d6dae32f7a608015edc21b5d68793d2b1d0c9c35e59e2d7ad02be5a821a9722864e7cc15c67913969822
+  languageName: node
+  linkType: hard
+
+"@saberhq/tsconfig@npm:^2.0.4":
+  version: 2.0.4
+  resolution: "@saberhq/tsconfig@npm:2.0.4"
+  checksum: bb8836403d1cff423081eae8d6ac8f67dc7a32010b867ff278e73b8c836db8d6d6aeab2db1a22168319615ae139b34a531d60d97d61d5d02a159b8a57ba00c5b
   languageName: node
   linkType: hard
 
@@ -2272,7 +2291,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/js-yaml@npm:^4.0.0":
+"@types/js-yaml@npm:^4, @types/js-yaml@npm:^4.0.0":
   version: 4.0.5
   resolution: "@types/js-yaml@npm:4.0.5"
   checksum: 586a99838928dc20d7e8826b3d8cab16ae131e36c00e7be4c519c51d30e90d0cbdfa92b4b5564bb1f3168c830e9750816c5e004577da0d207496da16bb0d0487
@@ -2376,6 +2395,13 @@ __metadata:
   version: 15.7.3
   resolution: "@types/prop-types@npm:15.7.3"
   checksum: 3b732f3c7f92c4540064c239c015396f6d71bdaf3fef7026838f6f479b85cb11217602ca2877fc4800e2e2bca57b0d307ab3645bf574452de0bbd6be84978efa
+  languageName: node
+  linkType: hard
+
+"@types/prop-types@npm:^15":
+  version: 15.7.5
+  resolution: "@types/prop-types@npm:15.7.5"
+  checksum: a6e04a01e1f632cc3fa5fffd79779f2f83a8fec1293cdf29b5a02aa4e1a1b38a124e824205a40de4e66532a0fa33c4f60337b55cec635080ea2571e55910460f
   languageName: node
   linkType: hard
 
@@ -2804,12 +2830,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"argparse@npm:^1.0.7":
-  version: 1.0.10
-  resolution: "argparse@npm:1.0.10"
-  dependencies:
-    sprintf-js: "npm:~1.0.2"
-  checksum: 6112e287a501a4badb8451c3b84420daa75dc4e1ac55d7ce086a492b2cf7d55f2fc0473acb62fc6af2d8013cf255d5d24734c10b4c2c6e440731644f8845c96b
+"argparse@npm:^2.0.1":
+  version: 2.0.1
+  resolution: "argparse@npm:2.0.1"
+  checksum: e041432563aadcf1267e543c472a756aaf57bb020ee5280093fe3c59fdde30d8b434c8d3c83614610550572acd18198395e2c20a38b3041a400dfe551320e0fb
   languageName: node
   linkType: hard
 
@@ -4029,16 +4053,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"esprima@npm:^4.0.0":
-  version: 4.0.1
-  resolution: "esprima@npm:4.0.1"
-  bin:
-    esparse: ./bin/esparse.js
-    esvalidate: ./bin/esvalidate.js
-  checksum: 08b3015538b1f7f087a4ea49b5a3d8ff9590ecf7eb43511182c9198cfe168a5cc1736c2ae33263c79cfbe9e984c1880ee971b64ad96e7c84db74488e6ee93c1b
-  languageName: node
-  linkType: hard
-
 "esquery@npm:^1.4.0":
   version: 1.4.0
   resolution: "esquery@npm:1.4.0"
@@ -4482,18 +4496,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"gray-matter@npm:^4.0.3":
-  version: 4.0.3
-  resolution: "gray-matter@npm:4.0.3"
-  dependencies:
-    js-yaml: "npm:^3.13.1"
-    kind-of: "npm:^6.0.2"
-    section-matter: "npm:^1.0.0"
-    strip-bom-string: "npm:^1.0.0"
-  checksum: a1554a503d24b5a846a7da2ff855d7515b7d2fe25e4eb6973b88c92f5f973a04774c302e2320b57e291f682af1eaa547d871cc1f1134520fa91a2d9e17a6bfe1
-  languageName: node
-  linkType: hard
-
 "has-bigints@npm:^1.0.1":
   version: 1.0.1
   resolution: "has-bigints@npm:1.0.1"
@@ -4676,12 +4678,17 @@ __metadata:
     "@emotion/babel-plugin": "npm:^11.10.2"
     "@emotion/react": "npm:^11.10.4"
     "@emotion/styled": "npm:^11.10.4"
+    "@gr2m/gray-matter": "npm:^4.0.3-with-pr-137"
+    "@next/env": "npm:^12.2.5"
     "@saberhq/eslint-config": "npm:^2.0.4"
     "@saberhq/eslint-config-react": "npm:^2.0.4"
+    "@saberhq/tsconfig": "npm:^2.0.4"
     "@svgr/webpack": "npm:^6.3.1"
     "@types/babel__core": "npm:^7"
+    "@types/js-yaml": "npm:^4"
     "@types/lodash": "npm:^4.14.184"
     "@types/node": "npm:^18.7.14"
+    "@types/prop-types": "npm:^15"
     "@types/react": "npm:^18.0.18"
     "@types/react-dom": "npm:^18.0.6"
     "@types/react-gtm-module": "npm:^2.0.1"
@@ -4689,7 +4696,7 @@ __metadata:
     disqus-react: "npm:^1.1.3"
     eslint: "npm:^8.23.0"
     eslint-config-next: "npm:^12.2.5"
-    gray-matter: "npm:^4.0.3"
+    js-yaml: "npm:^4.1.0"
     lodash: "npm:^4.17.21"
     next: "npm:12.2.5"
     next-google-fonts: "npm:^2.2.0"
@@ -4697,13 +4704,17 @@ __metadata:
     next-sitemap: "npm:^3.1.21"
     patch-package: "npm:^6.4.7"
     prettier: "npm:^2.7.1"
+    prop-types: "npm:^15.8.1"
     react: "npm:18.2.0"
     react-dom: "npm:18.2.0"
     react-gtm-module: "npm:^2.0.11"
     react-intersection-observer: "npm:^9.4.0"
     rehype-katex: "npm:^6.0.2"
     remark-math: "npm:5.1.1"
+    tiny-invariant: "npm:^1.2.0"
+    tslib: "npm:^2.4.0"
     typescript: "npm:^4.8.2"
+    webpack: "npm:^5.74.0"
   languageName: unknown
   linkType: soft
 
@@ -5042,15 +5053,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"js-yaml@npm:3.13.1":
-  version: 3.13.1
-  resolution: "js-yaml@npm:3.13.1"
+"js-yaml@npm:4":
+  version: 4.1.0
+  resolution: "js-yaml@npm:4.1.0"
   dependencies:
-    argparse: "npm:^1.0.7"
-    esprima: "npm:^4.0.0"
+    argparse: "npm:^2.0.1"
   bin:
     js-yaml: bin/js-yaml.js
-  checksum: 14907be8b66b3b964ca5b3a9c870070147bdaf727a335428d75bbb2a45891f2a256e9eef10bcf3c72e080a80fb4d6c6a2330e15b72a0756c97d8e50377fe5ea2
+  checksum: 03ab64a1008a68bb534a223f855c1dd595c0fc6b2800517f555803ed6e96c1cd365e19088ae46a466329a7b77b1e7951589db76a6ea2d525374a4167f69ac776
   languageName: node
   linkType: hard
 
@@ -6971,13 +6981,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"sprintf-js@npm:~1.0.2":
-  version: 1.0.3
-  resolution: "sprintf-js@npm:1.0.3"
-  checksum: 3e0738f581ab5582868689318a4987ea532cdf220266c1af6fdc5a5091f5c4e758fe3fed9125ac82ed91119ec2cbe0762c0e069b59b929bf70e8bbbf879e56e5
-  languageName: node
-  linkType: hard
-
 "stable@npm:^0.1.8":
   version: 0.1.8
   resolution: "stable@npm:0.1.8"
@@ -7218,6 +7221,13 @@ __metadata:
   version: 0.2.0
   resolution: "text-table@npm:0.2.0"
   checksum: 65e9ab9cd26946c5378cd4b8782562f47e017bad4fe8d398356380fdc762d08b177ca6a1c5c8deac14fbe974c46cd09c0cbb86560545cfa49800f3fcacb0c952
+  languageName: node
+  linkType: hard
+
+"tiny-invariant@npm:^1.2.0":
+  version: 1.2.0
+  resolution: "tiny-invariant@npm:1.2.0"
+  checksum: 6df944da6df501e6fa8b571aab2bb07b95c3425da4eb370c5bc2a7c4cd3d83ae946ac7db91b9589231fcb55c7ce7102abb5e70141b299c52e5484667b4f2705d
   languageName: node
   linkType: hard
 
@@ -7614,7 +7624,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"webpack@npm:^5":
+"webpack@npm:^5, webpack@npm:^5.74.0":
   version: 5.74.0
   resolution: "webpack@npm:5.74.0"
   dependencies:

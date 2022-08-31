@@ -1,10 +1,13 @@
 { pkgs ? import ./nix }:
 
 with pkgs;
+let
+  nodejs = nodejs-18_x;
+in
 mkShell {
   buildInputs = [
-    (yarn.override { nodejs = nodejs-14_x; })
-    nodejs-14_x
+    (yarn.override { inherit nodejs; })
+    nodejs
     awscli2
     update-static-assets
   ];

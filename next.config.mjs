@@ -1,4 +1,7 @@
-module.exports = {
+import { default as invariant } from "tiny-invariant";
+
+/** @type import('next').NextConfig */
+const nextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
@@ -7,11 +10,18 @@ module.exports = {
   },
   images: {
     domains: ["static.ian.pw"],
+    disableStaticImages: true,
   },
-  webpack(config, options) {
+  webpack(
+    /** @type import('webpack').Configuration */
+    config,
+    options
+  ) {
     if (process.env.NODE_ENV === "production") {
       config.devtool = "source-map";
     }
+
+    invariant(config.module?.rules);
 
     config.module.rules.push({
       test: /\.svg$/,
@@ -39,3 +49,5 @@ module.exports = {
     return config;
   },
 };
+
+export default nextConfig;

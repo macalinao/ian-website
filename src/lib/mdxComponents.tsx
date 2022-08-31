@@ -10,10 +10,13 @@ export const mdxComponents = {
   a: ({
     href,
     ...props
-  }: DetailedHTMLProps<
-    AnchorHTMLAttributes<HTMLAnchorElement>,
-    HTMLAnchorElement
-  > & { href: string }) => {
+  }: Omit<
+    DetailedHTMLProps<
+      AnchorHTMLAttributes<HTMLAnchorElement>,
+      HTMLAnchorElement
+    >,
+    "ref"
+  > & { href?: string }) => {
     if (href?.startsWith("http")) {
       return (
         <a {...props} href={href} target="_blank" rel="noreferrer">
@@ -29,7 +32,7 @@ export const mdxComponents = {
       );
     } else {
       return (
-        <Link {...props} href={href} passHref>
+        <Link {...props} href={href ?? "#"} passHref>
           <a>{props.children}</a>
         </Link>
       );
@@ -44,8 +47,8 @@ export const mdxComponents = {
   }: React.DetailedHTMLProps<
     React.ImgHTMLAttributes<HTMLImageElement>,
     HTMLImageElement
-  > & { src: string }) => {
-    if (src.startsWith("/")) {
+  > & { src?: string }) => {
+    if (src?.startsWith("/")) {
       return <img {...props} src={`https://static.ian.pw${src}`} alt={alt} />;
     }
     return <img {...props} src={src} alt={alt} />;
