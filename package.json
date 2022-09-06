@@ -42,7 +42,7 @@
     "tslib": "^2.4.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.18.13",
+    "@babel/core": "^7.19.0",
     "@emotion/babel-plugin": "^11.10.2",
     "@next/bundle-analyzer": "^12.2.5",
     "@next/env": "^12.2.5",
