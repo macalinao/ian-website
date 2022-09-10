@@ -11,6 +11,7 @@ const nextConfig = {
     ignoreDuringBuilds: true,
   },
   images: {
+    unoptimized: true,
     domains: ["static.ian.pw"],
     disableStaticImages: true,
   },
@@ -63,9 +64,6 @@ if (process.env.NEXT_PUBLIC_EXPORT_STATIC) {
   nextConfig.experimental = {
     browsersListForSwc: true,
     legacyBrowsers: false,
-    images: {
-      unoptimized: true,
-    },
   };
 }
 
