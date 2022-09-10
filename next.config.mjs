@@ -1,6 +1,6 @@
 import { default as NextBundleAnalyzer } from "@next/bundle-analyzer";
 import ResolveTypeScriptPlugin from "resolve-typescript-plugin";
-import { default as invariant } from "tiny-invariant";
+import invariant from "tiny-invariant";
 
 /** @type import('next').NextConfig */
 const nextConfig = {

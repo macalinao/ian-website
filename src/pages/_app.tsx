@@ -1,7 +1,7 @@
 import type { AppProps } from "next/app.js";
 import { default as Head } from "next/head.js";
 import React from "react";
-import { default as tw, styled } from "twin.macro";
+import tw, { styled } from "twin.macro";
 
 import { GlobalStyles } from "~src/layouts/GlobalStyles/index.js";
 import { useAnalytics } from "~src/lib/useAnalytics.js";

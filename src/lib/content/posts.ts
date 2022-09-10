@@ -1,7 +1,7 @@
 import { default as matter } from "@gr2m/gray-matter";
 import * as fs from "fs/promises";
 import path from "path";
-import { default as invariant } from "tiny-invariant";
+import invariant from "tiny-invariant";
 
 const postsDir = path.join(process.cwd(), "content/posts");
 
