@@ -1,5 +1,6 @@
 import type { AppProps } from "next/app.js";
 import { default as Head } from "next/head.js";
+import { DefaultSeo } from "next-seo";
 import React from "react";
 import tw, { styled } from "twin.macro";
 
@@ -45,12 +46,24 @@ const App: React.FC<AppProps> = ({ Component, pageProps }) => {
     <AppOuter>
       <AppWrapper>
         <GlobalStyles />
+        <DefaultSeo
+          titleTemplate="%s | Ian Macalinao"
+          defaultTitle="Ian Macalinao"
+          description="The personal website and blog of Ian Macalinao, software engineer and crypto-finance enthusiast."
+          openGraph={{
+            site_name: "Ian Macalinao",
+            locale: "en_US",
+          }}
+          twitter={{
+            handle: "@simplyianm",
+            site: "@simplyianm",
+            cardType: "summary",
+          }}
+        />
         <Head>
           <meta charSet="UTF-8" />
           {favicons}
           <meta name="viewport" content="width=device-width, initial-scale=1" />
-          <meta property="og:site_name" content="Ian Macalinao" />
-          <meta property="og:locale" content="en_US" />
         </Head>
         <Component {...pageProps} />
       </AppWrapper>

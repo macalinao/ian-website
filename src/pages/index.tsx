@@ -1,5 +1,5 @@
-import { default as Head } from "next/head.js";
 import { default as Link } from "next/link.js";
+import { NextSeo } from "next-seo";
 import React from "react";
 import { css, default as tw, styled } from "twin.macro";
 
@@ -15,13 +15,7 @@ const quote =
 const Home: React.FC = () => {
   return (
     <div tw="md:pt-24">
-      <Head>
-        <title>Ian Macalinao</title>
-        <meta
-          name="description"
-          content="The personal website and blog of Ian Macalinao, software engineer and crypto-finance enthusiast."
-        />
-      </Head>
+      <NextSeo canonical="https://ianm.com/" />
       <h1 tw="text-4xl my-4 md:(text-5xl my-8)">Ian Macalinao</h1>
       <div tw="text-lg flex flex-col gap-4">
         <p

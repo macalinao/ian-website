@@ -1,5 +1,5 @@
 import type { GetStaticProps } from "next";
-import { default as Head } from "next/head.js";
+import { NextSeo } from "next-seo";
 import React from "react";
 
 import { MDXProse } from "~src/components/MDXProse.js";
@@ -9,9 +9,7 @@ import { fetchContent } from "~src/lib/content/fetchContent.js";
 
 const ContactPage: React.FC<IContent> = ({ data, source }: IContent) => (
   <div>
-    <Head>
-      <title>Contact | Ian Macalinao</title>
-    </Head>
+    <NextSeo title="Contact" canonical="https://ianm.com/contact" />
     <BasicPage title={data.title}>
       <MDXProse {...source} />
     </BasicPage>

@@ -12,6 +12,7 @@ export interface IPost {
   publishedAt: string;
   content: string;
   path: string;
+  canonicalUrl: string;
   incomplete: boolean;
   description: string | null;
   hasMath: boolean;
@@ -42,13 +43,15 @@ export const getPostByID = async (postID: string): Promise<IPost | null> => {
     const { content, data: dataUnknown } = matter(source.toString());
     const data = dataUnknown as IPost;
     const publishedAt = new Date(postID.split("-").slice(0, 3).join("-"));
+    const path = `/posts/${postID}`;
     return {
       id: postID,
       title: data.title,
       draft: data.draft === true,
       publishedAt: publishedAt.toISOString(),
       content,
-      path: `/posts/${postID}`,
+      path,
+      canonicalUrl: `https://ianm.com/posts/${postID}`,
       incomplete: data.incomplete === true,
       description: data.description ?? null,
       hasMath: data.hasMath === true,

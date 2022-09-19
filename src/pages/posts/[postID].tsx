@@ -4,6 +4,7 @@ import { default as Image } from "next/image.js";
 import { default as Link } from "next/link.js";
 import type { MDXRemoteSerializeResult } from "next-mdx-remote";
 import { serialize } from "next-mdx-remote/serialize";
+import { NextSeo } from "next-seo";
 import React from "react";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypeKatex from "rehype-katex";
@@ -36,53 +37,52 @@ const Post: React.FC<IProps> = ({ source, post, exportStatic }) => {
   const content = <MDXProse {...source} components={mdxComponents} />;
   return (
     <PostWrapper post={post}>
+      <NextSeo
+        title={post.title}
+        canonical={post.canonicalUrl}
+        openGraph={{
+          type: "article",
+          article: {
+            authors: ["Ian Macalinao <contact@ianm.com>"],
+            publishedTime: new Date(post.publishedAt).toISOString(),
+            tags: post.tags,
+          },
+          title: post.title,
+          url: post.canonicalUrl,
+          ...(post.description
+            ? {
+                description: post.description,
+              }
+            : {}),
+          ...(post.banner
+            ? {
+                images: [
+                  {
+                    url: post.banner.src,
+                    width: post.banner.width,
+                    height: post.banner.height,
+                    alt: post.banner.alt,
+                  },
+                ],
+              }
+            : {}),
+        }}
+        {...(post.description
+          ? {
+              description: post.description,
+            }
+          : {})}
+        twitter={
+          post.banner
+            ? {
+                cardType: "summary_large_image",
+              }
+            : undefined
+        }
+      />
       <Head>
-        <title>{post.title} | Ian Macalinao</title>
-        <meta property="twitter:title" content={post.title} />
-        <meta property="og:type" content="article" />
-        <meta property="og:article:author" content="Ian Macalinao" />
-        <meta property="twitter:site" content="@simplyianm" />
-        <meta property="twitter:creator" content="@simplyianm" />
-        <meta name="author" content="Ian Macalinao, me@ianm.com" />
-        <meta
-          property="og:article:published_time"
-          content={`${new Date(post.publishedAt).toISOString()}`}
-        />
-        {post.tags.map((tag) => (
-          <meta key={tag} property="og:article:tag" content={tag} />
-        ))}
         {post.tags.length > 0 && (
           <meta name="keywords" content={post.tags.join(", ")} />
-        )}
-        <meta property="og:title" content={post.title} />
-        <meta property="og:url" content={`https://ianm.com${post.path}`} />
-        <meta property="twitter:url" content={`https://ianm.com${post.path}`} />
-        {post.description && (
-          <>
-            <meta name="description" content={post.description} />
-            <meta property="og:description" content={post.description} />
-            <meta property="twitter:description" content={post.description} />
-          </>
-        )}
-        {post.banner ? (
-          <>
-            <meta property="og:image" content={post.banner.src} />
-            <meta
-              property="og:image:width"
-              content={post.banner.width.toString()}
-            />
-            <meta
-              property="og:image:height"
-              content={post.banner.height.toString()}
-            />
-            <meta property="og:image:url" content={post.banner.src} />
-            <meta property="twitter:image" content={post.banner.src} />
-            <meta property="twitter:image:alt" content={post.banner.alt} />
-            <meta property="twitter:card" content="summary_large_image" />
-          </>
-        ) : (
-          // If no banner is present, still display a card
-          <meta name="twitter:card" content="summary" />
         )}
       </Head>
       <ProseTitle tw="mb-0 text-2xl md:(mb-0 text-3xl)">

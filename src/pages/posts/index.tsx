@@ -1,6 +1,6 @@
 import type { GetStaticProps } from "next";
-import { default as Head } from "next/head.js";
 import { default as Link } from "next/link.js";
+import { NextSeo } from "next-seo";
 import React from "react";
 
 import { BasicPage } from "~src/layouts/BasicPage.js";
@@ -22,9 +22,7 @@ const PostsPage: React.FC<IProps> = ({ posts }) => {
 
   return (
     <>
-      <Head>
-        <title>All Posts | Ian Macalinao</title>
-      </Head>
+      <NextSeo title="Writing" canonical="https://ianm.com/posts" />
       <BasicPage title="Writing">
         <div tw="flex flex-col gap-4 my-4">
           {sortedPosts.map((post) => (
