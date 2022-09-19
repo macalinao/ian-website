@@ -38,17 +38,26 @@ implementing and/or voting for it.
 
 ## How this applies to protocols
 
-Protocols are a form of governance, and as such they can use taxes to influence user behavior. This is already implemented in many layer one blockchains:
+Protocols are a form of governance, and as such they can use taxes to influence
+user behavior. This is already implemented in many layer one blockchains:
 
-- A tax on transactions to discourage spam. This already exists in the form of transaction fees.
-- A tax on storage, to discourage state bloat. This exists in Solana in the form of rent, and on Ethereum in the form of storage/storage refunds.
+- A tax on transactions to discourage spam. This already exists in the form of
+  transaction fees.
+- A tax on storage, to discourage state bloat. This exists in Solana in the form
+  of rent, and on Ethereum in the form of storage/storage refunds.
 - A tax on CPU resources, to encourage developers to optimize their code.
 
 These also exist in the DeFi space:
 
-- Automated market makers give fees to liquidity providers from traders crossing a protocol-defined spread between the bid and the ask, which is usually referred to as the "trade fee". For example, Uniswap V2 has a 0.3% spread on every pool.
+- Automated market makers give fees to liquidity providers from traders crossing
+  a protocol-defined spread between the bid and the ask, which is usually
+  referred to as the "trade fee". For example, Uniswap V2 has a 0.3% spread on
+  every pool.
   - 1/6 of this may be taken by the Uniswap protocol.
-- Borrowers of borrow-lend markets pay interest to depositors, usually based on the [utilization rate](./2020-12-20-understanding-compound-protocols-interest-rates) of the lending market.
+- Borrowers of borrow-lend markets pay interest to depositors, usually based on
+  the [utilization
+  rate](./2020-12-20-understanding-compound-protocols-interest-rates) of the
+  lending market.
   - A percentage of the spread goes to the DAO.
 
 Understanding the effects of taxes is important for protocol designers, since
