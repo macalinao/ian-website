@@ -4,7 +4,7 @@ import { default as Image } from "next/image.js";
 import { default as Link } from "next/link.js";
 import type { MDXRemoteSerializeResult } from "next-mdx-remote";
 import { serialize } from "next-mdx-remote/serialize";
-import { NextSeo } from "next-seo";
+import { ArticleJsonLd, NextSeo } from "next-seo";
 import React from "react";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypeKatex from "rehype-katex";
@@ -79,6 +79,21 @@ const Post: React.FC<IProps> = ({ source, post, exportStatic }) => {
               }
             : undefined
         }
+      />
+      <ArticleJsonLd
+        url={post.canonicalUrl}
+        title={post.title}
+        images={post.banner ? [post.banner.src] : []}
+        datePublished={new Date(post.publishedAt).toISOString()}
+        authorName={[
+          {
+            name: "Ian Macalinao",
+            url: "https://ianm.com",
+          },
+        ]}
+        publisherName="Ian Macalinao"
+        publisherLogo="https://ianm.com/icon.svg"
+        description={post.description ?? `${post.title} by Ian Macalinao`}
       />
       <Head>
         {post.tags.length > 0 && (
