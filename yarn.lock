@@ -1993,12 +1993,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@next/bundle-analyzer@npm:^12.3.0":
-  version: 12.3.0
-  resolution: "@next/bundle-analyzer@npm:12.3.0"
+"@next/bundle-analyzer@npm:^13.0.0":
+  version: 13.0.0
+  resolution: "@next/bundle-analyzer@npm:13.0.0"
   dependencies:
     webpack-bundle-analyzer: "npm:4.3.0"
-  checksum: 7d37a6091cc1a890fce2a74d6c5d2e6e27237c329170c1655ce8721f7dda57e34aef0863697d60aac1e505e0f5782858c3fbc4b301c78d0c55a433a549d39f24
+  checksum: ffb9837ba4acffb5a7bc6e9fe76a80850667b9b5d91eb81123c2647b97087ef2548f7387f8c34e630fcefd9eb2c47dbf246f110a3e80771cabad236c021a6cc3
   languageName: node
   linkType: hard
 
@@ -5465,7 +5465,7 @@ __metadata:
     "@emotion/react": "npm:^11.10.4"
     "@emotion/styled": "npm:^11.10.4"
     "@gr2m/gray-matter": "npm:^4.0.3-with-pr-137"
-    "@next/bundle-analyzer": "npm:^12.3.0"
+    "@next/bundle-analyzer": "npm:^13.0.0"
     "@next/env": "npm:^12.3.0"
     "@saberhq/browserslist-config": "npm:^2.0.5"
     "@saberhq/eslint-config": "npm:^2.0.5"
