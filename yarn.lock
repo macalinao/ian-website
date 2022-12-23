@@ -2002,10 +2002,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@next/env@npm:12.3.0, @next/env@npm:^12.3.0":
+"@next/env@npm:12.3.0":
   version: 12.3.0
   resolution: "@next/env@npm:12.3.0"
   checksum: cc242adce2cf1fff1bb9145bad71abecfddded053cde35a776ab542f7caa6d083658e45a4f574d98fb8656d5e197ddf1de82874aadd0970028b12507caf30fed
+  languageName: node
+  linkType: hard
+
+"@next/env@npm:^13.1.0":
+  version: 13.1.0
+  resolution: "@next/env@npm:13.1.0"
+  checksum: 9ccac379b1a2f5f896eb3b1c0b48bf4d590ee5da5780b27a9f3764bba053e8dfac7fa04422be9736a8a1ebf3b4e4783b106c88df96fd65e4150c302878982c16
   languageName: node
   linkType: hard
 
@@ -5466,7 +5473,7 @@ __metadata:
     "@emotion/styled": "npm:^11.10.4"
     "@gr2m/gray-matter": "npm:^4.0.3-with-pr-137"
     "@next/bundle-analyzer": "npm:^12.3.0"
-    "@next/env": "npm:^12.3.0"
+    "@next/env": "npm:^13.1.0"
     "@saberhq/browserslist-config": "npm:^2.0.5"
     "@saberhq/eslint-config": "npm:^2.0.5"
     "@saberhq/eslint-config-react": "npm:^2.0.5"
