@@ -1993,12 +1993,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@next/bundle-analyzer@npm:^12.3.0":
-  version: 12.3.0
-  resolution: "@next/bundle-analyzer@npm:12.3.0"
+"@next/bundle-analyzer@npm:^13.1.1":
+  version: 13.1.1
+  resolution: "@next/bundle-analyzer@npm:13.1.1"
   dependencies:
-    webpack-bundle-analyzer: "npm:4.3.0"
-  checksum: 7d37a6091cc1a890fce2a74d6c5d2e6e27237c329170c1655ce8721f7dda57e34aef0863697d60aac1e505e0f5782858c3fbc4b301c78d0c55a433a549d39f24
+    webpack-bundle-analyzer: "npm:4.7.0"
+  checksum: fa327fab48c7bd61d31e9121a0b4610f273e91658968897e8ac7f2146eb3ddd82b356b4a17d6125928bc98f894b0408a99338db5a606629a1dfd26e5177f850a
   languageName: node
   linkType: hard
 
@@ -3717,13 +3717,6 @@ __metadata:
   version: 2.20.3
   resolution: "commander@npm:2.20.3"
   checksum: a6cb7ce73cc1db74a2da4bb6b4fc4f9a655ba35beb90f32bf5831d7d3be610dafc01dcc8a17f8204cf4e3f1f434d2115b7db56dfb0b827d42b10d1ba6ae8cbb4
-  languageName: node
-  linkType: hard
-
-"commander@npm:^6.2.0":
-  version: 6.2.1
-  resolution: "commander@npm:6.2.1"
-  checksum: c52b3cba040d015dc2788bed08041dd2e4734bc79b4ac0e1829544fa09e0844b746b956e9f5f87dee4f62870ab63239f22e2e2d30b242eef392df1501dee319d
   languageName: node
   linkType: hard
 
@@ -5465,7 +5458,7 @@ __metadata:
     "@emotion/react": "npm:^11.10.4"
     "@emotion/styled": "npm:^11.10.4"
     "@gr2m/gray-matter": "npm:^4.0.3-with-pr-137"
-    "@next/bundle-analyzer": "npm:^12.3.0"
+    "@next/bundle-analyzer": "npm:^13.1.1"
     "@next/env": "npm:^12.3.0"
     "@saberhq/browserslist-config": "npm:^2.0.5"
     "@saberhq/eslint-config": "npm:^2.0.5"
@@ -9354,14 +9347,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"webpack-bundle-analyzer@npm:4.3.0":
-  version: 4.3.0
-  resolution: "webpack-bundle-analyzer@npm:4.3.0"
+"webpack-bundle-analyzer@npm:4.7.0":
+  version: 4.7.0
+  resolution: "webpack-bundle-analyzer@npm:4.7.0"
   dependencies:
     acorn: "npm:^8.0.4"
     acorn-walk: "npm:^8.0.0"
     chalk: "npm:^4.1.0"
-    commander: "npm:^6.2.0"
+    commander: "npm:^7.2.0"
     gzip-size: "npm:^6.0.0"
     lodash: "npm:^4.17.20"
     opener: "npm:^1.5.2"
@@ -9369,7 +9362,7 @@ __metadata:
     ws: "npm:^7.3.1"
   bin:
     webpack-bundle-analyzer: lib/bin/analyzer.js
-  checksum: 677b601c01db5eb0b5269c50797f942ce182e3f44b4d43dd59e1a83587d03f6acc3e4b90a9b1ff634c3e8ad1627e45f9a0891265ab669efcbe44174fc4334272
+  checksum: 6d896b27e19783e1bc34ea545d758acac43b01699cb14bc9269b115f3de26ae909d7bd779e89dc2ef43263a8d98841b8478f849bd32925e912d97d7a39e0a4b8
   languageName: node
   linkType: hard
 
