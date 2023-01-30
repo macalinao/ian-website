@@ -44,7 +44,7 @@
   "devDependencies": {
     "@babel/core": "^7.19.1",
     "@emotion/babel-plugin": "^11.10.2",
-    "@next/bundle-analyzer": "^12.3.0",
+    "@next/bundle-analyzer": "^13.1.6",
     "@next/env": "^12.3.0",
     "@saberhq/browserslist-config": "^2.0.5",
     "@saberhq/eslint-config": "^2.0.5",
