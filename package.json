@@ -10,7 +10,7 @@
     "sitemap": "next-sitemap --config next-sitemap.config.mjs",
     "build": "next build && yarn sitemap",
     "build:analyze": "ANALYZE=1 next build",
-    "build:static": "NEXT_PUBLIC_EXPORT_STATIC=1 yarn build && NEXT_PUBLIC_EXPORT_STATIC=1 next export",
+    "build:static": "NEXT_PUBLIC_EXPORT_STATIC=1 yarn build",
     "typecheck": "tsc",
     "start": "next start",
     "postinstall": "husky install"
