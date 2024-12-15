@@ -5,7 +5,6 @@ import {
   Main,
   NextScript,
 } from "next/document.js";
-import React from "react";
 
 class MyDocument extends Document {
   override render() {

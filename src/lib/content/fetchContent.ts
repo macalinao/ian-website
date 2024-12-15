@@ -1,7 +1,9 @@
 import matter from "@gr2m/gray-matter";
+// eslint-disable-next-line import-x/no-nodejs-modules
 import { readFile } from "fs/promises";
 import type { MDXRemoteSerializeResult } from "next-mdx-remote";
 import { serialize } from "next-mdx-remote/serialize";
+// eslint-disable-next-line import-x/no-nodejs-modules
 import path from "path";
 
 interface ContentData {

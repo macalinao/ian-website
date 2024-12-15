@@ -10,7 +10,7 @@ const DiscussionEmbed = dynamic(
   () => import("disqus-react").then((mod) => mod.DiscussionEmbed),
   {
     ssr: false,
-  }
+  },
 ) as typeof DiscussionEmbedType;
 
 interface IProps {

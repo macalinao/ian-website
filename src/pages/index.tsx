@@ -1,6 +1,6 @@
 import { default as Link } from "next/link.js";
 import { NextSeo } from "next-seo";
-import React from "react";
+import type React from "react";
 import { css, default as tw, styled } from "twin.macro";
 
 import {
@@ -23,7 +23,7 @@ const Home: React.FC = () => {
             ${lineCountAtWidth(2, 370)}
           `}
         >
-          Hi, I'm Ian. I'm currently working on{" "}
+          Hi, I&apos;m Ian. I&apos;m currently working on{" "}
           <a href="https://saber.so" target="_blank" rel="noreferrer">
             Saber
           </a>
@@ -49,24 +49,20 @@ const Home: React.FC = () => {
             ${lineCountAtWidth(2, 350)}
           `}
         >
-          You can find my resume{" "}
-          <Link href="/resume">
-            <a>here</a>
-          </Link>
-          .
+          You can find my resume <Link href="/resume">here</Link>.
           <span
             css={css`
               ${clampWidth(
                 css`
                   display: none;
                 `,
-                367
+                367,
               )}
               ${clampWidth(
                 css`
                   display: inline;
                 `,
-                350
+                350,
               )}
             `}
           >
@@ -78,9 +74,7 @@ const Home: React.FC = () => {
 
       <Connect>
         <li>
-          <Link href="/posts" passHref>
-            <a>Writing</a>
-          </Link>
+          <Link href="/posts">Writing</Link>
         </li>
         <li>
           <a href="https://twitter.com/simplyianm">Twitter</a>
@@ -89,12 +83,10 @@ const Home: React.FC = () => {
           <a href="https://github.com/macalinao">GitHub</a>
         </li>
         <li>
-          <Link href="/contact" passHref>
-            <a>Contact</a>
-          </Link>
+          <Link href="/contact">Contact</Link>
         </li>
       </Connect>
-      <Quote>"{quote}"</Quote>
+      <Quote>&ldquo;{quote}&rdquo;</Quote>
     </div>
   );
 };

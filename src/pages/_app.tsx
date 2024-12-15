@@ -1,7 +1,7 @@
 import type { AppProps } from "next/app.js";
 import { default as Head } from "next/head.js";
 import { DefaultSeo } from "next-seo";
-import React from "react";
+import type React from "react";
 import tw, { styled } from "twin.macro";
 
 import { GlobalStyles } from "~src/layouts/GlobalStyles/index.js";

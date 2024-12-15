@@ -1,7 +1,7 @@
 import type { GetStaticProps } from "next";
 import { default as Link } from "next/link.js";
 import { NextSeo } from "next-seo";
-import React from "react";
+import type React from "react";
 
 import { BasicPage } from "~src/layouts/BasicPage.js";
 import type { IPost } from "~src/lib/content/posts.js";
@@ -17,7 +17,7 @@ const PostsPage: React.FC<IProps> = ({ posts }) => {
     .filter((post) => !post.draft)
     .sort(
       (a, b) =>
-        new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
+        new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime(),
     );
 
   return (
@@ -32,8 +32,8 @@ const PostsPage: React.FC<IProps> = ({ posts }) => {
                   {formatDate(new Date(post.publishedAt))}
                 </time>
               </div>
-              <Link href={post.path} passHref>
-                <a tw="text-base md:text-lg font-normal">{post.title}</a>
+              <Link href={post.path} tw="text-base md:text-lg font-normal">
+                {post.title}
               </Link>{" "}
             </div>
           ))}

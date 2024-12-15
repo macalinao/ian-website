@@ -1,5 +1,3 @@
-import React from "react";
-
 import { BasicPage } from "~src/layouts/BasicPage.js";
 
 const NotFoundPage = () => (

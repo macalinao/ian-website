@@ -1,7 +1,7 @@
-"use strict";
+import type { Config } from "tailwindcss";
 
-/** @type {import('tailwindcss').Config} */
-module.exports = {
+const config: Config = {
+  content: ["./src/**/*.{ts,tsx}"],
   theme: {
     extend: {
       fontFamily: {
@@ -25,3 +25,5 @@ module.exports = {
     },
   },
 };
+
+export default config;

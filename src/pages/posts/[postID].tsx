@@ -5,7 +5,7 @@ import { default as Link } from "next/link.js";
 import type { MDXRemoteSerializeResult } from "next-mdx-remote";
 import { serialize } from "next-mdx-remote/serialize";
 import { ArticleJsonLd, NextSeo } from "next-seo";
-import React from "react";
+import type React from "react";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypeKatex from "rehype-katex";
 import rehypeSlug from "rehype-slug";
@@ -111,8 +111,8 @@ const Post: React.FC<IProps> = ({ source, post, exportStatic }) => {
         <div>
           <address tw="not-italic">
             by{" "}
-            <Link href="/" passHref>
-              <a rel="author">Ian Macalinao</a>
+            <Link href="/" rel="author">
+              Ian Macalinao
             </Link>
           </address>
         </div>
@@ -159,8 +159,8 @@ const Post: React.FC<IProps> = ({ source, post, exportStatic }) => {
         <p tw="mb-2">
           Thanks for reading! Have any questions, comments, or suggestions? Feel
           free to use the comment section below or email me at{" "}
-          <a href="mailto:blog@igm.pub">blog@igm.pub</a> and I'll do my best to
-          respond.
+          <a href="mailto:blog@igm.pub">blog@igm.pub</a> and I&apos;ll do my
+          best to respond.
         </p>
         <p>
           Alternatively, you can view the source of the post{" "}

@@ -1,5 +1,5 @@
 import { default as Link } from "next/link.js";
-import React from "react";
+import type React from "react";
 
 import { ProseTitle } from "~src/components/Prose.js";
 
@@ -14,8 +14,8 @@ export const BasicPage: React.FC<Props> = ({ title, children }: Props) => {
       <ProseTitle>{title}</ProseTitle>
       {children}
       <div tw="my-8">
-        <Link href="/" passHref>
-          <a tw="font-medium underline">Back to home</a>
+        <Link href="/" tw="font-medium underline">
+          Back to home
         </Link>
       </div>
     </>

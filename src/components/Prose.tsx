@@ -62,5 +62,5 @@ export const Prose = styled.div(() => [
 ]);
 
 export const ProseTitle = styled.h1(
-  () => tw`text-3xl my-4 leading-normal md:(text-4xl my-8)`
+  () => tw`text-3xl my-4 leading-normal md:(text-4xl my-8)`,
 );
