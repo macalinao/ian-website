@@ -63,10 +63,15 @@ $$\text{Borrow Interest Rate} = \text{Multiplier} * \text{Utilization Rate} + \t
 ### Example: WBTC rates
 
 <figure>
-    <a href="https://compound.finance/markets/WBTC">
-        <NextImage src="https://static.ian.pw/images/2020-12-20-wbtc-rate-model.png" width="512" height="467" alt="The WBTC rate model." />
-    </a>
-    <figcaption>The WBTC rate model.</figcaption>
+  <a href="https://compound.finance/markets/WBTC">
+    <NextImage
+      src="https://static.ian.pw/images/2020-12-20-wbtc-rate-model.png"
+      width="512"
+      height="467"
+      alt="The WBTC rate model."
+    />
+  </a>
+  <figcaption>The WBTC rate model.</figcaption>
 </figure>
 
 Let's say the protocol has 10,000 <TokenIcon token="WBTC" /> supplied to it and users are borrowing 1,000 WBTC. The utilization rate is thus 10%. What should the rates be?
@@ -130,10 +135,15 @@ $$
 ### Example: USDC rate model
 
 <figure>
-    <a href="https://compound.finance/markets/USDC">
-        <NextImage src="https://static.ian.pw/images/2020-12-20-usdc-rate-model.png" width="512" height="467" alt="The WBTC rate model." />
-    </a>
-    <figcaption>The USDC rate model is a jump rate model.</figcaption>
+  <a href="https://compound.finance/markets/USDC">
+    <NextImage
+      src="https://static.ian.pw/images/2020-12-20-usdc-rate-model.png"
+      width="512"
+      height="467"
+      alt="The WBTC rate model."
+    />
+  </a>
+  <figcaption>The USDC rate model is a jump rate model.</figcaption>
 </figure>
 
 The USDC rate model is a jump rate model with the following parameters:
@@ -196,6 +206,9 @@ Compound is a very powerful building block of the Ethereum DeFi ecosystem. Under
 If you enjoyed this post and/or would like to hear more, please leave a comment below!
 
 [^1]: Source: [Compound whitepaper](https://compound.finance)
+
 [^2]: According to [proposal 31](https://compound.finance/governance/proposals/31), the Reserve Factor is a percentage of the borrowers paid interest which can be used by the governance or act as an insurance against borrower default which protects all the suppliers.
+
 [^3]: Technically, this system is not immune to insider trading. A member of governance can trade before voting. Also since COMP can be borrowed on Compound, one can stake a lot of ETH, borrow COMP, place a large vote, then repay all of the COMP.
+
 [^4]: At the time of writing Ethereum has been producing ~13 second blocks, so all annualized rates in Compound should be multiplied by approximately 15/13. Although [this number is hardcoded into the smart contract](https://etherscan.io/address/0xbae04cbf96391086dc643e842b517734e214d698#code), the rate model may be updated in the future via governance.

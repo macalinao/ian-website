@@ -1,9 +1,9 @@
 {
   "typescript.tsdk": ".yarn/sdks/typescript/lib",
   "eslint.useFlatConfig": true,
-  "files.associations": {
-    "*.md": "mdx"
-  },
+  // "files.associations": {
+  //   "*.md": "mdx"
+  // },
   "eslint.options": {
     "cache": true
   },
