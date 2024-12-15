@@ -9,6 +9,7 @@ in
 mkShell {
   buildInputs = [
     (yarn.override { inherit nodejs; })
+    nixfmt-rfc-style
     nodejs
     awscli2
     update-static-assets
