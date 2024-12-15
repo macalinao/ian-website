@@ -10,15 +10,12 @@ runs:
   using: composite
   steps:
     # Install Cachix
-    - uses: cachix/install-nix-action@v17
     - uses: cachix/install-nix-action@v30
-      with:
-        github_access_token: ${{ secrets.GITHUB_TOKEN }}
     - name: Setup Cachix
       uses: cachix/cachix-action@v15
       with:
         name: igm
-        authToken: "${{ secrets.CACHIX_AUTH_TOKEN }}"
+        authToken: ${{ inputs.cachix-auth-token }}
     # Install Node
     - name: Get yarn cache directory path
       id: yarn-cache-dir-path
