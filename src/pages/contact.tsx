@@ -1,6 +1,6 @@
 import type { GetStaticProps } from "next";
 import { NextSeo } from "next-seo";
-import React from "react";
+import type React from "react";
 
 import { MDXProse } from "~src/components/MDXProse.js";
 import { BasicPage } from "~src/layouts/BasicPage.js";

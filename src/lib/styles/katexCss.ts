@@ -6,7 +6,8 @@ export const katexCss = css`
   @font-face {
     font-display: swap;
     font-family: KaTeX_AMS;
-    src: url(${fontBaseURL}/fonts/KaTeX_AMS-Regular.woff2) format("woff2"),
+    src:
+      url(${fontBaseURL}/fonts/KaTeX_AMS-Regular.woff2) format("woff2"),
       url(${fontBaseURL}/fonts/KaTeX_AMS-Regular.woff) format("woff"),
       url(${fontBaseURL}/fonts/KaTeX_AMS-Regular.ttf) format("truetype");
     font-weight: 400;
@@ -15,7 +16,8 @@ export const katexCss = css`
   @font-face {
     font-display: swap;
     font-family: KaTeX_Caligraphic;
-    src: url(${fontBaseURL}/fonts/KaTeX_Caligraphic-Bold.woff2) format("woff2"),
+    src:
+      url(${fontBaseURL}/fonts/KaTeX_Caligraphic-Bold.woff2) format("woff2"),
       url(${fontBaseURL}/fonts/KaTeX_Caligraphic-Bold.woff) format("woff"),
       url(${fontBaseURL}/fonts/KaTeX_Caligraphic-Bold.ttf) format("truetype");
     font-weight: 700;
@@ -24,8 +26,8 @@ export const katexCss = css`
   @font-face {
     font-display: swap;
     font-family: KaTeX_Caligraphic;
-    src: url(${fontBaseURL}/fonts/KaTeX_Caligraphic-Regular.woff2)
-        format("woff2"),
+    src:
+      url(${fontBaseURL}/fonts/KaTeX_Caligraphic-Regular.woff2) format("woff2"),
       url(${fontBaseURL}/fonts/KaTeX_Caligraphic-Regular.woff) format("woff"),
       url(${fontBaseURL}/fonts/KaTeX_Caligraphic-Regular.ttf) format("truetype");
     font-weight: 400;
@@ -34,7 +36,8 @@ export const katexCss = css`
   @font-face {
     font-display: swap;
     font-family: KaTeX_Fraktur;
-    src: url(${fontBaseURL}/fonts/KaTeX_Fraktur-Bold.woff2) format("woff2"),
+    src:
+      url(${fontBaseURL}/fonts/KaTeX_Fraktur-Bold.woff2) format("woff2"),
       url(${fontBaseURL}/fonts/KaTeX_Fraktur-Bold.woff) format("woff"),
       url(${fontBaseURL}/fonts/KaTeX_Fraktur-Bold.ttf) format("truetype");
     font-weight: 700;
@@ -43,7 +46,8 @@ export const katexCss = css`
   @font-face {
     font-display: swap;
     font-family: KaTeX_Fraktur;
-    src: url(${fontBaseURL}/fonts/KaTeX_Fraktur-Regular.woff2) format("woff2"),
+    src:
+      url(${fontBaseURL}/fonts/KaTeX_Fraktur-Regular.woff2) format("woff2"),
       url(${fontBaseURL}/fonts/KaTeX_Fraktur-Regular.woff) format("woff"),
       url(${fontBaseURL}/fonts/KaTeX_Fraktur-Regular.ttf) format("truetype");
     font-weight: 400;
@@ -52,7 +56,8 @@ export const katexCss = css`
   @font-face {
     font-display: swap;
     font-family: KaTeX_Main;
-    src: url(${fontBaseURL}/fonts/KaTeX_Main-Bold.woff2) format("woff2"),
+    src:
+      url(${fontBaseURL}/fonts/KaTeX_Main-Bold.woff2) format("woff2"),
       url(${fontBaseURL}/fonts/KaTeX_Main-Bold.woff) format("woff"),
       url(${fontBaseURL}/fonts/KaTeX_Main-Bold.ttf) format("truetype");
     font-weight: 700;
@@ -61,7 +66,8 @@ export const katexCss = css`
   @font-face {
     font-display: swap;
     font-family: KaTeX_Main;
-    src: url(${fontBaseURL}/fonts/KaTeX_Main-BoldItalic.woff2) format("woff2"),
+    src:
+      url(${fontBaseURL}/fonts/KaTeX_Main-BoldItalic.woff2) format("woff2"),
       url(${fontBaseURL}/fonts/KaTeX_Main-BoldItalic.woff) format("woff"),
       url(${fontBaseURL}/fonts/KaTeX_Main-BoldItalic.ttf) format("truetype");
     font-weight: 700;
@@ -70,7 +76,8 @@ export const katexCss = css`
   @font-face {
     font-display: swap;
     font-family: KaTeX_Main;
-    src: url(${fontBaseURL}/fonts/KaTeX_Main-Italic.woff2) format("woff2"),
+    src:
+      url(${fontBaseURL}/fonts/KaTeX_Main-Italic.woff2) format("woff2"),
       url(${fontBaseURL}/fonts/KaTeX_Main-Italic.woff) format("woff"),
       url(${fontBaseURL}/fonts/KaTeX_Main-Italic.ttf) format("truetype");
     font-weight: 400;
@@ -79,7 +86,8 @@ export const katexCss = css`
   @font-face {
     font-display: swap;
     font-family: KaTeX_Main;
-    src: url(${fontBaseURL}/fonts/KaTeX_Main-Regular.woff2) format("woff2"),
+    src:
+      url(${fontBaseURL}/fonts/KaTeX_Main-Regular.woff2) format("woff2"),
       url(${fontBaseURL}/fonts/KaTeX_Main-Regular.woff) format("woff"),
       url(${fontBaseURL}/fonts/KaTeX_Main-Regular.ttf) format("truetype");
     font-weight: 400;
@@ -88,7 +96,8 @@ export const katexCss = css`
   @font-face {
     font-display: swap;
     font-family: KaTeX_Math;
-    src: url(${fontBaseURL}/fonts/KaTeX_Math-BoldItalic.woff2) format("woff2"),
+    src:
+      url(${fontBaseURL}/fonts/KaTeX_Math-BoldItalic.woff2) format("woff2"),
       url(${fontBaseURL}/fonts/KaTeX_Math-BoldItalic.woff) format("woff"),
       url(${fontBaseURL}/fonts/KaTeX_Math-BoldItalic.ttf) format("truetype");
     font-weight: 700;
@@ -97,7 +106,8 @@ export const katexCss = css`
   @font-face {
     font-display: swap;
     font-family: KaTeX_Math;
-    src: url(${fontBaseURL}/fonts/KaTeX_Math-Italic.woff2) format("woff2"),
+    src:
+      url(${fontBaseURL}/fonts/KaTeX_Math-Italic.woff2) format("woff2"),
       url(${fontBaseURL}/fonts/KaTeX_Math-Italic.woff) format("woff"),
       url(${fontBaseURL}/fonts/KaTeX_Math-Italic.ttf) format("truetype");
     font-weight: 400;
@@ -106,7 +116,8 @@ export const katexCss = css`
   @font-face {
     font-display: swap;
     font-family: "KaTeX_SansSerif";
-    src: url(${fontBaseURL}/fonts/KaTeX_SansSerif-Bold.woff2) format("woff2"),
+    src:
+      url(${fontBaseURL}/fonts/KaTeX_SansSerif-Bold.woff2) format("woff2"),
       url(${fontBaseURL}/fonts/KaTeX_SansSerif-Bold.woff) format("woff"),
       url(${fontBaseURL}/fonts/KaTeX_SansSerif-Bold.ttf) format("truetype");
     font-weight: 700;
@@ -115,7 +126,8 @@ export const katexCss = css`
   @font-face {
     font-display: swap;
     font-family: "KaTeX_SansSerif";
-    src: url(${fontBaseURL}/fonts/KaTeX_SansSerif-Italic.woff2) format("woff2"),
+    src:
+      url(${fontBaseURL}/fonts/KaTeX_SansSerif-Italic.woff2) format("woff2"),
       url(${fontBaseURL}/fonts/KaTeX_SansSerif-Italic.woff) format("woff"),
       url(${fontBaseURL}/fonts/KaTeX_SansSerif-Italic.ttf) format("truetype");
     font-weight: 400;
@@ -124,7 +136,8 @@ export const katexCss = css`
   @font-face {
     font-display: swap;
     font-family: "KaTeX_SansSerif";
-    src: url(${fontBaseURL}/fonts/KaTeX_SansSerif-Regular.woff2) format("woff2"),
+    src:
+      url(${fontBaseURL}/fonts/KaTeX_SansSerif-Regular.woff2) format("woff2"),
       url(${fontBaseURL}/fonts/KaTeX_SansSerif-Regular.woff) format("woff"),
       url(${fontBaseURL}/fonts/KaTeX_SansSerif-Regular.ttf) format("truetype");
     font-weight: 400;
@@ -133,7 +146,8 @@ export const katexCss = css`
   @font-face {
     font-display: swap;
     font-family: KaTeX_Script;
-    src: url(${fontBaseURL}/fonts/KaTeX_Script-Regular.woff2) format("woff2"),
+    src:
+      url(${fontBaseURL}/fonts/KaTeX_Script-Regular.woff2) format("woff2"),
       url(${fontBaseURL}/fonts/KaTeX_Script-Regular.woff) format("woff"),
       url(${fontBaseURL}/fonts/KaTeX_Script-Regular.ttf) format("truetype");
     font-weight: 400;
@@ -142,7 +156,8 @@ export const katexCss = css`
   @font-face {
     font-display: swap;
     font-family: KaTeX_Size1;
-    src: url(${fontBaseURL}/fonts/KaTeX_Size1-Regular.woff2) format("woff2"),
+    src:
+      url(${fontBaseURL}/fonts/KaTeX_Size1-Regular.woff2) format("woff2"),
       url(${fontBaseURL}/fonts/KaTeX_Size1-Regular.woff) format("woff"),
       url(${fontBaseURL}/fonts/KaTeX_Size1-Regular.ttf) format("truetype");
     font-weight: 400;
@@ -151,7 +166,8 @@ export const katexCss = css`
   @font-face {
     font-display: swap;
     font-family: KaTeX_Size2;
-    src: url(${fontBaseURL}/fonts/KaTeX_Size2-Regular.woff2) format("woff2"),
+    src:
+      url(${fontBaseURL}/fonts/KaTeX_Size2-Regular.woff2) format("woff2"),
       url(${fontBaseURL}/fonts/KaTeX_Size2-Regular.woff) format("woff"),
       url(${fontBaseURL}/fonts/KaTeX_Size2-Regular.ttf) format("truetype");
     font-weight: 400;
@@ -160,7 +176,8 @@ export const katexCss = css`
   @font-face {
     font-display: swap;
     font-family: KaTeX_Size3;
-    src: url(${fontBaseURL}/fonts/KaTeX_Size3-Regular.woff2) format("woff2"),
+    src:
+      url(${fontBaseURL}/fonts/KaTeX_Size3-Regular.woff2) format("woff2"),
       url(${fontBaseURL}/fonts/KaTeX_Size3-Regular.woff) format("woff"),
       url(${fontBaseURL}/fonts/KaTeX_Size3-Regular.ttf) format("truetype");
     font-weight: 400;
@@ -169,7 +186,8 @@ export const katexCss = css`
   @font-face {
     font-display: swap;
     font-family: KaTeX_Size4;
-    src: url(${fontBaseURL}/fonts/KaTeX_Size4-Regular.woff2) format("woff2"),
+    src:
+      url(${fontBaseURL}/fonts/KaTeX_Size4-Regular.woff2) format("woff2"),
       url(${fontBaseURL}/fonts/KaTeX_Size4-Regular.woff) format("woff"),
       url(${fontBaseURL}/fonts/KaTeX_Size4-Regular.ttf) format("truetype");
     font-weight: 400;
@@ -178,15 +196,18 @@ export const katexCss = css`
   @font-face {
     font-display: swap;
     font-family: KaTeX_Typewriter;
-    src: url(${fontBaseURL}/fonts/KaTeX_Typewriter-Regular.woff2)
-        format("woff2"),
+    src:
+      url(${fontBaseURL}/fonts/KaTeX_Typewriter-Regular.woff2) format("woff2"),
       url(${fontBaseURL}/fonts/KaTeX_Typewriter-Regular.woff) format("woff"),
       url(${fontBaseURL}/fonts/KaTeX_Typewriter-Regular.ttf) format("truetype");
     font-weight: 400;
     font-style: normal;
   }
   .katex {
-    font: normal 1.21em KaTeX_Main, Times New Roman, serif;
+    font:
+      normal 1.21em KaTeX_Main,
+      Times New Roman,
+      serif;
     line-height: 1.2;
     text-indent: 0;
     text-rendering: auto;

@@ -1,5 +1,3 @@
-import React from "react";
-
 import { Prose } from "~src/components/Prose.js";
 import { BasicPage } from "~src/layouts/BasicPage.js";
 
@@ -11,8 +9,8 @@ const ResumePage = () => (
           <a href="https://macalinao.github.io/resume/resume.pdf">My Resume</a>
         </p>
         <p>
-          A lot of people have been asking for my resume source. I'm not
-          actively looking for a job right now, so I've made this page to
+          A lot of people have been asking for my resume source. I&apos;m not
+          actively looking for a job right now, so I&apos;ve made this page to
           explain things.
         </p>
         <p>

@@ -1,18 +1,18 @@
 {
   "typescript.tsdk": ".yarn/sdks/typescript/lib",
+  "eslint.useFlatConfig": true,
   "files.associations": {
     "*.md": "mdx"
   },
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "editor.formatOnSave": true,
-  "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
+  "eslint.options": {
+    "cache": true
   },
+  "editor.formatOnSave": true,
   "search.exclude": {
     "**/.yarn": true,
     "**/.pnp.*": true
   },
   "eslint.nodePath": ".yarn/sdks",
-  "prettier.prettierPath": ".yarn/sdks/prettier/index.js",
+  "prettier.prettierPath": ".yarn/sdks/prettier/index.cjs",
   "typescript.enablePromptUseWorkspaceTsdk": true
 }
