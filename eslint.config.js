@@ -1,9 +1,8 @@
-import { configs } from "@macalinao/eslint-config";
+import { configs } from "@macalinao/eslint-config-react";
 import nextPlugin from "@next/eslint-plugin-next";
 
 export default [
-  ...configs.base,
-  ...configs.react,
+  ...configs.reactFull,
   {
     languageOptions: {
       parserOptions: {

@@ -44,8 +44,8 @@
   "devDependencies": {
     "@babel/core": "^7.26.0",
     "@emotion/babel-plugin": "^11.13.5",
-    "@macalinao/eslint-config": "^1.0.1",
-    "@macalinao/tsconfig": "^1.0.1",
+    "@macalinao/eslint-config-react": "^3.0.0",
+    "@macalinao/tsconfig": "^3.0.0",
     "@next/bundle-analyzer": "^15.1.0",
     "@next/env": "^15.1.0",
     "@next/eslint-plugin-next": "^15.1.0",
