@@ -1,7 +1,7 @@
 import { css, default as tw, styled } from "twin.macro";
 
 export const Prose = styled.div(() => [
-  tw`text-sm md:text-base`,
+  tw`text-sm leading-relaxed md:(text-base leading-relaxed)`,
   css`
     p {
       ${tw`mb-2`}
@@ -15,7 +15,7 @@ export const Prose = styled.div(() => [
     ol,
     ul {
       & > li {
-        ${tw`ml-4`}
+        ${tw`ml-4 mb-1`}
       }
     }
     :not(li) > ol,
