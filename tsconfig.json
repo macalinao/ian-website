@@ -27,7 +27,7 @@
     ".eslintrc.cjs",
     "*.cjs"
   ],
-  "exclude": ["node_modules"],
+  "exclude": ["node_modules", "tailwind.config.ts"],
   "mdx": {
     // Enable strict type checking in MDX files.
     "checkMdx": true
